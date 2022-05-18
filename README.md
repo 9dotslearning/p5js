@@ -1,2 +1,2 @@
 # p5jsms
-Lessons for p5js for middle school students.
+Lessons about the language p5js for middle school students.
