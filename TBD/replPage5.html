@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Page 5</title>
+    <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+    <link href="styles/poole.css" rel="stylesheet" type="text/css" />
+    <link href="styles/syntax.css" rel="stylesheet" type="text/css" />
+
+    <!-- processing -->
+    <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
+    <script language="javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container content">
+      <main>
+        <article class="page">
+
+            <!-- toolness widgeet -->
+            <script type="text/p5">
+function setup() {
+  createCanvas(100, 100);
+}
+
+function draw() {
+  background(255, 0, 200);
+}
+</script>
+
+
+          <!-- answers -->
+          <p id='test'>Test ID</p>
+          <p class="showAnswers">Click for answers. But investigate first!</p>
+          <p class="answers hidden"><strong>Answers</strong></p>
+          <p class="answers hidden"><code>createCanvas(640, 480)</code> draws a window (the <em>canvas</em>) that is 640 pixels wide and 480 pixels high. A <em>pixel</em> is the smallest dot on the screen that can show color and measures about 1/100 inch. So our canvas is about 6.4 inches wide x 4.8 inches tall. </p>
+          <p class="answers hidden"><img width="70%" src="images/p1canvasdimensions.png" /></p>
+          <p class="answers hidden"><code>background(110)</code> paints the canvas gray color  110. Shades of gray range from 0 (black) to 255 (white), with  grays getting lighter as numbers increase.</p>
+          <p class="answers hidden"><code>ellipse(400, 150, 50)</code> draws a circle with horizontal position at 400 pixels across and 150 pixels down the screen. The circle is 50 pixels wide.</p>
+          <p class="answers hidden"><img width="70%" src="images/p1ellipseposition.png" ></li>
+
+          <!-- bottom nav -->
+          <p class="nav"><a href="page5.html">4 &larr; </a>&nbsp;&nbsp;pages&nbsp;&nbsp;<a href="page6.html">&rarr; 6</a></p>
+
+
+        </article>
+      </main>
+    </div> <!-- container content -->
+
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="script.js"></script>
+    <script src="sketchui-repl.js"></script>
+    <script src="https://toolness.github.io/p5.js-widget/p5-widget.js"></script>
+
+  </body>
+</html>

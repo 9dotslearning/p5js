@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Lesson 1</title>
+
+    <!-- from https://creative-coding.decontextualize.com/ -->
+    <link href="../styles/poole.css" rel="stylesheet" type="text/css" />
+    <link href="../stylessyntax" rel="stylesheet" type="text/css" />
+
+    <!-- processing -->
+    <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
+    <script language="javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <main>
+        <article class="page">
+
+          <h1>Lesson 1</h1>
+          <h2>Shapes with Random Positions, Colors, and Sizes</h2>
+          <p class="nav"><a href="../index.html">&larr; Back to Home</a></p>
+          <p>In this lesson, you'll make shapes that change position, color, and size randomly.</p>
+          <p><img src="../images/p1lessoncomplete.gif" alt="animated shapes that change color, size and position"/></p>
+
+          <!-- tinker: canvas -->
+
+          <h2>1. The Canvas</h2>
+          <p>To learn p5.js, you'll tinker in little windows like the one below. Remember, you can't break anything!</p>
+          <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+            Tinker
+          <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+            Click <span class="btnPress">&#9654;Play</span> to run the code below.
+            Then explore the 3 numbers! Change them one at a time, clicking <span class="btnPress">&#9654;Play</span> after each change.
+            What does each number do? What does each command do?
+            <em>Hint:</em> Use numbers between 0 and 300, for now.
+          </p>
+          <script type="text/p5" data-preview-width="300">
+createCanvas(250, 300);
+background(0);
+
+          </script>
+
+          <ul>
+            <li class="think" style="list-style: none;"><span style="color: #00A2C2; ">createCanvas</span> defines the width and height of the <em>canvas</em>, measured in <em>pixels</em>.
+The canvas is the drawing area at the right, where you see the background color after you click <span class="btnPress">&#9654;Play</span>.
+A pixel is the smallest dot that the screen can show; it's about 1/100 inch wide and tall.</li>
+            <li class="think" style="list-style: none;"><span style="color: #00A2C2;">background</span> changes the color of the canvas &mdash; 0 is black, 255 is white, and in between the grays get lighter as the number gets bigger.</li>
+          </ul>
+
+          <!-- tinker: mistakes -->
+
+          <h2>2. Mistakes</h2>
+          <p>Let's make some mistakes on purpose, just to see what happens.</p>
+          <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+            Tinker
+          <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+            Try deleting the comma between the 2 numbers in <span style="color: #00A2C2; ">createCanvas</span>. Then click <span class="btnPress">&#9654;Play</span>.  What happens?
+            <br style="margin-bottom: 13px" />
+            Click <span class="btnPress">Revert</span> to reset. Delete a parenthesis ( ), and click <span class="btnPress">&#9654;Play</span>. What happens?
+            <br style="margin-bottom: 13px" />
+            Click <span class="btnPress">Revert</span> to reset. Add a space between <span style="color: #00A2C2; ">create</span> and <span style="color: #00A2C2; ">Canvas</span>. Or write <span style="color: #00A2C2; ">canvas</span> with a lower-case "c". What happens?
+          </p>
+          <script type="text/p5" data-preview-width="300">
+createCanvas(250, 300);
+background(0);
+
+          </script>
+
+          <ul>
+            <li class="think" style="list-style: none;">You must write commands and punctuation <em>exactly</em> as p5.js expects.
+            Otherwise you'll see error messages. The error messages aren't very helpful. :-)
+            Since most errors are caused by mistakes in spelling or punctuation, check them carefully whenever you see an error message. </li>
+          </ul>
+
+          <!-- read: arguments -->
+
+          <h2>3. Arguments</h2>
+          <p>You may have noticed that the commands you've learned include numbers enclosed in parentheses.
+            These numbers are called <em>arguments</em>. They change the way that the command works.
+            For example, <span style="color: #00A2C2; ">background(127)</span> creates gray and <span style="color: #00A2C2; ">background(0)</span> creates black.
+          </p>
+
+          <!-- introduce HSB color model -->
+
+          <h2>4. Understanding Color</h2>
+          <p>In a moment, we'll add color to our drawing!
+          But first, it's helpful to understand how p5.js creates color.</p>
+
+          <ul>
+            <li>
+            Go to <a href="https://codepen.io/HunorMarton/details/eWvewo" target="_blank">HSB Color Picker</a>, which opens in a new tab.
+            Notice that you see 3 numbers: hue, saturation, and brightness.
+            These 3 qualities, taken together, create a color.
+            </li>
+            <li>
+            Drag handle on the color wheel to change the hue.
+            Hue is the basic color &mdash; red, gold, turquoise, and so on.
+            Hue is represented as degrees around a color circle. For example, we write yellow as 50&deg;.
+            </li>
+            <li>
+            Drag the first slider to change the saturation.
+            Saturation is the intensity of the color.
+            Saturation is represented as a percentage, with 100% meaning full color and 0% meaning no color (white).
+            </li>
+            <li>
+            Drag the last slider to change the brightness.
+            Brightness is the shade, or amount of black, mixed into color.
+            Brightness is represented as a percentage, with 100% very bright (no black) and 0% meaning the color has become completely black.
+          </li>
+        </ul>
+
+          <!-- tinker: color -->
+
+          <h2>5. Add Color to a Drawing</h2>
+          <p>Let's add color to our sketch!</p>
+          <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+            Tinker
+          <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+            Click <span class="btnPress">&#9654;Play</span>.
+            You'll see a blue background. It's created by the
+            <span style="color: #00A2C2; ">colorMode(HSB)</span> and <span style="color: #00A2C2; ">background(51, 100, 100)</span> commands.
+            The 3 arguments in the <span style="color: #00A2C2;">background</span> command represent the hue, saturation, and brightness (in that order).
+            <br style="margin-bottom: 13px" />
+            Go back to <a href="https://codepen.io/HunorMarton/details/eWvewo" target="_blank">HSB Color Picker</a>.
+            Choose a color you like.
+            Then copy or type the 3 numbers for that color, in order, into the <span style="color: #00A2C2; ">background</span> command below.
+            Omit the degree and percent signs.
+            <br style="margin-bottom: 13px" />
+            <span class="btnPress">Example.</span> I like this color green: hue 85&deg;, saturation 100%, brightness 90%<br />
+            so I'd write <span style="color: #00A2C2; ">background(85, 100, 90)</span>
+          </p>
+          <script type="text/p5" data-preview-width="300">
+createCanvas(250, 300);
+colorMode(HSB);
+background(51, 100, 100);
+
+          </script>
+
+          <ul>
+            <li class="think" style="list-style: none;">Remember that you must write commands and punctuation <em>exactly</em> as p5.js expects.
+            In the <span style="color: #00A2C2; ">background</span> command, for example, the arguments must appear in the correct order &mdash; hue, saturation, brightness.
+            They must be separated by commas and enclosed in parentheses.
+          </li>
+          <li class="think" style="list-style: none;">The argument in the <span style="color: #00A2C2; ">colorMode</span> command is HSB, written in all caps.</li>
+          </ul>
+
+
+          <!-- introduce coordinate system -->
+
+          <h2>6. Coordinates</h2>
+          <p>In a moment, you'll learn to draw shapes like lines, circles, and rectangles.
+          But first, you need to understand how we use <em>coordinates</em> to put shapes at different locations on the canvas.</p>
+          <p style="width: 90%; font-size: 1.2rem; font-weight: 550; color: #09A603; border: 1px solid #09A603; padding: 0.25rem; margin-bottom: 0;">
+            Read About It
+          <p style="width: 90%; border-right: 1px solid #09A603; border-bottom: 1px solid #09A603; border-left: 1px solid #09A603; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+              The first picture below shows a small red circle located 150 pixels across and 100 pixels down the screen.
+              The other picture below shows the red circle located 125 pixels across and 175 pixels down the screen.
+              <br style="margin-bottom: 13px;">
+              <img style="width: 90%; align: center;" src="../images/p1coordinatesystemlabelsall.png" alt="x-position is horizontal and y-position is vertical" />
+              Every location on screen can be identified uniquely and precisely by its down-and-across distances.
+              For example, there is only one point on screen that is 150 pixels across and 100 pixels down the screen,
+              and there is only one point at 125 pixels across and 175 pixels down.
+              Because these locations are unique and precise, we can use them to place shapes where we want them on screen.
+              <br style="margin-bottom: 13px;">
+              We give these distances a special name: <em>coordinates</em>.
+              A shape's distance <em>across</em> the screen is called its <span style="color: #DBA400;"><em>x-</em>coordinate</span>.
+              Its distance <em>down</em> the screen is called its <span style="color: #86E600;"><em>y-</em>coordinate</span>.
+              <br style="margin-bottom: 13px;">
+              We write the coordinates like this: <span style="color: #DBA400;">150</span>, <span style="color: #86E600;">100</span><br />
+              The <em>x-</em>coordinate is always first, followed by the <em>y-</em>coordinate (they're in alphabetical order). The two coordinates are separated by a comma.
+            </p>
+
+          <!-- tinker: ellipse -->
+
+          <h2>7. Draw an Ellipse</h2>
+          <p>Finally, let's draw a shape! We'll make it an ellipse (oval).</p>
+
+          <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+            Tinker
+          <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+            Click <span class="btnPress">&#9654;Play</span>.
+            You'll see a white ellipse (oval) created by the <span style="color: #00A2C2;">ellipse(150, 100, 50, 35)</span> command.
+            Explore the 4 numbers in <span style="color: #00A2C2;">ellipse</span>! Change them one at a time, clicking <span class="btnPress">&#9654;Play</span> after each change.
+            What does each number do?
+            <em>Hint:</em> Use numbers between 0 and 300, for now.
+            <br />
+
+          </p>
+          <script type="text/p5" data-preview-width="300">
+createCanvas(250, 300);
+colorMode(HSB);
+background(51, 100, 100);
+ellipse(150, 100, 50, 35);
+
+          </script>
+
+          <p>
+            <ul>
+              <li class="think" style="list-style: none;">
+                <img style="margin-top: -1.5rem; width: 35%" src="../images/p1ellipsesyntax.png" width="35%" alt="the 4 numbers in the ellipse command represent (x-position, y-position, width, height)" />
+              </li>
+              <li class="think" style="list-style: none;">The first argument in the <span style="color: #00A2C2;">ellipse</span> command is the <em>x-</em>coordinate. </li>
+              <li class="think" style="list-style: none;">The second argument is the <em>y-</em>coordinate.</li>
+              <li class="think" style="list-style: none;">The third argument is the width of the ellipse.</li>
+              <li class="think" style="list-style: none;">The fourth argument is its height.</li>
+              <li class="think" style="list-style: none;">All measurements are in pixels.</li>
+              <li class="think" style="list-style: none;">Remember to write the arguments to <span style="color: #00A2C2;">ellipse</span> in order, separated by commas, and enclosed in parentheses.</li>
+            </ul>
+
+          </p>
+
+          <!-- tinker: rect -->
+
+          <h2>8. Draw a Rectangle</h2>
+          <p>Let's add a rectangle.</p>
+
+          <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+            Tinker
+          <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+            Click <span class="btnPress">&#9654;Play</span>.
+            You'll see a white rectangle created by the <span style="color: #00A2C2;">rect(50, 180, 25, 70)</span> command.
+            Explore the 4 numbers in <span style="color: #00A2C2;">rect</span>! Change them one at a time, clicking <span class="btnPress">&#9654;Play</span> after each change.
+            What does each number do?
+            <em>Hint:</em> Use numbers between 0 and 300, for now.
+            <br />
+
+          </p>
+          <script type="text/p5" data-preview-width="300">
+createCanvas(250, 300);
+colorMode(HSB);
+background(51, 100, 100);
+ellipse(150, 100, 50, 35);
+rect(50, 180, 25, 70);
+
+          </script>
+
+          <p>
+            <ul>
+              <li class="think" style="list-style: none;">
+                <img style="margin-top: -1.5rem; width: 35%" src="../images/p1rectsyntax.png" width="35%" alt="the 4 numbers in the ellipse command represent (x-position, y-position, width, height)" />
+              </li>
+              <li class="think" style="list-style: none;">The arguments in the <span style="color: #00A2C2;">rect</span> command are the same as in the <span style="color: #00A2C2;">ellipse</span> command.
+              <li class="think" style="list-style: none;">Write <span style="color: #00A2C2;">rect</span> not <span style="color: #6f6f6f;">rectangle</span>.</li>
+            </ul>
+
+          </p>
+
+          <!-- read: positioning shapes from their centers -->
+
+          <h2>9. Positioning Shapes from Their Centers</h2>
+          <p>You may have noticed that coordinates in the <span style="color: #00A2C2; ">ellipse</span> and <span style="color: #00A2C2; ">rect</span> commands operate differently from each other. </p>
+          <p style="width: 90%; font-size: 1.2rem; font-weight: 550; color: #09A603; border: 1px solid #09A603; padding: 0.25rem; margin-bottom: 0;">
+            Read About It
+          <p style="width: 90%; border-right: 1px solid #09A603; border-bottom: 1px solid #09A603; border-left: 1px solid #09A603; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+            In the <span style="color: #00A2C2; ">ellipse</span> command, the coordinates position its <em>center</em>.
+            But coordinates in the <span style="color: #00A2C2; ">rect</span> command position its top left corner.
+            <br>
+            <img style="width: 40%;" src='../images/p1ellipserectcoordinates.png' alt="coordinates place ellipse by their centers but rects by their top left corners" />
+            This gets very confusing!
+            But we can tell <span style="color: #00A2C2; ">rect</span> to behave just like <span style="color: #00A2C2; ">ellipse</span> by adding the <span style="color: #00A2C2; ">rectMode(CENTER)</span> command to our code.
+          </p>
+
+          <script type="text/p5" data-preview-width="300">
+createCanvas(250, 300);
+colorMode(HSB);
+rectMode(CENTER);
+background(51, 100, 100);
+ellipse(150, 100, 50, 35);
+rect(50, 180, 25, 70);
+
+          </script>
+
+          <p>
+            <ul>
+              <li class="think" style="list-style: none;">The argument in the <span style="color: #00A2C2;">rectMode</span> command is CENTER, written in all capital letters</span>.</li>
+              <li class="think" style="list-style: none;"><span style="color: #00A2C2; ">rectMode(CENTER)</span> must appear in the script <em>before</em> you draw any rectangles.</li>
+            </ul>
+
+          </p>
+
+
+
+
+
+
+
+        </article>
+      </main>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/sketchui.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+
+  </body>
+</html>

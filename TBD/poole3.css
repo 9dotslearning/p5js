@@ -1,5 +1,4 @@
-/* From https://creative-coding.decontextualize.com/public/css/poole.css
- *
+/*
  *                        ___
  *                       /\_ \
  *  _____     ___     ___\//\ \      __
@@ -60,8 +59,7 @@ html {
 }
 
 body {
-  /* color: #515151; */
-  color: #5e5a54;
+  color: #515151;
   background-color: #fff;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
@@ -69,7 +67,7 @@ body {
 
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {
-  color: #407abd;
+  color: #0000ff;
   text-decoration: none;
 }
 a strong {
@@ -120,19 +118,6 @@ strong {
 ul, ol, dl {
   margin-top: 0;
   margin-bottom: 1rem;
-  /* added 220514 */
-  list-style-type: square;
-  padding-left: 1rem;
-}
-
-/* added 220514 */
-li {
-  margin-bottom: 10px;
-}
-
-/* added 220514 */
-li img {
-  width: 70%;
 }
 
 dt {
@@ -194,43 +179,6 @@ pre code {
   background-color: transparent;
 }
 
-/* added 220514 */
-.showAnswers {
-  color: #407abd; /* same as link color */
-}
-
-.showAnswersVisited {
-  visibility: hidden;
-}
-
-/* added 220514 */
-.hidden {
-  visibility: hidden;
-}
-
-/* added 220514 */
-.visible {
-  visibility: visible;
-}
-
-/* added 220514 */
-.challengeHead {
-  font-size: 1.2rem;
-  padding: 6px;
-  color: #fcfbfa;
-  background-color: #b8b0a3;
-}
-
-/* added 220514 */
-.challenge {
-  color: #5e5a54;
-}
-
-/* added 220514 */
-.clickable {
-  font-variant: small-caps;
-}
-
 /* Pygments via Jekyll */
 .highlight {
   margin-bottom: 1rem;
@@ -238,11 +186,6 @@ pre code {
 }
 .highlight pre {
   margin-bottom: 0;
-}
-
-/* added 220515 */
-.accentuate {
-  background-color: #ffff77;
 }
 
 /* Gist via GitHub Pages */
@@ -267,11 +210,6 @@ pre code {
   border-radius: 0;
 }
 
-/* added 220514 */
-.nav {
-  background-color: #ececec;
-}
-
 /* Quotes */
 blockquote {
   padding: .5rem 1rem;
@@ -292,9 +230,8 @@ blockquote p:last-child {
 img {
   display: block;
   max-width: 100%;
-  margin: 0 0 2rem;
+  margin: 0 0 1rem;
   border-radius: 5px;
-  box-shadow: 20px 20px 40px grey;
 }
 
 /* Tables */
@@ -505,23 +442,10 @@ a.pagination-item:hover {
     padding: 1em;
 }
 .example-container {
-    /*
     width: 400;
     height: 400;
-    */
-    width: 640;
-    height: 480;
     float: right;
 }
-/* added 220515, like .example but no min-height */
-.example-codeonly {
-    overflow: auto; zoom: 1;
-    margin-bottom: 1em;
-    background-color: #fcfcfc;
-    border: 1px black solid;
-    font-size: 0.8em;
-}
-
 .cntrl {
     font-size: 80%;
 }

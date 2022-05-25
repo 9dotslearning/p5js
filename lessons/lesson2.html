@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Lesson 2</title>
+
+    <!-- from https://creative-coding.decontextualize.com/ -->
+    <!--
+    <link href="../styles/poole.css" rel="stylesheet" type="text/css" />
+    <link href="../stylessyntax" rel="stylesheet" type="text/css" />
+    -->
+
+    <!-- styles -->
+    <link href="../styles/poole.css" rel="stylesheet" type="text/css" />
+
+    <!-- processing -->
+    <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
+    <script language="javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.js"></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+
+      <!-- ********************* page intro ********************* -->
+
+      <div>
+        <h1>Lesson 1</h1>
+        <h2>Random Shapes</h2>
+        <p class="nav"><a href="../index.html">&larr; Back to Home</a></p>
+        <p>In this lesson, you'll make shapes that change position, color, and size randomly.</p>
+        <p><img src="../images/p1lessoncomplete.gif" alt="animated shapes that change color, size and position"/></p>
+      </div>
+      <div class="sidebar"></div>
+
+
+      <!-- ********************* 1. createCanvas + background ********************* -->
+
+      <!-- tinker: createCanvas + background -->
+
+      <div>
+        <h2>1. The Canvas</h2>
+<!-- old colors: #eb3467, #e6006b; -->
+        <p>To learn p5.js, you'll tinker in little windows like the one below. Remember, you can't break anything!</p>
+        <p style="font-size: 1.2rem; font-weight: 550; color: #e60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+          Tinker
+        <p style="border-right: 1px solid #e60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+          Click <span class="btnPress">&#9654;Play</span> to run the code below.
+          Then explore the 3 numbers &mdash; 250, 200, and 0! Change them one at a time, clicking <span class="btnPress">&#9654;Play</span> after each change.
+          What does each number do? What does each command do?
+          <em>Hints:</em> Use numbers between 0 and 200, for now. You can learn more about these commands by clicking Canvas Help below.
+        </p>
+        <script type="text/p5" data-preview-width="250">
+createCanvas(250, 200);
+background(0);
+
+        </script>
+      </div>
+
+      <!-- help: createCanvas + background -->
+
+      <div class="sidebar" style="margin-top: 1rem;">
+
+        <!-- collapsible from https://codepen.io/markcaron/pen/RVvmaz -->
+        <section class="accordion">
+          <input type="checkbox" name="collapse" id="handle1" checked="checked">
+          <h2 class="handle">
+            <label for="handle1">Canvas Help</label>
+          </h2>
+          <div class="content">
+            <p><span style="color: #00A2C2; ">createCanvas</span> defines the width and height of the <em>canvas</em>, the drawing area that you see after you click <span class="btnPress">&#9654;Play</span>.
+              Its size is measured in <em>pixels</em>.
+              A pixel is the smallest dot that the screen can show; it's about 1/100 inch wide and tall. This canvas is 250 pixels wide and 200 pixels tall.</p>
+            <p><span style="color: #00A2C2; ">background</span> changes the color of the canvas.</p>
+            <p>The numbers in parentheses are called <em>arguments</em>, and they change how commands work.
+            For example, <span style="color: #00A2C2; ">background(0)</span> creates black and <span style="color: #00A2C2; ">background(255)</span>  creates white. Arguments between 0 and 255 produce gray, with lighter grays as arguments get bigger.
+            </p>
+            <p>When you click Click <span class="btnPress">&#9654;Play</span>, we say that you <em>run</em> the script.</p>
+            <p>If things get messed up after you make changes, you can restore the starting code by clicking <span class="btnPress">Revert</span>.</p>
+            </div>
+        </section>
+
+      </div>
+
+<!-- TBD missing info to consider adding: the argument to colorMode is letters -->
+
+
+      <!-- ********************* 2. mistakes ********************* -->
+
+      <!-- tinker: mistakes -->
+
+      <div>
+        <h2>2. Mistakes</h2>
+        <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+          Tinker
+        </p>
+        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+          Let's make some mistakes on purpose, just to see what happens.
+          <span class="tinkerBullet">Try deleting the comma between the 2 numbers in <span style="color: #00A2C2; ">createCanvas</span>. Then click <span class="btnPress">&#9654;Play</span>.  What happens?</span>
+          <span class="tinkerBullet">Click <span class="btnPress">Revert</span> to reset. Delete a parenthesis ( ), and click <span class="btnPress">&#9654;Play</span>. What happens?</span>
+          <span class="tinkerBullet">Click <span class="btnPress">Revert</span> to reset. Add a space between <span style="color: #00A2C2; ">create</span> and <span style="color: #00A2C2; ">Canvas</span>. What happens?</span>
+          <span class="tinkerBullet">Write <span style="color: #00A2C2; ">createcanvas</span> in lowercase letters. What happens?</span>
+        </p>
+        <script type="text/p5" data-preview-width="300">
+createCanvas(250, 300);
+background(0);
+
+        </script>
+      </div>
+
+      <!-- help: mistakes -->
+
+      <div class="sidebar" style="margin-top: 4rem;">
+
+        <!-- collapsible from https://codepen.io/markcaron/pen/RVvmaz -->
+        <section class="accordion">
+          <input type="checkbox" name="collapse2" id="handle2" checked="checked">
+          <h2 class="handle">
+            <label for="handle2">Mistakes Help</label>
+          </h2>
+          <div class="content">
+            <p>You must write commands and punctuation <em>exactly</em> as p5.js expects.
+            Otherwise you'll see error messages. The error messages aren't very helpful. :-)</p>
+            <p>Since most errors are caused by mistakes in spelling or punctuation, check them carefully whenever you see an error message.</p>
+          </div>
+        </section>
+
+      </div>
+
+
+      <!-- ********************* 3. color ********************* -->
+
+      <!-- tinker: color -->
+
+      <div>
+        <h2>3. Color</h2>
+        <p>Let's add color to our drawing!</p>
+        <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+          Tinker
+        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+          Click <span class="btnPress">&#9654;Play</span>.
+          You'll see a yellow background. It's created by the commands
+          <span style="color: #00A2C2; ">colorMode(HSB)</span>
+          and <span style="color: #00A2C2; ">background(51, 100, 100)</span>.
+          You can learn more about these commands by clicking Color Help below.
+          To add your own colors, go to <a href="https://codepen.io/HunorMarton/details/eWvewo" target="_blank">HSB Color Picker</a>,
+          adjust the sliders, and then copy the 3 numbers for your color
+          into <span style="color: #00A2C2;">background</span> below.
+          Be sure to copy them <em>in order!</em>
+          And remember to click <span class="btnPress">&#9654;Play</span>. 🙂
+
+        </p>
+        <script type="text/p5" data-preview-width="300">
+createCanvas(250, 200);
+colorMode(HSB);
+background(51, 100, 100);
+
+        </script>
+
+      </div>
+
+      <!-- help: color -->
+
+      <div class="sidebar" style="margin-top: 4rem;">
+
+        <!-- collapsible from https://codepen.io/markcaron/pen/RVvmaz -->
+        <section class="accordion">
+          <input type="checkbox" name="collapse3" id="handle3" checked="checked">
+          <h2 class="handle">
+            <label for="handle3">Color Help</label>
+          </h2>
+          <div class="content">
+            <p>
+              At <a href="https://codepen.io/HunorMarton/details/eWvewo" target="_blank">HSB Color Picker</a>,
+              notice the 3 numbers labeled <em><u>H</u>ue, <u>S</u>aturation,</em> and <em><u>B</u>rightness.</em>
+              These 3 qualities, taken together, create a color.
+            </p>
+            <p>
+              Hue is the basic color &mdash; red, gold, turquoise, and so on.
+              It is represented as degrees around a color circle. For example, our yellow is at 51&deg;.
+            </p>
+            <p>
+              Saturation is the intensity of the color.
+              It is represented as a percentage, with 100% meaning full color and 0% meaning no color (white).
+            </p>
+            <p>
+              Brightness is the shade or amount of black mixed into color.
+              It is represented as a percentage, with 100% very bright (no black) and 0% meaning the color has become completely black.
+            </p>
+          </div>
+        </section>
+
+      </div>
+
+
+      <!-- ********************* 4. ellipse ********************* -->
+
+      <!-- tinker: ellipse -->
+
+      <div>
+        <h2>4. Ellipse</h2>
+        <p>Finally, let's draw a shape! We'll add an ellipse, also called an oval.</p>
+
+        <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+          Tinker
+        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+          Click <span class="btnPress">&#9654;Play</span>.
+          You'll see a white ellipse (oval) created by the <span style="color: #00A2C2;">ellipse(150, 100, 50, 35)</span> command.
+          Explore the 4 numbers in <span style="color: #00A2C2;">ellipse!</span> Change them one at a time, clicking <span class="btnPress">&#9654;Play</span> after each change.
+          What does each number do?
+          <br style="margin-bottom: 13px;">
+          Can you make a circle? A oval that fills touches all the edges?
+          Can you make TWO ellipses? more?
+          <em>Hint:</em> In <span style="color: #00A2C2;">ellipse</span>, use numbers between 0 and 200, for now.
+        </p>
+        <script type="text/p5" data-preview-width="300">
+createCanvas(250, 200);
+colorMode(HSB);
+background(51, 100, 100);
+ellipse(150, 100, 50, 35);
+
+        </script>
+
+      </div>
+
+      <!-- ellipse: help -->
+
+      <div class="sidebar" style="margin-top: 4rem;">
+        <section class="accordion">
+          <input type="checkbox" name="collapse4" id="handle4" checked="checked">
+          <h2 class="handle">
+            <label for="handle4">Ellipse Help</label>
+          </h2>
+          <div class="content">
+            <strong>Location on Screen</strong>
+            <p>
+              In <span style="color: #00A2C2;">ellipse(150, 100, 50, 35)</span>,
+              the first number, <span style="color: #00A2C2;">150</span>, is the ellipse's
+              distance from the left edge of the screen. The number <span style="color: #00A2C2;">100</span>
+              is its distance from the top.
+            </p>
+            <p>
+              Here's a picture of the ellipse and distances.
+              <br style="margin-bottom: 13px;">
+              <img style="align: center;" src="../images/p1coordinatesystemlabels.png" alt="shows a canvas with a red ellipse at horizontal position (x-positiona) 150 pixels from the left edge and vertical position (y-position) 100 pixels from the top." />
+              These distances are so helpful for placing images on screen that we give them a special name: <em>coordinates</em>.
+              A shape's distance from the left edge is called its <span style="color: blue;"><em>x-</em>coordinate</span>.
+              Its distance from the top is called its <span style="color: red;"><em>y-</em>coordinate</span>.
+              <br style="margin-bottom: 13px;">
+              We write the coordinates like this: <br />
+              <span style="color: blue;">150</span>, <span style="color: red;">100</span><br />
+              The <em>x-</em>coordinate is always first, followed by the <em>y-</em>coordinate. The two coordinates are separated by a comma.
+            </p>
+            <strong>Ellipse</strong>
+            <p>Here are the arguments to <span style="color: #00A2C2;">ellipse</span>:<br />
+            <img src="../images/p1ellipsesyntax.png" alt="In ellipse(150, 100, 50, 35), 150 is the x-coordinate, 100 is the y-coordinate, 50 is the width, and 35 is the height.)"></p>
+            <p>Remember to write the arguments in order, separated by commas, and enclosed in parentheses.</li>
+          </div>
+        </section>
+      </div>
+
+
+
+      <!-- ********************* 5. color the ellipse ********************* -->
+
+      <!-- tinker: color the ellipse -->
+
+      <div>
+        <h2>5. Color the Ellipse</h2>
+        <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+          Tinker
+        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+          Click <span class="btnPress">&#9654;Play</span>.
+          The ellipse has changed color, and it has a thick outline as well.
+          These changes come from the <span style="color: #00A2C2;">stroke, strokeWeight, </span> and
+          <span style="color: #00A2C2;">fill</span> commands.
+          Change numbers in these commands one at a time, clicking <span class="btnPress">&#9654;Play</span> after each change.
+          What does each command do? What does each number do?
+          <br style="margin-bottom: 13px;">
+          Try using all that you've learned to make a snowman or an emoji face!
+        </p>
+        <script type="text/p5" data-preview-width="300">
+createCanvas(250, 200);
+colorMode(HSB);
+background(51, 100, 100);
+fill(5, 100, 100);
+stroke(0, 100, 0);
+strokeWeight(6);
+ellipse(150, 100, 50, 35);
+
+        </script>
+      </div>
+
+      <!-- help: color the ellipse  -->
+
+      <div class="sidebar" style="margin-top: 4rem;">
+        <section class="accordion">
+          <input type="checkbox" name="collapse5" id="handle5" checked="checked">
+          <h2 class="handle">
+            <label for="handle5">Color the Ellipse Help</label>
+          </h2>
+          <div class="content">
+            <p><span style="color: #00A2C2;">fill(5, 100, 100)</span> makes the inside of the ellipse red.</p>
+            <p><span style="color: #00A2C2;">stroke(0, 100, 0)</span> makes the border around the ellipse black.</p>
+            <p<span style="color: #00A2C2;">strokeWeight(6)</span> changes the thickness of the border.</p>
+          </p><em>Reminder:</em> Use the <a href=
+            "https://codepen.io/HunorMarton/details/eWvewo" target="_blank">HSB Color Picker</a> to choose colors. 😀</p>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ********************* 6. random gray ********************* -->
+
+      <!-- tinker: random gray -->
+
+      <div>
+        <h2>6. Random Gray Backgrounds</h2>
+        <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+          Tinker
+        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+          Click <span class="btnPress">&#9654;Play</span>, <em>several times.</em>
+          The ellipse and the color are both gone (for a moment), but each time you click, the background changes to a different shade of gray.
+          These changes come from <span style="color: #00A2C2;">random(255)</span>,
+          which produces a random number between 0 and 255.
+          <br style="margin-bottom: 13px;">
+          Remember that when <span style="color: #00A2C2;">background</span> has a single argument, it creates gray colors
+          from black (0) to white (255).
+          When we tuck <span style="color: #00A2C2;">random(255)</span> into
+          <span style="color: #00A2C2;">background(</span> <span style="color: #00A2C2; font-weight: 600;">random(255)</span> <span style="color: #00A2C2;">)</span><br />
+          then we send <span style="color: #00A2C2;">background</span> a different number from 0-255 each time the script runs,
+          and each time we see a different color gray.
+        </p>
+        <script type="text/p5" data-preview-width="300">
+createCanvas(250, 200);
+colorMode(HSB);
+background( random(255) );
+
+        </script>
+      </div>
+
+      <!-- help: random gray -->
+
+      <div class="sidebar" style="margin-top: 4rem;">
+        <section class="accordion">
+          <input type="checkbox" name="collapse6" id="handle6" checked="checked">
+          <h2 class="handle">
+            <label for="handle6">Random Gray Help</label>
+          </h2>
+          <div class="content">
+            TBD
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ********************* 7. random color ********************* -->
+
+      <!-- tinker: random color -->
+
+      <div>
+        <h2>7. Random Color</h2>
+        <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+          Tinker
+        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+          Click <span class="btnPress">&#9654;Play</span>, <em>several times.</em>
+          Each time you click, the background changes color randomly.
+          The colors come from the command:<br />
+          <span style="color: #00A2C2;">background( random(255), 100, 100 )</span><br />
+          which randomly changes hue each time the script runs.
+          (If you can't see the whole <span style="color: #00A2C2;">background</span> command, click <span class="btnPress">&#9632; Stop</span> to show all the code.)
+          <br style="margin-bottom: 13px;" />
+          Try these challenges:
+          <span class="tinkerBullet">Make the <span style="color: #00A2C2;">fill</span> random.</span>
+          <span class="tinkerBullet">Make the <span style="color: #00A2C2;">stroke</span> random.</span>
+          <span class="tinkerBullet">Make the <span style="color: #00A2C2;">strokeWeight</span> random.</span>
+          <span class="tinkerBullet">And most fun of all, change the ellipse position and size randomly.</span>
+        </p>
+        <script type="text/p5" data-preview-width="300">
+createCanvas(250, 200);
+colorMode(HSB);
+background( random(255), 100, 100 );
+fill(5, 100, 100);
+stroke(0, 100, 0);
+strokeWeight(6);
+ellipse(150, 100, 50, 35);
+
+        </script>
+      </div>
+
+      <!-- random color help -->
+
+      <div class="sidebar" style="margin-top: 4rem;">
+        <section class="accordion">
+          <input type="checkbox" name="collapse7" id="handle7" checked="checked">
+          <h2 class="handle">
+            <label for="handle7">Random Color Help</label>
+          </h2>
+          <div class="content">
+            TBD - commands executed in order
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ********************* 8. setup() and draw() ********************* -->
+
+      <!-- tinker: setup and draw -->
+
+      <div>
+        <h2>8. setup() and draw()</h2>
+        <p style="font-size: 1.2rem; font-weight: 550; color: #e60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+          Tinker
+        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+          Click <span class="btnPress">&#9654;Play</span>. You'll see dozens of ellipses!
+          Where did they come from?
+          <br style="margin-bottom: 13px;" />
+          Notice that the script has been divided into two sections called
+          <span style="color: #00A2C2;">function setup()</span> and <span style="color: #00A2C2;">function draw()</span>.
+          The commands in <span style="color: #00A2C2;">function setup()</span> happen once, as soon as you click <span class="btnPress">&#9654;Play</span>.
+          But the command in <span style="color: #00A2C2;">function draw()</span> happens over and over, endlessly,
+          creating infinite ellipses at random positions.
+          <br style="margin-bottom: 13px;" />
+          Try these challenges:
+          <span class="tinkerBullet">Change the <span style="color: #00A2C2;">ellipse</span> command to draw ellipses with random sizes.</span>
+          <span class="tinkerBullet">Draw randomly-colored ellipses by adding commands in <span style="color: #00A2C2;">function draw()</span>.
+          Be sure to add them <em>above the <span style="color: #00A2C2;">ellipse</span> command</em>. </span>
+        </p>
+        <script type="text/p5" data-preview-width="300">
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+  background(51, 100, 100);
+}
+
+function draw() {
+  ellipse(random(250), random(200), 10, 10);
+}
+
+
+        </script>
+      </div>
+
+      <!-- help: setup() and draw() -->
+
+      <div class="sidebar" style="margin-top: 4rem;">
+        <section class="accordion">
+          <input type="checkbox" name="collapse8" id="handle8" checked="checked">
+          <h2 class="handle">
+            <label for="handle8">setup() and draw() Help</label>
+          </h2>
+          <div class="content">
+            Horizontal whitespace before or after commands doesn't matter.
+            Vertical whitespace doesn't matter.
+            The order does matter.
+            function setup() { } does matter. Commands go inside { }, like in a little suitcase.
+            setup() must be first, and the commands you learned so far must be inside one of these functions
+            you can have many commands in draw(), and they all happen endlessly
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ********************* 9. more mistakes ********************* -->
+
+      <!-- tinker: more mistakes -->
+
+      <div>
+        <h2>9. More Mistakes!</h2>
+        <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+          Tinker
+        </p>
+        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+          Let's make more mistakes on purpose, just to see what happens.
+          Use the keyboard to cut and paste when necessary; click More Mistakes Help for the keys to press.
+          Right-clicking won't work!
+          <br style="margin-bottom: 13px; " />
+          Try these challenges:
+          <span class="tinkerBullet">Delete a curly brace { or }. Click <span class="btnPress">&#9654;Play</span>. What happens?</span>
+          <span class="tinkerBullet">Delete the word <span style="color: #00A2C2; ">function</span> Click <span class="btnPress">&#9654;Play</span>. What happens?</span>
+          <span class="tinkerBullet">Delete the () after <span style="color: #00A2C2; ">setup</span> or <span style="color: #00A2C2; ">draw</span>. Click <span class="btnPress">&#9654;Play</span>. What happens?</span>
+          <span class="tinkerBullet">Move the <span style="color: #00A2C2; ">background</span> command so it's just above <span style="color: #00A2C2;">function setup()</span>. Click <span class="btnPress">&#9654;Play</span>. What happens?</span>
+        </p>
+        <script type="text/p5" data-preview-width="300">
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+  background(51, 100, 100);
+}
+
+function draw() {
+  ellipse(random(250), random(200), 10, 10);
+}
+
+        </script>
+      </div>
+
+      <!-- help: more mistakes -->
+
+      <div class="sidebar" style="margin-top: 4rem;">
+
+        <!-- collapsible from https://codepen.io/markcaron/pen/RVvmaz -->
+        <section class="accordion">
+          <input type="checkbox" name="collapse9" id="handle9" checked="checked">
+          <h2 class="handle">
+            <label for="handle9">More Mistakes Help</label>
+          </h2>
+          <div class="content">
+            <p>          Use the keyboard to cut (<span class="btnPress">ctrl+c</span> or <span class="btnPress">cmd+c</span> on Macintosh computers)</span>
+                      and paste (<span class="btnPress">ctrl+v</span> or <span class="btnPress">cmd+v on Macintosh computers).
+</p>
+          </div>
+        </section>
+
+      </div>
+
+
+      <!-- ********************* 10. more shapes ********************* -->
+
+      <!-- tinker: more shapes -->
+
+      <div>
+        <h2>10. More Shapes</h2>
+        <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+          Tinker
+        </p>
+        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+          The script below introduces 3 new shapes &mdash; rectangles, triangles, and lines.
+          <br style="margin-bottom: 13px; " />
+          Try these challenges:
+          <span class="tinkerBullet">Change numbers in the commands to see how they work. Click <span class="btnPress">&#9654;Play</span> after each change. What happens?</span>
+          <span class="tinkerBullet">Give the shapes random positions and sizes.</span>
+          <span class="tinkerBullet">Add <span style="color: #00A2C2; ">fill, stroke, </span>, and <span style="color: #00A2C2; ">strokeWeight</span>to change colors.</span>
+      </p>
+        <script type="text/p5" data-preview-width="300" data-height="480">
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+  background(51, 100, 100);
+}
+
+function draw() {
+  fill(102, 100, 100);
+  stroke(280, 100, 100);
+  rect(40, 120, 40, 40);
+
+  fill(231, 100, 100);
+  triangle(150, 30, 150, 90, 220, 90);
+
+  line(60, 10, 150, 150);
+
+}
+
+        </script>
+      </div>
+
+      <!-- help: more shapes -->
+
+      <div class="sidebar" style="margin-top: 4rem;">
+
+        <!-- collapsible from https://codepen.io/markcaron/pen/RVvmaz -->
+        <section class="accordion">
+          <input type="checkbox" name="collapse10" id="handle10" checked="checked">
+          <h2 class="handle">
+            <label for="handle10">More Shapes Help</label>
+          </h2>
+          <div class="content">
+            <p> TBD</p>
+          </div>
+        </section>
+
+      </div>
+
+
+      <!-- ********************* 11. make your own ********************* -->
+
+      <div>
+
+        <h2>11. Make Your Own Project</h2>
+        <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+          Tinker
+        </p>
+        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+          Go to the <a href="https://editor.p5js.org/" target="_blank">p5.js editor.</a> Login if necessary.
+          Use what you've learned to make a project with random shapes, positions, sizes, and colors,
+          similar to the GIF image at the beginning of this page. Have fun!
+        </p>
+
+      </div>
+
+      <!-- help: make your own -->
+
+      <div class="sidebar" style="margin-top: 4rem;">
+
+        <!-- collapsible from https://codepen.io/markcaron/pen/RVvmaz -->
+        <section class="accordion">
+          <input type="checkbox" name="collapse11" id="handle11" checked="checked">
+          <h2 class="handle">
+            <label for="handle11">Make Your Own Project Help</label>
+          </h2>
+          <div class="content">
+            <p>Feeling lost? Copy and paste this script (link to your own completed project at editor.p5js.org)</p>
+          </div>
+        </section>
+
+      </div>
+
+
+
+<div>next tinker</div>
+<div>next sidebar</div>
+
+
+
+  </div> <!-- wrapper ->
+
+    <script src="../script.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="../sketchui.js"></script>
+    <!-- <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script> -->
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <script src="https://kit.fontawesome.com/9ac34343ed.js" crossorigin="anonymous"></script>
+  </body>
+</html>
