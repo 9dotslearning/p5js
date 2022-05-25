@@ -15,7 +15,7 @@
 }
 
 .sidebar p {
-  width: 70%;
+  width: 90%;
 }
 
 
@@ -333,14 +333,16 @@ abbr[title] {
 /* Code */
 code,
 pre {
-  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-family: 'ABeeZee', Menlo, Monaco, "Courier New", monospace;
 }
+/* changes 220525 */
 code {
-  padding: .25em .5em;
-  font-size: 85%;
+  /* padding: .25em .5em; */
+  font-family: 'ABeeZee', Menlo, Monaco, "Courier New", monospace;
+  /* font-size: 85%; */
   color: #333;
-  background-color: #eee;
-  border-radius: 3px;
+  /* background-color: #eee;
+  border-radius: 3px; */
 }
 pre {
   display: block;
@@ -454,6 +456,28 @@ pre code {
   content: "\2610";
   display: inline-block;
   margin-right: 5px;
+}
+
+.tinkerNewLine {
+  margin-bottom: 13px;
+}
+
+.tinkerHeadingTop {
+  font-size: 1.2rem;
+  font-weight: 550;
+  color: #e60060;
+  border: 1px solid #e60060;
+  padding: 0.25rem;
+  margin-bottom: 0;
+}
+
+.tinkerHeadingBottom {
+  border-right: 1px solid #e60060;
+  border-bottom: 1px solid #e60060;
+  border-left: 1px solid #e60060;
+  font-size: 0.8rem;
+  padding: 0.25rem;
+  margin-top: 0;>
 }
 
 /* Gist via GitHub Pages */
