@@ -15,7 +15,7 @@
 }
 
 .sidebar p {
-  width: 90%;
+  width: 95%;
 }
 
 
@@ -331,19 +331,28 @@ abbr[title] {
 }
 
 /* Code */
+
+/* commented out 220526 */
+
+/*
 code,
 pre {
   font-family: 'ABeeZee', Menlo, Monaco, "Courier New", monospace;
 }
+*/
+
 /* changes 220525 */
 code {
   /* padding: .25em .5em; */
   font-family: 'ABeeZee', Menlo, Monaco, "Courier New", monospace;
   /* font-size: 85%; */
-  color: #333;
+  /* color: #333; */
+  color: #6b0000;
   /* background-color: #eee;
   border-radius: 3px; */
 }
+
+/* commented out 220526
 pre {
   display: block;
   margin-top: 0;
@@ -363,6 +372,7 @@ pre code {
   color: inherit;
   background-color: transparent;
 }
+*/
 
 /* added 220514 */
 .showAnswers {
@@ -413,11 +423,6 @@ pre code {
 }
 .highlight pre {
   margin-bottom: 0;
-}
-
-/* added 220515 */
-.accentuate {
-  background-color: #ffff77;
 }
 
 /* added 220520 */
@@ -478,6 +483,12 @@ pre code {
   font-size: 0.8rem;
   padding: 0.25rem;
   margin-top: 0;>
+}
+
+/* 150526 same visual treatment as code */
+.accentuate {
+    font-family: 'ABeeZee', Menlo, Monaco, "Courier New", monospace;
+    color: #333;
 }
 
 /* Gist via GitHub Pages */

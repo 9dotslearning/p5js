@@ -46,10 +46,10 @@
       <div>
         <h2>1. The Canvas</h2>
 <!-- old colors: #eb3467, #e6006b; -->
-        <p>To learn <code>p5.js</code>, you'll tinker by making changes in little windows like the ones below. Remember, you can't break anything!</p>
+        <p>To learn <span class="accentuate">p5.js</span>, you'll tinker by making changes in little windows like the ones below. Remember, you can't break anything!</p>
         <p class="tinkerHeadingTop">Tinker</p>
         <p class="tinkerHeadingBottom">
-          Click <span class="btnPress">&#9654;Play</span> in the <code>p5.js</code> window below.
+          Click <span class="btnPress">&#9654;Play</span> in the <span class="accentuate">p5.js</span> window below.
           You'll see a black area called the <em>canvas</em> to the right of the code.
           <span class="tinkerBullet">Let's explore the 3 numbers &mdash; <code>250</code>, <code>200</code>, and <code>0</code>.
             Change them one at a time, and click <span class="btnPress">&#9654;Play</span> after each change.
@@ -57,7 +57,7 @@
           </span>
           <span class="tinkerBullet">What does each number do?</span>
           <span class="tinkerBullet">What does each command do?</span>
-          <span class="tinkerBullet">You can learn more about these commands by clicking Canvas Help at the right.</span>
+          <span class="tinkerBullet">You can learn more about these commands by clicking <span class="accentuate">Canvas Help</span> at the right.</span>
         </p>
         <script type="text/p5" data-preview-width="250">
 createCanvas(250, 200);
@@ -102,10 +102,10 @@ background(0);
 
       <div>
         <h2>2. Mistakes</h2>
-        <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+        <p class="tinkerHeadingTop">
           Tinker
         </p>
-        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+        <p class="tinkerHeadingBottom">
           Let's make some mistakes on purpose, just to see what happens.
           <span class="tinkerBullet">Try deleting the comma between the 2 numbers in <code>createCanvas</code>. Then click <span class="btnPress">&#9654;Play</span>.  What happens?</span>
           <span class="tinkerBullet">Click <span class="btnPress">Revert</span> to reset. Delete a parenthesis ( ) and click <span class="btnPress">&#9654;Play</span>. What happens?</span>
@@ -130,7 +130,7 @@ background(0);
             <label for="handle2">Mistakes Help</label>
           </h2>
           <div class="content">
-            <p>You must write commands and punctuation <em>exactly</em> as p5.js expects.
+            <p>You must write commands and punctuation <em>exactly</em> as <span class="accentuate">p5.js</span> expects.
             Otherwise you'll see error messages. The error messages aren't very helpful. :-)</p>
             <p>Since most errors are caused by mistakes in spelling or punctuation, check them carefully whenever you see an error message.</p>
           </div>
@@ -146,19 +146,22 @@ background(0);
       <div>
         <h2>3. Color</h2>
         <p>Let's add color to our drawing!</p>
-        <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+        <p class="tinkerHeadingTop">
           Tinker
-        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+        <p class="tinkerHeadingBottom">
           Click <span class="btnPress">&#9654;Play</span>.
           You'll see a yellow background. It's created by the commands
-          <span style="color: #00A2C2; ">colorMode(HSB)</span>
-          and <span style="color: #00A2C2; ">background(51, 100, 100)</span>.
-          You can learn more about these commands by clicking Color Help below.
-          To add your own colors, go to <a href="https://codepen.io/HunorMarton/details/eWvewo" target="_blank">HSB Color Picker</a>,
-          adjust the sliders, and then copy the 3 numbers for your color
-          into <span style="color: #00A2C2;">background</span> below.
-          Be sure to copy them <em>in order!</em>
-          And remember to click <span class="btnPress">&#9654;Play</span>. 🙂
+          <code>colorMode(HSB)</code>
+          and <code>background(51, 100, 100)</code>.
+          <br class="tinkerNewLine" />
+          Follow these steps to investigate colors and add your own!
+          <span class="tinkerBullet">Go to <a href="https://codepen.io/HunorMarton/details/eWvewo" target="_blank">HSB Color Picker</a>.</span>
+          <span class="tinkerBullet">You'll see 3 sliders. Move them to change colors. Find a color you like!</span>
+          <span class="tinkerBullet">Each slider is represented by a number to its right.
+            Copy the numbers one at a time, in order, and paste them into the <code>background</code> command below.
+            Don't include &deg; and % symbols.</span>
+          <span class="tinkerBullet" style="margin-bottom: 13px;">Remember to click <span class="btnPress">&#9654;Play</span>. 🙂</span>
+          You can learn more about these ideas by clicking <span class="accentuate">Color Help</span> at the right.
 
         </p>
         <script type="text/p5" data-preview-width="300">
@@ -174,7 +177,6 @@ background(51, 100, 100);
 
       <div class="sidebar" style="margin-top: 4rem;">
 
-        <!-- collapsible from https://codepen.io/markcaron/pen/RVvmaz -->
         <section class="accordion">
           <input type="checkbox" name="collapse3" id="handle3" checked="checked">
           <h2 class="handle">
@@ -210,19 +212,20 @@ background(51, 100, 100);
 
       <div>
         <h2>4. Ellipse</h2>
-        <p>Finally, let's draw a shape! We'll add an ellipse, also called an oval.</p>
+        <p>Finally, let's draw a shape! We'll add an ellipse, or oval.</p>
 
-        <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+        <p class="tinkerHeadingTop">
           Tinker
-        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+        <p class="tinkerHeadingBottom">
           Click <span class="btnPress">&#9654;Play</span>.
-          You'll see a white ellipse (oval) created by the <span style="color: #00A2C2;">ellipse(150, 100, 50, 35)</span> command.
-          Explore the 4 numbers in <span style="color: #00A2C2;">ellipse!</span> Change them one at a time, clicking <span class="btnPress">&#9654;Play</span> after each change.
-          What does each number do?
-          <br style="margin-bottom: 13px;">
-          Can you make a circle? A oval that fills touches all the edges?
-          Can you make TWO ellipses? more?
-          <em>Hint:</em> In <span style="color: #00A2C2;">ellipse</span>, use numbers between 0 and 200, for now.
+          You'll see a white ellipse (oval) created by the <code>ellipse(150, 100, 50, 35)</code> command.
+          <br class="tinkerNewLine">
+          Try these challenges:
+          <span class="tinkerBullet">  Explore the 4 numbers in <code>ellipse!</code> Change them one at a time, clicking <span class="btnPress">&#9654;Play</span> after each change.
+            What does each number do? <em>Hint:</em> Use numbers between 0 and 200, for now.</span>
+          <span class="tinkerBullet">Can you make a circle?</span>
+          <span class="tinkerBullet">Can you make an oval that touches all the edges?</span>
+          <span class="tinkerBullet">Can you make TWO ellipses? more?</span>
         </p>
         <script type="text/p5" data-preview-width="300">
 createCanvas(250, 200);
@@ -245,27 +248,28 @@ ellipse(150, 100, 50, 35);
           <div class="content">
             <strong>Location on Screen</strong>
             <p>
-              In <span style="color: #00A2C2;">ellipse(150, 100, 50, 35)</span>,
-              the first number, <span style="color: #00A2C2;">150</span>, is the ellipse's
-              distance from the left edge of the screen. The number <span style="color: #00A2C2;">100</span>
+              In <code>ellipse(150, 100, 50, 35)</code>,
+              the first number, <code>150</code>, is the ellipse's
+              distance from the left edge of the screen. The number <code>100</code>
               is its distance from the top.
             </p>
             <p>
               Here's a picture of the ellipse and distances.
-              <br style="margin-bottom: 13px;">
+              <br class="tinkerNewLine">
               <img style="align: center;" src="../images/p1coordinatesystemlabels.png" alt="shows a canvas with a red ellipse at horizontal position (x-positiona) 150 pixels from the left edge and vertical position (y-position) 100 pixels from the top." />
               These distances are so helpful for placing images on screen that we give them a special name: <em>coordinates</em>.
               A shape's distance from the left edge is called its <span style="color: blue;"><em>x-</em>coordinate</span>.
               Its distance from the top is called its <span style="color: red;"><em>y-</em>coordinate</span>.
-              <br style="margin-bottom: 13px;">
+              <br class="tinkerNewLine">
               We write the coordinates like this: <br />
               <span style="color: blue;">150</span>, <span style="color: red;">100</span><br />
-              The <em>x-</em>coordinate is always first, followed by the <em>y-</em>coordinate. The two coordinates are separated by a comma.
+              The <em>x-</em>coordinate is always first, followed by the <em>y-</em>coordinate.
+              The two coordinates are separated by a comma.
             </p>
             <strong>Ellipse</strong>
-            <p>Here are the arguments to <span style="color: #00A2C2;">ellipse</span>:<br />
+            <p>Here are the arguments to <code>ellipse</code>:<br />
             <img src="../images/p1ellipsesyntax.png" alt="In ellipse(150, 100, 50, 35), 150 is the x-coordinate, 100 is the y-coordinate, 50 is the width, and 35 is the height.)"></p>
-            <p>Remember to write the arguments in order, separated by commas, and enclosed in parentheses.</li>
+            <p>Remember to write the arguments in order, separated by commas, and enclosed in parentheses.</p>
           </div>
         </section>
       </div>
@@ -278,25 +282,26 @@ ellipse(150, 100, 50, 35);
 
       <div>
         <h2>5. Color the Ellipse</h2>
-        <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+        <p class="tinkerHeadingTop">
           Tinker
-        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+        <p class="tinkerHeadingBottom">
           Click <span class="btnPress">&#9654;Play</span>.
           The ellipse has changed color, and it has a thick outline as well.
-          These changes come from the <span style="color: #00A2C2;">stroke, strokeWeight, </span> and
-          <span style="color: #00A2C2;">fill</span> commands.
-          Change numbers in these commands one at a time, clicking <span class="btnPress">&#9654;Play</span> after each change.
-          What does each command do? What does each number do?
-          <br style="margin-bottom: 13px;">
-          Try using all that you've learned to make a snowman or an emoji face!
+          These changes come from the <code>stroke</code>, <code>strokeWeight</code>, and
+          <code>fill</code> commands.
+          <br class="tinkerNewLine">
+          Try these challenges:
+          <span class="tinkerBullet">Change numbers in these commands one at a time, clicking <span class="btnPress">&#9654;Play</span> after each change.
+          What does each command do? What does each number do?</span>
+          <span class="tinkerBullet">Try using all that you've learned to draw a snowman or an emoji face!</span>
         </p>
         <script type="text/p5" data-preview-width="300">
 createCanvas(250, 200);
 colorMode(HSB);
 background(51, 100, 100);
-fill(5, 100, 100);
 stroke(0, 100, 0);
 strokeWeight(6);
+fill(5, 100, 100);
 ellipse(150, 100, 50, 35);
 
         </script>
@@ -311,11 +316,16 @@ ellipse(150, 100, 50, 35);
             <label for="handle5">Color the Ellipse Help</label>
           </h2>
           <div class="content">
-            <p><span style="color: #00A2C2;">fill(5, 100, 100)</span> makes the inside of the ellipse red.</p>
-            <p><span style="color: #00A2C2;">stroke(0, 100, 0)</span> makes the border around the ellipse black.</p>
-            <p<span style="color: #00A2C2;">strokeWeight(6)</span> changes the thickness of the border.</p>
-          </p><em>Reminder:</em> Use the <a href=
-            "https://codepen.io/HunorMarton/details/eWvewo" target="_blank">HSB Color Picker</a> to choose colors. 😀</p>
+            <p><code>stroke(0, 100, 0)</code> makes the border around the ellipse black.</p>
+            <p><code>strokeWeight(6)</code> changes the thickness of the border.</p>
+            <p><code>fill(5, 100, 100)</code> makes the inside of the ellipse red.</p>
+            <p>The computer runs commands in order, from top to bottom.
+              That means you must place the <code>stroke</code>, <code>strokeWeight</code>, and
+              <code>fill</code> commands <em>above</em> the shape whose color you're changing.
+              Otherwise the colors won't work at all!
+            </p>
+            <p><em>Hint:</em> Use the <a href=
+              "https://codepen.io/HunorMarton/details/eWvewo" target="_blank">HSB Color Picker</a> to choose colors. 😀</p>
           </div>
         </section>
       </div>
@@ -327,20 +337,20 @@ ellipse(150, 100, 50, 35);
 
       <div>
         <h2>6. Random Gray Backgrounds</h2>
-        <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+        <p class="tinkerHeadingTop">
           Tinker
-        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+        <p class="tinkerHeadingBottom">
           Click <span class="btnPress">&#9654;Play</span>, <em>several times.</em>
-          The ellipse and the color are both gone (for a moment), but each time you click, the background changes to a different shade of gray.
-          These changes come from <span style="color: #00A2C2;">random(255)</span>,
-          which produces a random number between 0 and 255.
-          <br style="margin-bottom: 13px;">
-          Remember that when <span style="color: #00A2C2;">background</span> has a single argument, it creates gray colors
-          from black (0) to white (255).
-          When we tuck <span style="color: #00A2C2;">random(255)</span> into
-          <span style="color: #00A2C2;">background(</span> <span style="color: #00A2C2; font-weight: 600;">random(255)</span> <span style="color: #00A2C2;">)</span><br />
-          then we send <span style="color: #00A2C2;">background</span> a different number from 0-255 each time the script runs,
-          and each time we see a different color gray.
+          The ellipse and the color are both gone (for a moment).
+          Each time you click <span class="btnPress">&#9654;Play</span>, the background changes to a different shade of gray.
+          <br class="tinkerNewLine">
+          Try thess challenges:
+          <span class="tinkerBullet">Change <code>255</code> to a smaller number. What happens?</span>
+          <span class="tinkerBullet">Make the random background command look like this:<br />
+            <code>background( random( 127, 255 ) );</code><br />
+            You'll see only light grays. Why?
+          </span>
+          <span>To learn more about these ideas, click <span class="accentuate">Random Gray Backgrounds Help</span> at the right.</span>
         </p>
         <script type="text/p5" data-preview-width="300">
 createCanvas(250, 200);
@@ -359,7 +369,34 @@ background( random(255) );
             <label for="handle6">Random Gray Help</label>
           </h2>
           <div class="content">
-            TBD
+            <p>
+              When we tuck <code>random(255)</code> into <code>background</code>, the punctuation gets a little tricky!
+              We end up with four parentheses, like this:
+            </p>
+              <code>background( random(255) );</code>
+            </p>
+            <p>
+              <img src="../images/p1randombackground.png" alt="image showing background(random(255))">
+            </p>
+            <p>
+              The computer always reads the innermost parentheses first.
+              So the computer chooses a random number from 0-255.
+              Then it gives this random number to the <code>background</code> command, producing a random gray color.
+            </p>
+            <p>
+              It's helpful to understand that the random numbers may not always change when you click <span class="btnPress">&#9654;Play</span>.
+              That's because it's possible for the computer to pick the same random number twice,
+              just like when you flip coins you can get "heads" twice in a row.
+            </p>
+            <p>
+              Suppose you use a smaller number than 255 in random, like this:<br />
+              <code>background( random(100) )</code><br />
+              Then you'll get darker grays! Remember that lower numbers &mdash; random or not &mdash; produce darker grays.
+            </p>
+            <p>
+              The command <code>random( 127, 255 )</code> chooses a random number between 127 and 255.
+              So the command <code>background( random(127, 255) )</code> creates lighter grays.
+            </p>
           </div>
         </section>
       </div>
@@ -371,21 +408,21 @@ background( random(255) );
 
       <div>
         <h2>7. Random Color</h2>
-        <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
+        <p class="tinkerHeadingTop">
           Tinker
-        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+        <p class="tinkerHeadingBottom">
           Click <span class="btnPress">&#9654;Play</span>, <em>several times.</em>
           Each time you click, the background changes color randomly.
           The colors come from the command:<br />
-          <span style="color: #00A2C2;">background( random(255), 100, 100 )</span><br />
-          which randomly changes hue each time the script runs.
-          (If you can't see the whole <span style="color: #00A2C2;">background</span> command, click <span class="btnPress">&#9632; Stop</span> to show all the code.)
-          <br style="margin-bottom: 13px;" />
+          <code>background( random(255), 100, 100 )</code><br />
+          which randomly changes hue.
+          (If you can't see the whole <code>background</code> command, click <span class="btnPress">&#9632; Stop</span> to show the full code window.)
+          <br class="tinkerNewLine" />
           Try these challenges:
-          <span class="tinkerBullet">Make the <span style="color: #00A2C2;">fill</span> random.</span>
-          <span class="tinkerBullet">Make the <span style="color: #00A2C2;">stroke</span> random.</span>
-          <span class="tinkerBullet">Make the <span style="color: #00A2C2;">strokeWeight</span> random.</span>
-          <span class="tinkerBullet">And most fun of all, change the ellipse position and size randomly.</span>
+          <span class="tinkerBullet">Make the <code>fill</code> random.</span>
+          <span class="tinkerBullet">Make the <code>stroke</code> random.</span>
+          <span class="tinkerBullet">Make the <code>strokeWeight</code> random.</span>
+          <span class="tinkerBullet">And most fun of all, change the ellipse position and size randomly!</span>
         </p>
         <script type="text/p5" data-preview-width="300">
 createCanvas(250, 200);
@@ -408,7 +445,20 @@ ellipse(150, 100, 50, 35);
             <label for="handle7">Random Color Help</label>
           </h2>
           <div class="content">
-            TBD - commands executed in order
+            <p>
+              Notice that in <br />
+              <code>background( random(255), 100, 100 );</code> <br />
+              we chose a random number <em>only</em> for the first number,
+              the hue (the basic color). We didn't randomize saturation or brightness.
+            </p>
+            <p>But you could randomize saturation and brightness, too. :-)
+              You could write a command like this:<br />
+              <code>background( random(255), random(100), random(100) );</code>
+              <br class="tinkerNewLine"/>
+              <img src="../images/p1randombackgroundall.png" alt="image showing the code: background( random(255), random(100), random(100) )" />
+              You can make similar changes to <code>stroke</code> and <code>fill</code> as well.
+              Make any changes that create colors you like!
+            </p>
           </div>
         </section>
       </div>
@@ -420,22 +470,22 @@ ellipse(150, 100, 50, 35);
 
       <div>
         <h2>8. setup() and draw()</h2>
-        <p style="font-size: 1.2rem; font-weight: 550; color: #e60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
-          Tinker
-        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
+        <p class="tinkerHeadingTop">Tinker</p>
+        <p class="tinkerHeadingBottom">
           Click <span class="btnPress">&#9654;Play</span>. You'll see dozens of ellipses!
           Where did they come from?
-          <br style="margin-bottom: 13px;" />
+          <br class="tinkerNewLine" />
           Notice that the script has been divided into two sections called
-          <span style="color: #00A2C2;">function setup()</span> and <span style="color: #00A2C2;">function draw()</span>.
-          The commands in <span style="color: #00A2C2;">function setup()</span> happen once, as soon as you click <span class="btnPress">&#9654;Play</span>.
-          But the command in <span style="color: #00A2C2;">function draw()</span> happens over and over, endlessly,
+          <code>function setup()</code> and <code>function draw()</code>.
+          The commands in <code>function setup()</code> happen once, as soon as you click <span class="btnPress">&#9654;Play</span>.
+          But the command in <code>function draw()</code> happens over and over, endlessly,
           creating infinite ellipses at random positions.
-          <br style="margin-bottom: 13px;" />
+          <br class="tinkerNewLine" />
           Try these challenges:
-          <span class="tinkerBullet">Change the <span style="color: #00A2C2;">ellipse</span> command to draw ellipses with random sizes.</span>
-          <span class="tinkerBullet">Draw randomly-colored ellipses by adding commands in <span style="color: #00A2C2;">function draw()</span>.
-          Be sure to add them <em>above the <span style="color: #00A2C2;">ellipse</span> command</em>. </span>
+          <span class="tinkerBullet">Change the <code>ellipse</code> command to draw ellipses with random sizes.</span>
+          <span class="tinkerBullet">Draw randomly-colored ellipses by adding <code>fill</code>,
+          <code>stroke</code>, and <code>strokeWeight</code> commands in <code>function draw()</code>.
+          Be sure to add the color commands <em>above the <code>ellipse</code> command</em>. </span>
         </p>
         <script type="text/p5" data-preview-width="300">
 function setup() {
@@ -458,15 +508,43 @@ function draw() {
         <section class="accordion">
           <input type="checkbox" name="collapse8" id="handle8" checked="checked">
           <h2 class="handle">
-            <label for="handle8">setup() and draw() Help</label>
+            <label for="handle8"><code>setup()</code> and <code>draw()</code> Help</label>
           </h2>
           <div class="content">
-            Horizontal whitespace before or after commands doesn't matter.
-            Vertical whitespace doesn't matter.
-            The order does matter.
-            function setup() { } does matter. Commands go inside { }, like in a little suitcase.
-            setup() must be first, and the commands you learned so far must be inside one of these functions
-            you can have many commands in draw(), and they all happen endlessly
+            <p>A <em>function</em> is a set of commands that does a specific task.
+              <code>function setup()</code> sets up the drawing, runnig its commands exactly once.
+              <code>function draw()</code> draws the sketch, repeating its commands endlessly, in order.
+            </p>
+            <p>As you write code, it's helpful to know rules about
+            <em>syntax</em>. Syntax, pronounced
+            SIN-tax, means the arrangement of letters and symbols.
+            If you use correct syntax, the computer will understand what you want it to do.
+            <ul>
+              <li>
+                You must end most commands end <code>;</code><br />
+                which is called a <em>semicolon</em>.
+              </li>
+              <li>You <em>can</em> include extra space before or after commands or numbers.
+                For example, both <br />
+                <code>background ( 51,  100,  100 );</code> and<br />
+                <code>background(51,100,100);</code> are good.
+              </li>
+              <li>
+                You can include extra lines between commands (by pressing <span class="btnPress">enter</span> or
+                <span class="btnPress">return</span>).
+              </li>
+              <li>In <code>function setup()</code> and <code>function draw()</code> you can include as many commands as you like,
+                but they all must be written between <code>{</code> and <code>}</code>.
+                You can think of <code>{ }</code> like bookends, with all the commands like books lined up between them.
+              </li>
+              <li>
+                The order of commands is <em>very</em> important. For example, you must write
+                <code>function setup()</code> and its commands <em>before</em> <code>function draw()</code>.
+                You must write commands like <code>fill</code> and <code>stroke</code> <em>before</em>
+                the shape that uses those colors. The computer reads commands from top to bottom,
+                and the commands must occur in a sensible order.
+              </li>
+            </ul>
           </div>
         </section>
       </div>
@@ -478,19 +556,17 @@ function draw() {
 
       <div>
         <h2>9. More Mistakes!</h2>
-        <p style="font-size: 1.2rem; font-weight: 550; color: #E60060; border: 1px solid #e60060; padding: 0.25rem; margin-bottom: 0;">
-          Tinker
-        </p>
-        <p style="border-right: 1px solid #E60060; border-bottom: 1px solid #e60060; border-left: 1px solid #e60060; font-size: 0.8rem; padding: 0.25rem; margin-top: 0;">
-          Let's make more mistakes on purpose, just to see what happens.
-          Use the keyboard to cut and paste when necessary; click More Mistakes Help for the keys to press.
-          Right-clicking won't work!
+        <p class="tinkerHeadingTop">Tinker</p>
+        <p class="tinkerHeadingBottom">
+          Let's make some more mistakes on purpose, just to see what happens.
+          Use the keyboard to cut and paste when doing tasks below (right-clicking the mouse won't work);
+          click <span class="accentuate">More Mistakes Help</span> for the keyboard shortcuts.
           <br style="margin-bottom: 13px; " />
           Try these challenges:
           <span class="tinkerBullet">Delete a curly brace { or }. Click <span class="btnPress">&#9654;Play</span>. What happens?</span>
-          <span class="tinkerBullet">Delete the word <span style="color: #00A2C2; ">function</span> Click <span class="btnPress">&#9654;Play</span>. What happens?</span>
-          <span class="tinkerBullet">Delete the () after <span style="color: #00A2C2; ">setup</span> or <span style="color: #00A2C2; ">draw</span>. Click <span class="btnPress">&#9654;Play</span>. What happens?</span>
-          <span class="tinkerBullet">Move the <span style="color: #00A2C2; ">background</span> command so it's just above <span style="color: #00A2C2;">function setup()</span>. Click <span class="btnPress">&#9654;Play</span>. What happens?</span>
+          <span class="tinkerBullet">Click <span class="btnPress">Revert</span> to reset. Then delete the word <code>function</code>. Click <span class="btnPress">&#9654;Play</span>. What happens?</span>
+          <span class="tinkerBullet">Click <span class="btnPress">Revert</span> to reset. Then delete the () after <code>function setup</code> or <code>function draw</code>. Click <span class="btnPress">&#9654;Play</span>. What happens?</span>
+          <span class="tinkerBullet">Click <span class="btnPress">Revert</span> to reset. Then move the <code>background</code> command to a new line just ABOVE <code>function setup()</code>. Click <span class="btnPress">&#9654;Play</span>. What happens?</span>
         </p>
         <script type="text/p5" data-preview-width="300">
 function setup() {
@@ -517,8 +593,8 @@ function draw() {
             <label for="handle9">More Mistakes Help</label>
           </h2>
           <div class="content">
-            <p>          Use the keyboard to cut (<span class="btnPress">ctrl+c</span> or <span class="btnPress">cmd+c</span> on Macintosh computers)</span>
-                      and paste (<span class="btnPress">ctrl+v</span> or <span class="btnPress">cmd+v on Macintosh computers).
+            <p>To copy with the keyboard, press <span class="btnPress">ctrl+c</span> or <span class="btnPress">cmd+c</span> on Macintosh computers.</p>
+            <p>To paste with the keyboard, press <span class="btnPress">ctrl+v</span> or <span class="btnPress">cmd+v</span> on Macintosh computers.</p>
 </p>
           </div>
         </section>
