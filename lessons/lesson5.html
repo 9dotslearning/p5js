@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Lesson 5</title>
+
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
+
+    <!-- styles -->
+    <!-- from https://creative-coding.decontextualize.com/ -->
+    <link href="../styles/poole.css" rel="stylesheet" type="text/css" />
+
+    <!-- processing -->
+    <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
+    <script language="javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.js"></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+
+      <!-- ********************* page intro ********************* -->
+
+      <div>
+        <h1>Lesson 5</h1>
+        <h2>Spins and Spirals</h2>
+        <p class="nav"><a href="../index.html">&larr; Back to Home</a></p>
+        <p>In this lesson, you'll TBD</p>
+
+        <p>
+          GIF IMAGES TBD
+        </p>
+      </div>
+
+
+      <div class="grid">
+
+      <!-- ********************* 1. lines again ********************* -->
+
+        <!-- tinker: mouseX and mouseY -->
+
+        <div>
+
+          <h2>1. Lines Again</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>. You'll see a line.
+            <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">Change the thickness of the line, just for review. Click Lines Again Help if you need help.</span>
+            <span class="tinkerBullet">Change the color of the line, just for review.</span>
+          </p>
+          <script type="text/p5" data-preview-width="250" data-height="300">
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+}
+
+function draw() {
+  text("hello!", 0, 0);
+}
+          </script>
+        </div>
+
+        <!-- help: lines again -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle1" checked="checked">
+            <h2 class="handle">
+              <label for="handle1">mouseX and mouseY Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                TBD: how to change line thickness and color.
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+        <!-- ********************* 2. translate ********************* -->
+
+
+        <div>
+
+          <h2>2. Translate</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>.
+            A new command called <code>translate</code> moved the line.
+            Let's investigate how <code>translate</code> works.
+            <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">Change the <em>first</em> argument within the <code>translate</code> command.
+              Use numbers between <code>0</code> and <code>200</code>, for now. Click <span class="btnPress">&#9654;Play</span>.
+              What happens?
+            </span>
+            <span class="tinkerBullet">Change the <em>second</em> argument within the <code>translate</code> command.
+              Then click <span class="btnPress">&#9654;Play</span>.
+              What happens?
+            </span>
+            <span class="tinkerBullet">Move the <code>line</code> command so that appears <em>above</em> <code>translate</code>.
+              Then click <span class="btnPress">&#9654;Play</span>.
+              What happens?
+            </span>
+          </p>
+          <script type="text/p5" data-preview-width="250" data-height="300">
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+}
+
+function draw() {
+  translate(125, 100);
+  text("hello!", 0, 0);
+}
+          </script>
+        </div>
+
+        <!-- help: translate -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse2" id="handle2" checked="checked">
+            <h2 class="handle">
+              <label for="handle2">Translate Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                Explain that translate moves the center of the screen, so that 0, 0 is somewhere else!
+                NEED IMAGES. ALSO explain why putting line above translate doesn't work. This involves explaining
+                the draw loop and the notional machine. :-)
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+        <!-- ********************* 3. rotate ********************* -->
+
+
+        <div>
+
+          <h2>3. Rotate</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>.
+            A new command called <code>rotate</code> changed the angle of the line.
+            Let's investigate how <code>rotate</code> works.
+            <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">Change the argument to the <code>rotate</code> command using
+              numbers between <code>0</code> and <code>6</code>. Click <span class="btnPress">&#9654;Play</span>.
+              What happens?
+            </span>
+            <span class="tinkerBullet">Change both arguments to the <code>translate</code> command using numbers
+              between 0 and 200. Then click <span class="btnPress">&#9654;Play</span>.
+              What happens?
+            </span>
+            <span class="tinkerBullet">Move the <code>rotate</code> command so that it appears
+              <em>above</em> theh <code>translate</code> command. Then click <span class="btnPress">&#9654;Play</span>.
+              You'll find it doesn't work. Why?
+            </span>
+          </p>
+          <script type="text/p5" data-preview-width="250" data-height="300">
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+}
+
+function draw() {
+  translate(125, 100);
+  rotate(1);
+  text("hello!", 0, 0);
+}
+          </script>
+        </div>
+
+        <!-- help: rotate -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse3" id="handle3" checked="checked">
+            <h2 class="handle">
+              <label for="handle3">Rotate Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                Rotates about the center counter-clockwise. The number 6 is a little more than a full turn.
+                p5.js is using a unit of turning called a radian, which is about 57 degrees or, more
+                precisely, 180/PI degrees.
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+
+        <!-- ********************* 4. variables ********************* -->
+
+
+        <div>
+
+          <h2>4. Variables That You Create</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>.
+            Notice <code>line 1</code> of the code. It creates a variable named <code>r</code>
+            and puts <code>4</code> inside it.
+            The variable <code>r</code> also appears in <code>line 10</code>,
+            where the <code>rotate</code> command uses the number inside <code>r</code> for rotation.
+            <br class="tinkerNewLine" />
+            Try this challenge:
+            <span class="tinkerBullet">Change the first line of code so that <code>r</code> contains
+              a different number. Try whole numbers, positive and negative numbers, and decimals.
+              If you use large numbers, don't include commas.
+              Click <span class="btnPress">&#9654;Play</span> after each change.
+              What happens?
+            </span>
+          </p>
+          <script type="text/p5" data-preview-width="250" data-height="300">
+let r = 4;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+}
+
+function draw() {
+  translate(125, 100);
+  rotate(r);
+  text("hello!", 0, 0);
+}
+          </script>
+        </div>
+
+        <!-- help: variables that you create -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse4" id="handle4" checked="checked">
+            <h2 class="handle">
+              <label for="handle4">Variables That You Create Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                Explain let r = 3;
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+        <!-- ********************* 5. changing variables ********************* -->
+
+
+        <div>
+
+          <h2>5. Changing Variables You Create</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            We've replaced "hello" with a black line that rotates continuously (over and over).
+            Click <span class="btnPress">&#9654;Play</span> to see it.
+            <br class="tinkerNewLine" />
+            Try this challenge:
+            <span class="tinkerBullet">
+              Which line of code makes the line rotate continuously?
+            </span>
+            <span class="tinkerBullet">
+              What happens if you change the number in that line of code to be much larger?
+              Or change it to a decimal like <code>0.01</code>?
+              Or change it to a negative number like <code>-7</code>?
+              Be sure to click <span class="btnPress">&#9654;Play</span> after each change.
+            </span>
+          </p>
+          <script type="text/p5" data-preview-width="250" data-height="300">
+let r = 4;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+}
+
+function draw() {
+  translate(125, 100);
+  rotate(r);
+  line(0, 0, 100, 0);
+  r = r + 1;
+}
+          </script>
+        </div>
+
+        <!-- help: changing variables -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse5" id="handle5" checked="checked">
+            <h2 class="handle">
+              <label for="handle5">Changing Variables You Create</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                Explain r = r + 1; and the notional machine.
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+
+        <!-- ********************* 6. variables and position ********************* -->
+
+
+        <div>
+
+          <h2>6. Variables and Position</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            We've changed the ellipse code to use variables in a different way. What's changing now?
+            Click <span class="btnPress">&#9654;Play</span> to see it.
+            <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">
+              Which line of code makes each new ellipse appear a little further from the center?
+            </span>
+            <span class="tinkerBullet">
+              Can you change the code so that each ellipse appears even further out than its previous neighbor?
+              Can you change the code again so that each ellipse still moves outwards but is very close to its neighbor?
+            </span>
+            <span class="tinkerBullet">
+              Change the ellipse's width and height to make more beautiful drawings.
+              Try a very long and narrow ellipse, or a big circular ellipse, or whatever else you like!
+            </span>
+            <span class="tinkerBullet">
+              Add a fill color &mdash; either solid or random!
+            </span>
+          </p>
+          <script type="text/p5" data-preview-width="250" data-height="300">
+let r = 0;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+}
+
+function draw() {
+  translate(125, 100);
+  rotate(r);
+  ellipse(0, 0, r, 8);
+  r = r + 1;
+}
+          </script>
+        </div>
+
+        <!-- help: variables and position -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse6" id="handle6" checked="checked">
+            <h2 class="handle">
+              <label for="handle6">Variables and Position Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                Explain that r is changing the x-position. Show the slow-mo movie.
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+        <!-- ********************* 7. variables and size ********************* -->
+
+
+        <div>
+
+          <h2>7. Variables and Size</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>.
+            Each time a new ellipse appears, it's a little wider than the previous ellipse was.
+            <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">
+              Which line of code makes each ellipse a little wider?
+            </span>
+            <span class="tinkerBullet">
+              Can you change the code so that the ellipses get wider at a faster rate? a slower rate?
+              Find a rate that you like.
+            </span>
+            <span class="tinkerBullet">
+              Try changing <em>both</em> the ellipse's <em>x-</em>coordinate and its width at the same time
+              by using the variable <code>r</code>.
+            </span>
+          </p>
+          <script type="text/p5" data-preview-width="250" data-height="300">
+let r = 0;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+}
+
+function draw() {
+  translate(125, 100);
+  rotate(r);
+  ellipse(0, 0, r, 10);
+  r = r + 1;
+}
+          </script>
+        </div>
+
+        <!-- help: variables and size -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse7" id="handle7" checked="checked">
+            <h2 class="handle">
+              <label for="handle7">Variables and Size Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                TBD
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+        <!-- ********************* 8. transparency ********************* -->
+
+
+        <div>
+
+          <h2>8. Transparency</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>.
+            The drawing appears gray at the edges and darker at the center.
+            This effect is created by 2 new commands:<br />
+            <span style="display: inline-block; margin-left: 22px; text-indent: -22px;">
+              &#9671;&emsp;<code>noFill();</code> makes the <em>inside</em> of ellipses transparent.
+            </span>
+            <span style="display: inline-block; margin-left: 22px; text-indent: -22px;">
+              &#9671;&emsp;<code>stroke(0, 100, 0, <span style="color: #b50000;">0.2<span>);</code>
+              where a fourth argument makes the ellipse borders <em>partially</em> transparent,
+              so you see the borders but also see through them.
+              The amount of transparency in a color is called its <span class="accentuate">alpha</span>.
+              <br />
+            </span>
+            <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">
+              In <code>stroke</code>, change the decimal until you find one you like.
+              You can use any decimal between 0 and 1.
+              <code>0</code> makes shapes completely transparent,
+              <code>1</code> makes shapes completely opaque (not transparent at all).
+            </span>
+            <span class="tinkerBullet">
+              Replace the <code>stroke</code> and <code>fill</code> commands with the two new commands below.
+              What happens?<br />
+              <code>fill(330, 100, 100, 0.1);</code><br />
+              <code>noStroke();</code>
+            </span>
+          </p>
+          <script type="text/p5" data-preview-width="250" data-height="300">
+let r = 0;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+}
+
+function draw() {
+  translate(125, 100);
+  rotate(r);
+  noFill();
+  stroke(0, 100, 0, 0.2);
+  ellipse(r, 0, r, 10);
+  r = r + 0.1;
+}
+          </script>
+        </div>
+
+        <!-- help: transparency -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse8" id="handle8" checked="checked">
+            <h2 class="handle">
+              <label for="handle8">Transparency Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                TBD<br />
+                The command <code>noFill();</code> makes fill completely transparent,
+                so you can see ellipses behind other ellipses.
+                In previous drawings, each new ellipse obscured previous ellipses.
+                <br class="tinkerNewLine" />
+                There's also a way to change transparency a little at a time (instead of turning it on or off completely).
+                Notice that the <code>stroke</code> command includes fourth argument:
+                <code>stroke(0, 0, 100, <strong>0.2</strong>)</code><br />
+                This argument is called <span class="accentuate">alpha</span>.
+                Alpha controls the amount of transparency a little at a time.
+                An alpha of 0 is completely transparent, and an alpha of 1 is not at all transparent.
+                You can set alpha to any number between 0 and 1.
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+
+
+
+        <!-- ************************ footer ************************ -->
+
+      </div> <!-- grid -->
+
+      <p class="nav">
+      <span class="item">
+        &larr; <a href="lesson4.html">Lesson 4</a>
+      </span>
+      <span class="item">
+        <a href="lesson6.html">Lesson 6</a> &rarr;
+      </span>
+      </p>
+
+    </div> <!-- wrapper -->
+
+    <!--
+    <script src="../script.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="../sketchui.js"></script>
+    -->
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <script src="https://kit.fontawesome.com/9ac34343ed.js" crossorigin="anonymous"></script>
+  </body>
+</html>

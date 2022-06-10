@@ -1,17 +1,21 @@
 .wrapper {
-  display: grid;
-  grid-template-columns: 640px auto;
-  grid-column-gap: 24px;
-  grid-row-gap: 36px;
   max-width: 960px;
   padding: none;
   margin-left:  auto;
   margin-right: auto;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 640px auto;
+  grid-column-gap: 24px;
+  grid-row-gap: 36px;
+}
+
 .sidebar {
   color: #989590;
   font-size: 0.7rem;
+  padding-top: 4rem;
 }
 
 .sidebar p {
@@ -87,16 +91,15 @@ body {
 /* border added 220524 */
 .accordion .handle {
   margin: 0;
-  font-size: 1.125em;
+  /* font-size: 1.125em; */
+  font-size: 1.05em;
   line-height: 1.2em;
   border: 1px solid #cccccc;
 }
 
 /* changes 220524 */
 .accordion label {
-  /*
-  color: #333; */
-  color: #e60060;
+  color: #333;
   font-weight: normal;
   background: #e8e8e8;
   padding: 15px;
@@ -453,14 +456,14 @@ pre code {
 
 .tinkerBullet {
   display: block;
-  margin-left: 25px;
-  text-indent: -10px;
+  margin-left: 22px;
+  text-indent: -12px;
 }
 
 .tinkerBullet:before {
   content: "\2610";
   display: inline-block;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .tinkerNewLine {
@@ -491,6 +494,8 @@ pre code {
     color: #333;
 }
 
+
+
 /* Gist via GitHub Pages */
 .gist .gist-file {
   font-family: Menlo, Monaco, "Courier New", monospace !important;
@@ -517,6 +522,11 @@ pre code {
 .nav {
   margin-top: 1rem;
   margin-bottom: 2rem;
+}
+
+.nav .item {
+  display: inline-block;
+  width: 120px;
 }
 
 /* Quotes */
