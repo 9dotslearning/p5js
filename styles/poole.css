@@ -89,32 +89,39 @@ body {
 */
 
 /* border added 220524 */
+/* added background color 220611 */
 .accordion .handle {
   margin: 0;
   /* font-size: 1.125em; */
   font-size: 1.05em;
   line-height: 1.2em;
   border: 1px solid #cccccc;
+  background: #e8e8e8;
 }
 
 /* changes 220524 */
+/* moved background color to .accordion .handle */
 .accordion label {
   color: #333;
   font-weight: normal;
-  background: #e8e8e8;
   padding: 15px;
   cursor: pointer;
-
-
-
+  /* possible text indent, but then hover breaks
+  margin-left: 6px;
+  text-indent: -6px;
+  */
 }
 
 .accordion label:hover,
 .accordion label:focus {
   background: #d8d8d8;
+  /* possible alternate hover effect :
+  color: #e60060;
+  font-weight: 500; */
+
 }
 
-
+/* 220611 */
 .accordion .handle label:before {
   font-family: 'fontawesome';
   content: "\f078";
@@ -123,6 +130,7 @@ body {
   font-size: .58em;
   line-height: 1.556em;
   vertical-align: middle;
+
 }
 
 .accordion > input[type="checkbox"]:checked ~ .handle label:before {
@@ -758,7 +766,7 @@ a.pagination-item:hover {
 .example pre {
     margin: 0;
     padding: 0;
-    font-size: 12px;
+    font-size: 10px;
     padding: 1em;
 }
 .example-container {
@@ -774,9 +782,11 @@ a.pagination-item:hover {
 .example-codeonly {
     overflow: auto; zoom: 1;
     margin-bottom: 1em;
+    padding: 1em;
     background-color: #fcfcfc;
     border: 1px black solid;
     font-size: 0.8em;
+    color: #6b0000;
 }
 
 .cntrl {
