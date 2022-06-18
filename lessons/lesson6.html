@@ -30,11 +30,15 @@
         <h2>Grids</h2>
         <p class="nav"><a href="../index.html">&larr; Back to Home</a></p>
         <p>
-          In this lesson, you'll learn how to create grids &mdash; rows and columns &mdash;
-          that contain beautiful shapes like those in the images below.
+          In the previous lesson you learned how to change the rotation, position, size,
+          and color of shapes by using a variable.
+          In this lesson, you'll use multiple variables to
+          make beautiful rows and columns of shapes that change color.
+          Here are some examples of grids you can make in this lesson.
         </p>
-
         <p>
+          <img src="../images/lesson6/p6projectquilt.gif" />
+          <img src="../images/lesson6/p6projectvasarely.gif" />
         </p>
       </div>
 
@@ -53,10 +57,14 @@
             Try these challenges:
             <span class="tinkerBullet">Change one number in the script to create more rectangles closer together.</span>
             <span class="tinkerBullet">Change that number again to create fewer rectangles farther apart.</span>
-            <span class="tinkerBullet">Change <code>x</code> in the <code>rect</code> command to <code>250 - x</code>.
-              Click <span class="btnPress">&#9654;Play</span>.
+            <!--
+            <span class="tinkerBullet">Change the <code>rect</code> command on <span class="accentuate">line 11</span>
+              so it looks like this:<br />
+              <code>rect(240 - x, 0, 10, 10);</code><br />
+              Then click <span class="btnPress">&#9654;Play</span>.
               Why do the rectangles appear from right to left?
             </span>
+            -->
             <span class="tinkerBullet">Why do you see multiple rectangles, since there's just one <code>rect</code> command?</span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="400">
@@ -117,7 +125,7 @@ function draw() {
 
 
 
-        <!-- tinker: repeating rectangles -->
+        <!-- tinker: repeating triangles -->
 
         <div>
 
@@ -127,8 +135,8 @@ function draw() {
             Click <span class="btnPress">&#9654;Play</span>. There's one triangle about halfway down the screen.
             <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">Change one number at a time in the <code>triangle</code> command.
-              Click <span class="btnPress">&#9654;Play</span> after each change. Figure out what each number does.
+            <span class="tinkerBullet">Change one number at a time in the <code>triangle</code> command,
+              and remember to click <span class="btnPress">&#9654;Play</span> after each change. Figure out what each number does.
             </span>
             <span class="tinkerBullet">Change the <code>triangle</code> command so that you see multiple triangles,
               like you see multiple rectangles.
@@ -184,16 +192,16 @@ function draw() {
             <p class="tinkerHeadingTop">Tinker</p>
             <p class="tinkerHeadingBottom">
               Click <span class="btnPress">&#9654;Play</span>.
-              The shapes are different colors.
+              The shapes are different colors, and there are two variables.
               <br class="tinkerNewLine" />
               Try these challenges:
               <span class="tinkerBullet">Change one number in the code to make the colors more varied,
                 so that they include greens and blues as well as reds and oranges.
-                Find a number you like.
+                Find a spread of colors you like.
               </span>
               <span class="tinkerBullet">Add a <code>fill</code> command so that the triangles
-                not only vary in color but are also different from the rectangle colors.
-                Find a <code>fill</code> for the triangles that you like.
+                show a different spread of colors from the rectangles.
+                Find colors that you like.
             </p>
             <script type="text/p5" data-preview-width="250" data-height="520">
 let c = 0;
@@ -249,7 +257,8 @@ function draw() {
             <p class="tinkerHeadingTop">Tinker</p>
             <p class="tinkerHeadingBottom">
               Click <span class="btnPress">&#9654;Play</span>.
-              You see only 5 rectangles. Why?
+              You see 5 rectangles and 5 triangles, and there's a new <code>if</code>
+              command at the end of the script. Why are there only 5 of each shape?
               <br class="tinkerNewLine" />
               Try these challenges:
               <span class="tinkerBullet">Change one number in the code to make a drawing with exactly 6 rectangles.</span>
@@ -298,9 +307,7 @@ function draw() {
           </div>
 
 
-
-
-        <!-- ********************* 5. flickering colors ********************* -->
+        <!-- ********************* 5. color waves ********************* -->
 
 
         <div>
@@ -312,24 +319,26 @@ function draw() {
             All the shapes are red.
             <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">In the first line of code,
+            <span class="tinkerBullet">In <span class="accentuate">line 1</span>,
               we set variable <code>c</code> to <code>0</code>.
-              Then we used <code>c</code> in the <code>fill</code> command on line 11 to choose the hue.
-              When the hue is <code>0</code>, all shapes are red.
-              Change <code>c</code> to a different number in the <span class="accentuate">first line of code</span>.
-              Click <span class="btnPress">&#9654;Play</span>. Find a number for the hue that you like.
+              Change <code>0</code> to another number and then click <span class="btnPress">&#9654;Play</span>.
+              Why does the color change? Find a color that you like.
             </span>
-            <span class="tinkerBullet">Type a new line of code that makes <code>c</code>
-              change endlessly. Then click <span class="btnPress">&#9654;Play</span>.
+            <span class="tinkerBullet">Find the command towards the end of the script
+              that changes the varible <code>x</code>.
+              Add a new command just above it that changes the variable <code>c</code>.
+              Then click <span class="btnPress">&#9654;Play</span>.
               You should see waves of color, but you'll
               notice that they stop after a short time. Why? </span>
-            <span class="tinkerBullet">The biggest hue is <code>360</code>.
+            <span class="tinkerBullet">As you know from previous lessons,
+              the largest number you can use for hue is <code>360</code>.
               Type a new line of code so that when <code>c</code> is
               greater than <code>360</code>, it goes back to <code>0</code> and
               starts over.
             </span>
             <span class="tinkerBullet">You can make some lovely drawings with these commands.
-              Try making the color waves <em>very</em> slow, and add new shapes.
+              Try making the color waves <em>very</em> slow.
+              Try adding new shapes.
               Make each shape a different color. Have fun!
             </span>
           </p>
@@ -357,14 +366,14 @@ function draw() {
           </script>
         </div>
 
-        <!-- help: flickering colors -->
+        <!-- help: color waves -->
 
         <div class="sidebar">
 
           <section class="accordion">
             <input type="checkbox" name="collapse5" id="handle5" checked="checked">
             <h2 class="handle">
-              <label for="handle5">Flickering Colors Help</label>
+              <label for="handle5">Color Waves Help</label>
             </h2>
 
             <div class="content">
@@ -378,44 +387,33 @@ function draw() {
         </div>
 
 
-        <!-- ********************* 6. automatic rows ********************* -->
+        <!-- ********************* 6. grids ********************* -->
 
 
         <div>
 
-          <h2>6. Automatic Rows</h2>
+          <h2>6. Grids</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
-
-            <br class="tinkerNewLine" />
+            You'll see a grid of red rectangles.
+            Each row contains 10 rectangles. There are 5 rows.
+            <br span class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">TBD
+            <span class="tinkerBullet">Change one number in the script to make more rectangles in each row.
+              So instead of 10 rectangles in each row, make 15 or 20 or more.
             </span>
+            <span class="tinkerBullet">Change that same number to make fewer than 10 rectangles in each row.</span>
+            <span class="tinkerBullet">Change one number in the script to make more rows.
+              So instead of 5 rows, make 8 or 10 or 20 rows.
+            </span>
+            <span class="tinkerBullet">Change that same number again to create fewer than 5 rows. </span>
+            <span class="tinkerBullet">Make a drawing where all the rectangles are evenly spaced.
+              Rectangles should be the same distance from neighbors above, below, and to their sides. </span>
+            </span>
+            <span class="tinkerBullet">Add a command to make each rectangle a different color.</span>
+            <span class="tinkerBullet">Add commands to make all rectangles in one row the same color but each row a different color from its neighbors above and below.</span>
           </p>
-
-<!--
-let x = 0;
-let y = 0;
-
-function setup() {
-  createCanvas(250, 250);
-  colorMode(HSB);
-  background(0, 100, 0);
-}
-
-function draw() {
-  fill(random(360), 100, 100);
-  rect(x, y, 10, 10);
-
-  x = x + 20;
-  if (x > 250) y = y + 20;
-  if (x > 250) x = 0;
-  if (y > 250) y = 0;
-
-}
-
--->
           <script type="text/p5" data-preview-width="250" data-height="600">
 let x = 0;
 let y = 0;
@@ -430,8 +428,8 @@ function draw() {
   fill(0, 100, 100);
   rect(x, y, 10, 10);
 
-  x = x + 20;
-  if (x > 250) y = y + 20;
+  x = x + 25;
+  if (x > 250) y = y + 50;
   if (x > 250) x = 0;
 }
           </script>
@@ -459,74 +457,6 @@ function draw() {
 
 
 
-      <!-- ********************* 6. more variables ********************* -->
-
-
-      <div>
-
-        <h2>6. More Variables</h2>
-        <p class="tinkerHeadingTop">Tinker</p>
-        <p class="tinkerHeadingBottom">
-          Click <span class="btnPress">&#9654;Play</span>.
-          We've added another variable named <code>c</code> which changes the color.
-          <br class="tinkerNewLine" />
-          Try these challenges:
-          <span class="tinkerBullet">
-            Change only the first argument in the new <code>triangle</code> command.
-            Then click <span class="btnPress">&#9654;Play</span>. How does that change the drawing?
-          </span>
-        </p>
-        <script type="text/p5" data-preview-width="250" data-height="600">
-let x = 0;
-let c = 0;
-
-function setup() {
-createCanvas(250, 250);
-colorMode(HSB);
-background(0, 100, 0);
-}
-
-function draw() {
-fill(c, 100, 100);
-stroke(c, 100, 100);
-
-triangle(x, 100, x + 40, 100, x + 20, 40);
-
-rect(x + 2, 0, 36, 40);
-
-line(x + 20, 0, x + 20, 250);
-
-fill(0, 100, 0);
-ellipse(x + 20, 20, 20, 20);
-
-x = x + 50;
-c = c + 1;
-
-if (x > 250) x = 0;
-
-}
-        </script>
-      </div>
-
-      <!-- help: more shapes -->
-
-      <div class="sidebar">
-
-        <section class="accordion">
-          <input type="checkbox" name="collapse6" id="handle6" checked="checked">
-          <h2 class="handle">
-            <label for="handle6">More Shapes Help</label>
-          </h2>
-
-          <div class="content">
-            <p>
-              TBD: explain the triangle command.
-            </p>
-          </div>
-        </section>
-
-      </div>
-
 
     <!-- ************************ footer ************************ -->
 
@@ -552,3 +482,114 @@ if (x > 250) x = 0;
     <script src="https://kit.fontawesome.com/9ac34343ed.js" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<!-- final project scripts for GIFS
+
+// quilt
+let x = 0;
+let c = 0;
+
+function setup() {
+  createCanvas(400, 400);
+  colorMode(HSB);
+  background(0, 100, 0);
+}
+
+function draw() {
+  //background(0, 100, 0); // transparency?
+  fill(random(360), 100, 100);
+  rect(m, 0, 20, 60);
+
+  fill(random(360), 100, 100);
+  ellipse(m, 80, 20, 20);
+
+  fill(random(360), 100, 100);
+  triangle(m, 120, m + 0, 90, m + 20, 120);
+
+
+  m = m + 20;
+  if (m > 240) m = 0;
+
+}
+*/
+
+/* concentric shapes
+let c = 0;
+
+function setup() {
+  createCanvas(240, 240);
+  colorMode(HSB);
+  background(0, 100, 0); // transparency?
+  // frameRate(10);
+}
+
+function draw() {
+  //background(0, 100, 0); // transparency?
+
+  fill(c, 100, 100);
+  stroke(0, 100, 0);
+
+  rect(0, 0, 240 - c, 240 - c);
+
+  c = c + 20;
+  if (c > 220) noLoop();
+
+}
+*/
+
+
+/* STEP 1: quilt - introduce triangle, begin/endShape, multiple variables  */
+
+let x = 0;
+let c = 0;
+
+function setup() {
+  createCanvas(400, 360);
+  colorMode(HSB);
+  background(0, 100, 0);
+}
+
+
+function draw() {
+  fill(c, 100, 100);
+  stroke(c + 40, 100, 100);
+
+  rect(x + 10, 20, 20, 20);
+
+  fill(c + 20, 100, 100);
+  triangle(x + 10, 60, x + 30, 60, x + 20, 100);
+  triangle(x + 10, 140, x + 30, 140, x + 20, 100);
+
+  fill(c + 40, 100, 100);
+  ellipse(x + 20, 100, 20, 20);
+
+  /*
+  ellipse(x + 20, 150, 6, 6);
+  ellipse(x + 20, 165, 10, 10);
+  ellipse(x + 20, 190, 20, 20);
+  ellipse(x + 20, 215, 10, 10);
+  ellipse(x + 20, 235, 6, 6);
+  */
+
+  line(x + 20, 140, x + 20, 220);
+  ellipse(x + 20, 180, 12, 12);
+
+  fill(c + 20, 100, 100);
+  triangle(x + 10, 220, x + 30, 220, x + 20, 260);
+  triangle(x + 10, 300, x + 30, 300, x + 20, 260);
+
+  fill(c + 40, 100, 100);
+  ellipse(x + 20, 260, 20, 20);
+
+  fill(c, 100, 100);
+  rect(x + 10, 320, 20, 20);
+
+
+  x = x + 40;
+  c = c + 0.5;
+
+  if (x > 400) x = 0;
+  if (c > 360) c = 0;
+
+}
+-->
