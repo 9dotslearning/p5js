@@ -41,11 +41,11 @@
 
       <div class="grid">
 
-        <!-- tinker: line of ellipses -->
+        <!-- tinker: many ellipses -->
 
         <div>
 
-          <h2>1. Line of Ellipses</h2>
+          <h2>1. Many Ellipses</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>. You'll see many ellipses
@@ -53,7 +53,7 @@
             <br class="tinkerNewLine" />
             Try these challenges:
             <span class="tinkerBullet">Change one number in the script to make the ellipses appear further apart.</span>
-            <span class="tinkerBullet">Change the script so that the ellipse appear in the opposite direction, from right to left.</span>
+            <span class="tinkerBullet">Change the script so that the ellipses appear in the opposite direction, from right to left.</span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="400">
 let x = 0;
@@ -73,14 +73,14 @@ function draw() {;
         </div>
 
 
-        <!-- help: line of ellipses -->
+        <!-- help: many ellipses -->
 
         <div class="sidebar">
 
           <section class="accordion">
             <input type="checkbox" name="collapse" id="handle1" checked="checked">
             <h2 class="handle">
-              <label for="handle1">Line of Ellipses Help</label>
+              <label for="handle1">Many Ellipses Help</label>
             </h2>
 
             <div class="content">
@@ -93,11 +93,11 @@ function draw() {;
         </div>
 
 
-        <!-- crossing the screen -->
+        <!-- one ellipse -->
 
         <div>
 
-          <h2>2. Crossing the Screen</h2>
+          <h2>2. One Ellipse</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>. You'll see one ellipse
@@ -112,6 +112,10 @@ function draw() {;
             <span class="tinkerBullet">Cut the <code>background</code> command out of <code>function setup()</code>
               and paste it back into <code>function draw()</code>. Then click <span class="btnPress">&#9654;Play</span>.
               What happens?
+            </span>
+            <span class="tinkerBullet">Change the script so that the ellipse moves in the opposite direction.
+              It should start at the right edge and move left. When it reaches the left edge,
+              it should reappear at the right edge and then continue moving across the screen.
             </span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="400">
@@ -149,14 +153,14 @@ function draw() {;
         </div>
 
 
-        <!-- help: crossing the screen -->
+        <!-- help: one ellipse -->
 
         <div class="sidebar">
 
           <section class="accordion">
             <input type="checkbox" name="collapse2" id="handle2" checked="checked">
             <h2 class="handle">
-              <label for="handle2">Crossing the Screen Help</label>
+              <label for="handle2">One Ellipse Help</label>
             </h2>
 
             <div class="content">
@@ -169,21 +173,22 @@ function draw() {;
         </div>
 
 
-        <!-- transparent backgrounds -->
+        <!-- transparent background -->
 
         <div>
 
-          <h2>3. Transparent Backgrounds</h2>
+          <h2>3. Transparent Background</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>. You'll see a moving ellipse again,
-            but it has a tail.
+            but it has a tail. Let's investigate where the tail comes from.
             <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">Notice that we've changed the <code>background</code> command
-              by adding a fourth argument, <code>0.2</code>.
-              Change that argument to other decimals between 0 and 1 &mdash; for example,
-              try <code>0.2</code> to <code>0.1</code> or <code>0.05</code> or <code>0.6</code>
+            <span class="tinkerBullet">Notice that the <code>background</code> command
+              has a fourth argument, <code>0.2</code>.
+              Change that argument to any other decimal between 0 and 1 &mdash; for example,
+              try <code>0.1</code> or <code>0.05</code> or <code>0.6</code> instead of
+              <code>0.2</code>
               <br />
               Which numbers make the longest tails? The shortest tails?
             </span>
@@ -217,11 +222,12 @@ function draw() {;
             completely transparent. Transparency is a sliding scale.
             </span>
             <span class="tinkerBullet">The greater the transparency, the more
-              previously-drawn shapes you'll see.
+              previously-drawn shapes you can see through it.
             </span>
-            <span class="tinkerBullet" />For example, a fourth argument of <code>0.2</code>
-              makes the background mostly transparent. You can see
-              several previously-drawn ellipses, which appear as a tail.
+            <span class="tinkerBullet" />For example, if you make the fourth argument <code>0.2</code>,
+              the background is mostly transparent. Each time it is painted,
+              it leaves several previously-drawn ellipses partially visible.
+              They appear as a tail.
             </span>
             <span class="tinkerBullet" />Confusingly, the <em>smaller</em> you make the fourth argument,
               the <em>greater</em> the transparency. So changing the fourth argument
@@ -230,21 +236,22 @@ function draw() {;
               previously-drawn ellipses.
             </span>
             <span class="tinkerBullet" />When the transparency is <code>0</code>,
-              the background is completely transparent, and you see all previously-drawn ellipses.
+              the background is completely transparent, and you see <em>all</em>
+              previously-drawn ellipses, as if there were no background at all.
+            </span>
           </p>
-
 
         </div>
 
 
-        <!-- help: crossing the screen -->
+        <!-- help: transparent background -->
 
         <div class="sidebar">
 
           <section class="accordion">
-            <input type="checkbox" name="collapse2" id="handle2" checked="checked">
+            <input type="checkbox" name="collapse3" id="handle3" checked="checked">
             <h2 class="handle">
-              <label for="handle2">Crossing the Screen Help</label>
+              <label for="handle3">Transparent Background Help</label>
             </h2>
 
             <div class="content">
@@ -257,9 +264,126 @@ function draw() {;
         </div>
 
 
+        <!-- direction -->
+
+        <div>
+
+          <h2>4. Direction</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>.
+            You will see an ellipse that starts at the center of the
+            screen and moves right.
+            <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">Change one number in the script to make the ellipse move faster.</span>
+            <span class="tinkerBullet">Change that same number to make the ellipse move to the left instead of to the right.</span>
+          </p>
+
+          <script type="text/p5" data-preview-width="250" data-height="400">
+let x = 125;
+let step = 1;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+}
+
+function draw() {
+  background(30, 10, 20, 0.2);
+  ellipse(x, 100, 10, 10);
+  x = x + step;
+}
+          </script>
+        </p>
+
+        </div>
 
 
+        <!-- help: direction -->
 
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse4" id="handle4" checked="checked">
+            <h2 class="handle">
+              <label for="handle4">Direction Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                TBD: ???
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+        <!-- bounce -->
+
+        <div>
+
+          <h2>5. Bounce</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>.
+            You will once again see an ellipse that starts at the center of the
+            screen and moves right. When it touches the right edge, it reverses
+            direction as if bouncing.
+            <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">Look at line 13.
+              This code changes the direction of the ellipse when it touches the right edge.
+              Let's investigate how. If <code>step</code> starts with the value <code>1</code>, what does
+              <code>step</code>'s value become after the ellipse touches the right edge?
+              How does <code>step</code>'s new value change the ellipse's motion?
+            </span>
+            <span class="tinkerBullet">There's a problem with this script.
+              When the ellipse reaches the left edge, it disappears.
+              Change the script so that the ellipse also bounces off the left edge.
+            </span>
+          </p>
+
+          <script type="text/p5" data-preview-width="250" data-height="400">
+let x = 125;
+let step = 1;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+}
+
+function draw() {
+  background(30, 10, 20, 0.2);
+  ellipse(x, 100, 10, 10);
+  x = x + step;
+  if (x > 250) step = -step;
+}
+          </script>
+
+
+        </div>
+
+
+        <!-- help: direction -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse4" id="handle4" checked="checked">
+            <h2 class="handle">
+              <label for="handle4">Direction Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                TBD: ???
+              </p>
+            </div>
+          </section>
+
+        </div>
 
     <!-- ************************ footer ************************ -->
 
