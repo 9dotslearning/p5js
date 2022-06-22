@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+
 .wrapper {
   max-width: 960px;
   padding: none;
@@ -240,7 +242,7 @@ body {
   /* color: #515151; */
   color: #5e5a54;
   font-size: 0.9rem;
-  background-color: #fff;
+  background-color: #f2f2f2;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -502,7 +504,10 @@ pre code {
     color: #333;
 }
 
-
+/* 220622 */
+.logo {
+  font-family: Salsa;
+}
 
 /* Gist via GitHub Pages */
 .gist .gist-file {
