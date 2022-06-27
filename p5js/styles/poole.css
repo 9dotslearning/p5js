@@ -302,10 +302,13 @@ ul, ol, dl {
   margin-top: 0;
   margin-bottom: 1rem;
   /* added 220514 */
-  list-style-type: square;
   padding-left: 1rem;
 }
 
+/* added 220625 */
+ul {
+  list-style-type: square;
+}
 /* added 220514 */
 li {
   margin-bottom: 10px;
