@@ -53,22 +53,22 @@
             that appear one after the other, from left to right.
             <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">Change the script to make the ellipses appear further apart.</span>
-            <span class="tinkerBullet">Change the script to make the ellipses appear in the opposite direction, from right to left.</span>
-            <span class="tinkerBullet">Change the script to make the ellipses move straight down from top to bottom.</span>
-            <span class="tinkerBullet">Change the script to make the ellipses move straight up from bottom to top.</span>
+            <span class="tinkerBullet">Change one number in the script to make the ellipses appear further apart.</span>
+            <span class="tinkerBullet">Change the script so that the ellipses appear in the opposite direction, from right to left.</span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="400">
-let m = 0;
+let x = 0;
 
 function setup() {
   createCanvas(250, 200);
   colorMode(HSB);
+  background(0, 100, 0);
 }
 
 function draw() {;
-  ellipse(m, 125, 6, 6);
-  m = m + 8;
+  ellipse(x, 125, 4, 4);
+  x = x + 4;
+  if (x > 250) x = 0;
 }
           </script>
         </div>
@@ -106,29 +106,33 @@ function draw() {;
             the same as in the previous step, but there's one difference. Can you find it?
             <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">Delete the <code>background</code> command.
+            <span class="tinkerBullet">Cut the <code>background</code> command out of <code>function draw()</code>
+              and paste it into <code>function setup()</code> instead. Then click <span class="btnPress">&#9654;Play</span>.
               What happens?
             </span>
-            <span class="tinkerBullet">Then click <span class="btnPress">Undo</span>
-              to restore the <code>background</code> command. Then click <span class="btnPress">&#9654;Play</span>.
-              What happens? Why?
+            <span class="tinkerBullet">Cut the <code>background</code> command out of <code>function setup()</code>
+              and paste it back into <code>function draw()</code>. Then click <span class="btnPress">&#9654;Play</span>.
+              What happens?
             </span>
-            <span class="tinkerBullet">Change the script so that the ellipse moves in the opposite direction,
-              from right to left.
+            <span class="tinkerBullet">Change the script so that the ellipse moves in the opposite direction.
+              It should start at the right edge and move left. When it reaches the left edge,
+              it should reappear at the right edge and then continue moving across the screen.
             </span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="400">
-let m = 0;
+let x = 0;
 
 function setup() {
   createCanvas(250, 200);
   colorMode(HSB);
+
 }
 
-function draw() {
-  background(0, 0, 100);
-  ellipse(m, 125, 6, 6);
-  m = m + 4;
+function draw() {;
+  background(0, 100, 0);
+  ellipse(x, 125, 10, 10);
+  x = x + 4;
+  if (x > 250) x = 0;
 }
           </script>
 
@@ -170,75 +174,11 @@ function draw() {
         </div>
 
 
-        <!-- keep moving -->
-
-        <div>
-
-          <h2>3. Keep Moving</h2>
-          <p class="tinkerHeadingTop">Tinker</p>
-          <p class="tinkerHeadingBottom">
-            Click <span class="btnPress">&#9654;Play</span>. You'll see a moving ellipse again.
-            When it reaches the right edge it reappears at the left.
-            <br class="tinkerNewLine" />
-            Try these challenges:
-            <span class="tinkerBullet">Notice that the <code>background</code> command
-              has a fourth argument, <code>0.2</code>.
-              Change that argument to any other decimal between 0 and 1 &mdash; for example,
-              try <code>0.1</code> or <code>0.05</code> or <code>0.6</code> instead of
-              <code>0.2</code>
-              <br />
-              Which numbers make the longest tails? The shortest tails?
-            </span>
-            <span class="tinkerBullet">Make the fourth argument to <code>0</code>. What happens?</span>
-            <span class="tinkerBullet">Make the fourth argument to <code>1</code>. What happens?</span>
-          </p>
-
-          <script type="text/p5" data-preview-width="250" data-height="400">
-let m = 0;
-
-function setup() {
-  createCanvas(250, 200);
-  colorMode(HSB);
-}
-
-function draw() {
-  background(0, 0, 100);
-  ellipse(m, 125, 6, 6);
-  m = m + 4;
-  if (m > 250) m = 0;
-}
-          </script>
-
-          <p class="tinkerHeadingTop" style="margin-top: 13px;">Explanation</p>
-          <p class="tinkerHeadingBottom">
-          </p>
-
-        </div>
-
-        <!-- help: keep moving -->
-
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse3" id="handle3" checked="checked">
-            <h2 class="handle">
-              <label for="handle3">Keep Moving Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-                TBD: ???
-              </p>
-            </div>
-          </section>
-
-        </div>
-
         <!-- transparent background -->
 
         <div>
 
-          <h2>4. Transparent Background</h2>
+          <h2>3. Transparent Background</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>. You'll see a moving ellipse again,
@@ -272,7 +212,7 @@ function draw() {;
   x = x + 4;
   if (x > 250) x = 0;
 }
-</script>
+          </script>
 
           <p class="tinkerHeadingTop" style="margin-top: 13px;">Explanation</p>
           <p class="tinkerHeadingBottom">
