@@ -1,0 +1,149 @@
+<!-- ************* transparent background ************* -->
+
+<div>
+
+  <h2>4. Transparent Background</h2>
+  <p class="tinkerHeadingTop">Tinker</p>
+  <p class="tinkerHeadingBottom">
+    Click <span class="btnPress">&#9654;Play</span>. You'll see a moving ellipse again,
+    but it has a tail. The tail is created by a new,
+    fourth argument to the <code>background</code> command:<br />
+    <span class="accentuate">background(0, 100, 0, <span style="text-decoration: underline;">0.2</span>);</span><br />
+    Let's investigate it!
+    <br class="tinkerNewLine" />
+    Try these challenges:
+    <span class="tinkerBullet">
+      In the <code>background</code> command, change <code>0.2</code>
+      to any other decimal between 0 and 1 &mdash; for example,
+      try <code>0.1</code> or <code>0.05</code> or <code>0.6</code> instead of
+      <code>0.2</code>
+      <br />
+      Which numbers make the longest tails? The shortest tails?
+    </span>
+    <span class="tinkerBullet">Make the fourth argument to <code>0</code>. What happens?</span>
+    <span class="tinkerBullet">Make the fourth argument to <code>1</code>. What happens?</span>
+    <span class="tinkerBullet">Delete the fourth argument. What happens?</span>
+  </p>
+
+  <script type="text/p5" data-preview-width="250" data-height="400">
+let m = 0;
+
+function setup() {
+createCanvas(250, 200);
+colorMode(HSB);
+
+}
+
+function draw() {;
+background(0, 100, 0, 0.2);
+ellipse(m, 125, 10, 10);
+m = m + 4;
+if (m > 250) m = 0;
+}
+</script>
+
+  <p class="tinkerHeadingTop" style="margin-top: 13px;">Explanation</p>
+  <p class="tinkerHeadingBottom">
+    The fourth argument to the <code>background</code> command changes its transparency
+    &mdash; how much you can see through it. Here's how transparency works.
+    <span class="tinkerBullet" />You can make backgrounds with many different
+    levels of transparency, from not-at-all transparent to
+    completely transparent. Transparency is a sliding scale.
+    </span>
+    <span class="tinkerBullet">The greater the transparency, the more
+      previously-drawn shapes you can see through it.
+    </span>
+    <span class="tinkerBullet" />For example, if you make the fourth argument <code>0.2</code>,
+      the background is mostly transparent. Each time it is painted,
+      it leaves several previously-drawn ellipses partially visible.
+      They appear as a tail.
+    </span>
+    <span class="tinkerBullet" />Confusingly, the <em>smaller</em> you make the fourth argument,
+      the <em>greater</em> the transparency. So changing the fourth argument
+      from <code>0.2</code> to <code>0.1</code>
+      makes the background <em>more</em> transparent. You see a longer tail of
+      previously-drawn ellipses.
+    </span>
+    <span class="tinkerBullet" />When the transparency is <code>0</code>,
+      the background is completely transparent, and you see <em>all</em>
+      previously-drawn ellipses, as if there were no background at all.
+    </span>
+  </p>
+
+</div>
+
+
+<!-- help: transparent background -->
+
+<div class="sidebar">
+
+  <section class="accordion">
+    <input type="checkbox" name="collapse4" id="handle4" checked="checked">
+    <h2 class="handle">
+      <label for="handle4">Transparent Background Help</label>
+    </h2>
+
+    <div class="content">
+      <p>
+        TBD: ???
+      </p>
+    </div>
+  </section>
+
+</div>
+
+
+
+<!-- ************* direction ************* -->
+
+        <div>
+
+          <h2>5. Direction</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>.
+            You'll see an ellipse that starts at the center of the
+            screen and moves right.
+            <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">Change one number in the script to make the ellipse move faster.</span>
+            <span class="tinkerBullet">Change that same number to make the ellipse move to the left instead of to the right.</span>
+          </p>
+
+          <script type="text/p5" data-preview-width="250" data-height="400">
+let x = 125;
+let step = 1;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+}
+
+function draw() {
+  background(30, 10, 20, 0.2);
+  ellipse(x, 100, 10, 10);
+  x = x + step;
+}
+          </script>
+        </p>
+
+        </div>
+
+        <!-- help: direction -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse5" id="handle5" checked="checked">
+            <h2 class="handle">
+              <label for="handle5">Direction Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                TBD: ???
+              </p>
+            </div>
+          </section>
+
+        </div>
