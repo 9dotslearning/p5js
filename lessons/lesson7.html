@@ -28,12 +28,14 @@
 
       <div>
         <h1>Lesson 7</h1>
-        <h2>Motion </h2>
+        <h2>Images and Motion </h2>
         <p class="nav"><a href="../index.html">&larr; Back to Home</a></p>
         <p>
-          In this lesson, you'll learn how to make animations that move and change direction, like these:
+          In this lesson, you'll create animated scenes using images from the Internet.
+          You'll use variables to control the movement of these images.
+          Here's an example:
           <br />
-          TBD SAMPLE ANIMATIONS: single line, shape
+          TBD: EXAMPLE IMAGE FROM SEA
         </p>
         <!--  what?  -->
         <p>
@@ -300,269 +302,56 @@ function draw() {;
         </div>
 
 
-        <!-- grow -->
+        <!-- images -->
 
 
         <div>
 
-          <h2>6. Grow</h2>
+          <h2>5. Images</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
-            Click <span class="btnPress">&#9654;Play</span>.
-            You will see an ellipse. It should be growing, but it isn't.
+            We're ready to add images! But to do that, you'll need to work
+            in the p5.js editor. Our little Tinker windows don't work with images, unfortunately.
             <br class="tinkerNewLine" />
-            Try this challenge:
-            <span class="tinkerBullet">Change the script
-              so that the ellipse grows
-              when you click <span class="btnPress">&#9654;Play</span>.
+            Follow the steps below.
+            <br class="tinkerNewLine" />
+            <span class="tinkerBullet" />Sign into the <a href="https://editor.p5js.org" target="_blank">p5.js web editor</a>.</span>
+            <span class="tinkerBullet" /><a href="https://editor.p5js.org/magicsfirst/sketches/RgVFGl3S-" target="_blank">Click this link
+              to open the starter project.</a>
             </span>
+            <span class="tinkerBullet" />Watch the movie below and follow the instructions inside to
+            add images and animate them.</span>
+            TBD MOVIE images.mov
+
           </p>
 
-          <script type="text/p5" data-preview-width="250" data-height="360">
-let size = 10;
 
-function setup() {
-  createCanvas(250, 200);
-  colorMode(HSB);
-}
-
-function draw() {
-  background(30, 10, 20, 0.2);
-  ellipse(125, 100, 80, 80);
-  size = size + 1;
-}
-          </script>
-
-        </div>
-
-        <!-- help: grow -->
-
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse7" id="handle7" checked="checked">
-            <h2 class="handle">
-              <label for="handle7">Grow Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-                TBD: ???
-              </p>
-            </div>
-          </section>
-
-        </div>
+        <!-- images: sidebar intentionally blank -->
+        <div></div>
 
 
-        <!-- grow and shrink -->
+
+                <!-- images -->
 
 
-        <div>
+                <div>
 
-          <h2>7. Grow and Shrink</h2>
-          <p class="tinkerHeadingTop">Tinker</p>
-          <p class="tinkerHeadingBottom">
-            Click <span class="btnPress">&#9654;Play</span>.
-            You will see an ellipse that grows.
-            <br class="tinkerNewLine" />
-            Try these challenges:
-            <span class="tinkerBullet">Change the script so that the ellipse starts shrinking when it
-              reaches full height.
-            </span>
-            <span class="tinkerBullet">Change the script so that the ellipse also grows
-              everytime it gets so small you can hardly see it.
-            </span>
-          </p>
-
-          <script type="text/p5" data-preview-width="250" data-height="480">
-let size = 10;
-let sizestep = 1;
-
-function setup() {
-  createCanvas(250, 200);
-  colorMode(HSB);
-}
-
-function draw() {
-  background(30, 10, 20, 0.2);
-  ellipse(125, 100, size, size);
-  size = size + sizestep;
-}
-          </script>
+                  <h2>6. Credits</h2>
+                  <p class="tinkerHeadingTop">Tinker</p>
+                  <p class="tinkerHeadingBottom">
+                    When you use images from the Internet, you should properly credit the artist by
+                    including a link to each original image.
+                    <br class="tinkerNewLine" />
+                    Watch the movie below and follow the instructions inside to add credit links.<br />
+                    TBD movie credits.mov
+                  </p>
+                </div>
 
 
-        </div>
+                <!-- credits: sidebar intentionally blank -->
+                <div></div>
 
 
-        <!-- help: grow and shrink -->
-
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse8" id="handle8" checked="checked">
-            <h2 class="handle">
-              <label for="handle8">Grow and Shrink Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-                TBD: ???
-              </p>
-            </div>
-          </section>
-
-        </div>
-
-
-        <!-- bouncing lines -->
-
-
-        <div>
-
-          <h2>9. Bouncing Lines</h2>
-          <p class="tinkerHeadingTop">Tinker</p>
-          <p class="tinkerHeadingBottom">
-            Click <span class="btnPress">&#9654;Play</span>.
-            You will see a line with one end bouncing.
-            <br class="tinkerNewLine" />
-            Try these challenges.
-            <span class="tinkerBullet">Change the script so that both ends of the line
-              move sideways and bounce.
-            </span>
-            <span class="tinkerBullet">Change the script again, this time making both ends of the line
-              move up and down as well as sideways and bounce off all edges.
-            </span>
-          </p>
-
-          <script type="text/p5" data-preview-width="250" data-height="800">
-let x1 = 50;
-let x2 = 120;
-let y1 = 140;
-let y2 = 30;
-let x1step = 1;
-let x2step = 1;
-let y1step = 1;
-let y2step = 1;
-
-function setup() {
-  createCanvas(250, 200);
-  colorMode(HSB);
-}
-
-function draw() {
-  background(0, 0, 80);
-  line(x1, y1, x2, y2);
-  x1 = x1 + x1step;
-  if (x1 > 250) x1step = -1;
-  if (x1 < 0) x1step = 1;
-
-}
-
-          </script>
-
-        </div>
-
-
-        <!-- help: bouncing lines -->
-
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse9" id="handle9" checked="checked">
-            <h2 class="handle">
-              <label for="handle9">Bouncing Lines Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-                TBD.
-              </p>
-            </div>
-          </section>
-
-        </div>
-
-
-        <!-- more shapes -->
-
-
-        <div>
-
-          <h2>10. More Shapes</h2>
-          <p class="tinkerHeadingTop">Tinker</p>
-          <p class="tinkerHeadingBottom">
-            Click <span class="btnPress">&#9654;Play</span>.
-            You will see an irregular shape created by three new commands:<br />
-            <code>
-              beginShape();<br />
-              vertex();</code>&nbsp;&nbsp;&larr; means <em>point</em> or <em>corner</em><br />
-              <code>endShape(CLOSE);
-            </code>
-            <br class="tinkerNewLine" />
-            Try these challenges.
-            <span class="tinkerBullet">Change one number at a time in the command
-              <code>vertex(90, 30)</code>. Click <span class="btnPress">&#9654;Play</span>
-              after each chabnge. What do the numbers do?
-            </span>
-            <span class="tinkerBullet">Change the script so that the moving point
-              bounces off the right edge.
-            </span>
-            <span class="tinkerBullet">Change the script again to make the moving point bounce off the
-              left edge, too.
-            </span>
-            <span class="tinkerBullet">Now make the moving point go up and down as well as sideways,
-              and bounce off the top and bottom.
-            </span>
-            <span class="tinkerBullet">Make all the points (corners) move.</span>
-          </p>
-
-          <script type="text/p5" data-preview-width="250" data-height="720">
-let x1 = 60;
-let y1 = 80;
-let x1step = 1;
-let y1step = 1;
-
-function setup() {
-  createCanvas(250, 200);
-  colorMode(HSB);
-}
-
-function draw() {
-  background(0, 0, 80);
-
-  beginShape();
-  vertex(x1, y1);
-  vertex(90, 30);
-  vertex(120, 80);
-  vertex(90, 150);
-  endShape(CLOSE);
-
-  x1 = x1 + x1step;
-}
-          </script>
-
-        </div>
-
-
-        <!-- help: more shapes -->
-
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse10" id="handle10" checked="checked">
-            <h2 class="handle">
-              <label for="handle10">More Shapes Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-                Explain coordinate grid, capitalization matters.
-              </p>
-            </div>
-          </section>
-
-        </div>
 
 
 
