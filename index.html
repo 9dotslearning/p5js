@@ -40,6 +40,10 @@
         </div>
 
         <script>
+        /* disable cache so it menu changes it propagates appropriately */
+        $.ajaxSetup({
+            cache: false
+        });
         $(function(){
           $("#nav-placeholder").load("navbar.html");
         });
@@ -59,11 +63,12 @@
               <li><a href="lessons/lesson1.html">Lesson 1: What's Computer Programming? What's Code?</a></li>
               <li><a href="lessons/lesson2.html">Lesson 2: Create an Account</a></li>
               <li><a href="lessons/lesson3.html">Lesson 3: Random Shapes</a></li>
-              <li><a href="lessons/lesson4.html">Lesson 4: Reflections</a></li>
-              <li><a href="lessons/lesson5.html">Lesson 5: Spins and Spirals</a></li>
-              <li><a href="lessons/lesson6.html">Lesson 6: Grids</a></li>
-              <li><a href="lessons/lesson7.html">Lesson 7: Motion</a></li>
-              <li><a href="lessons/lesson8.html">Lesson 8: Music</a></li>
+              <li><a href="lessons/lesson4.html">Lesson 4: Funny Faces</a></li>
+              <li><a href="lessons/lesson4.html">Lesson 5: Reflections</a></li>
+              <li><a href="lessons/lesson6.html">Lesson 6: Up and Down</a></li>
+              <li><a href="lessons/lesson7.html">Lesson 7: Back and Forth</a></li>
+              <li><a href="lessons/lesson5.html">Lesson 8: Spins and Spirals</a></li>
+              <li><a href="lessons/lesson8.html">Lesson 9: Music</a></li>
             </ul>
           </p>
         </div>

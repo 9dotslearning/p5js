@@ -27,40 +27,39 @@
       <!-- ********************* page intro ********************* -->
 
       <div>
-        <h1>Lesson 6</h1>
-        <h2>Music</h2>
+        <h1>Lesson 8</h1>
+        <h2>Scenes</h2>
         <p class="nav"><a href="../index.html">&larr; Back to Home</a></p>
         <p>
-          In this lesson, you'll learn how to add music to your animations
-          and how to show many animations on different parts of the screen at the same time.
+          In this lesson, you'll create animated scenes using images from the Internet.
+          You'll use variables to control the movement of these images.
+          Here's an example:
+          <br />
+          TBD: EXAMPLE IMAGE FROM SEA
         </p>
-        <!--  What?  -->
+        <!--  what?  -->
         <p>
         </p>
       </div>
 
-<!--
-Thinking: after spins and spirals students need to learn, in this order:
-* lesson 5: spins and spirals: add spinning rectangles and rectMode(CENTER)
-* lesson 6: grids: using multiple variables for color, size, and position
-* lesson 7: using multiple variables and background for animated motion + music
-* lesson 8: undo/redo spin/spiral, push/pop, beginShape/endShape, and music
-
--->
 
       <div class="grid">
 
-        <!-- tinker: rectangle -->
+        <!-- tinker: many ellipses -->
 
         <div>
 
-          <h2>1. What?</h2>
+          <h2>1. Many Ellipses</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
-            Click <span class="btnPress">&#9654;Play</span>.
+            Click <span class="btnPress">&#9654;Play</span>. You'll see many ellipses
+            that appear one after the other, from left to right.
             <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">TBD</span>
+            <span class="tinkerBullet">Change the script to make the ellipses appear further apart.</span>
+            <span class="tinkerBullet">Change the script to make the ellipses appear in the opposite direction, from right to left.</span>
+            <span class="tinkerBullet">Change the script to make the ellipses move straight down from top to bottom.</span>
+            <span class="tinkerBullet">Change the script to make the ellipses move straight up from bottom to top.</span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="400">
 let m = 0;
@@ -71,7 +70,8 @@ function setup() {
 }
 
 function draw() {;
-  TBD
+  ellipse(m, 125, 6, 6);
+  m = m + 8;
 }
           </script>
         </div>
@@ -84,12 +84,12 @@ function draw() {;
           <section class="accordion">
             <input type="checkbox" name="collapse" id="handle1" checked="checked">
             <h2 class="handle">
-              <label for="handle1">1. What?</label>
+              <label for="handle1">Many Ellipses Help</label>
             </h2>
 
             <div class="content">
               <p>
-                TBD.
+                TBD: show the solutions.
               </p>
             </div>
           </section>
@@ -97,9 +97,285 @@ function draw() {;
         </div>
 
 
+        <!-- one ellipse -->
+
+        <div>
+
+          <h2>2. One Ellipse</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>. You'll see one ellipse
+            traveling across the screen from left to right. The code <em>almost</em>
+            the same as in the previous step, but there's one difference. Can you find it?
+            <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">Delete the <code>background</code> command.
+              What happens? Why?
+            </span>
+            <span class="tinkerBullet">Then click <span class="btnPress">Undo</span>
+              to restore the <code>background</code> command. Then click <span class="btnPress">&#9654;Play</span>.
+              What happens? Why?
+            </span>
+          </p>
+          <script type="text/p5" data-preview-width="250" data-height="400">
+let m = 0;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+}
+
+function draw() {
+  background(0, 0, 100);
+  ellipse(m, 125, 6, 6);
+  m = m + 4;
+}
+          </script>
+
+          <p class="tinkerHeadingTop" style="margin-top: 13px;">Explanation</p>
+          <p class="tinkerHeadingBottom">
+            Here's why the position of the <code>background</code> command matters.
+            <span class="tinkerBullet" />When the <code>background</code> command is in <code>function draw()</code>,
+              the background color is painted on the screen over and over, once each time that <code>function draw()</code> runs.
+              That means the background is painted about 60 times every second!
+              Each time the background is painted, it covers up anything that was previously drawn.
+              So you see just one ellipse at a time, moved a little to the right from where it was previously.
+            </span>
+            <span class="tinkerBullet" />On the other hand, when the <code>background</code> command is in <code>function setup()</code>,
+              the background is painted just once when the project begins.
+              The ellipses painted by  <code>function draw()</code> &mdash;
+              which runs over and over &mdash; all stay on screen.
+            </span>
+          </p>
+
+        </div>
 
 
+        <!-- help: one ellipse -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse2" id="handle2" checked="checked">
+            <h2 class="handle">
+              <label for="handle2">One Ellipse Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                TBD: Need an animation of a flip book.
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+        <!-- keep moving -->
+
+        <div>
+
+          <h2>3. Keep Moving</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>. You'll see a moving ellipse again.
+            When it reaches the right edge it reappears at the left.
+            <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">Change the code so that the ellipse moves across the screen
+              just once and then disappears at the right edge.
+            </span>
+            <span class="tinkerBullet">Click <span class="btnPress">Undo</span> to restore the original script.
+              Change the script so that the ellipse travels only half the screen.
+              The ellipse should move from the left edge to the center of the screen
+              and then reappear at the left edge, endlessly.
+            </span>
+            <span class="tinkerBullet">Change the script so that the ellipse moves from the top, center
+              straight down to the bottom center. Then it reappears at the top center and repeats, endlessly.
+            </span>
+          </p>
+
+          <script type="text/p5" data-preview-width="250" data-height="400">
+let m = 0;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+}
+
+function draw() {
+  background(0, 100, 0);
+  ellipse(m, 125, 6, 6);
+  m = m + 4;
+  if (m > 250) m = 0;
+}
+        </script>
+
+          <p class="tinkerHeadingTop" style="margin-top: 13px;">Explanation</p>
+          <p class="tinkerHeadingBottom">
+          </p>
+
+        </div>
+
+        <!-- help: keep moving -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse3" id="handle3" checked="checked">
+            <h2 class="handle">
+              <label for="handle3">Keep Moving Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                TBD: ???
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+        <!-- bounce -->
+
+
+        <div>
+
+          <h2>4. Bounce</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>.
+            You'll see an ellipse moves right, but this time when it reaches the right edge
+            it reverses direction as if bouncing. Why?
+            <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">Change the script so the starting speed of the ellipse is 3.</span>
+            <span class="tinkerBullet">When the starting speed is 3, the ellipse slows down after it
+              touches the right edge. Why? Fix the script so that the ellipse bounces and
+              maintains a steady speed.
+            </span>
+            <span class="tinkerBullet">Change the script so that the ellipse bounces
+              when it touches the left edge, too.
+            </span>
+          </p>
+
+          <script type="text/p5" data-preview-width="250" data-height="450">
+let m = 0;
+let step = 1;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+
+}
+
+function draw() {;
+  background(0, 100, 0, 0.2);
+  ellipse(m, 125, 10, 10);
+  m = m + step;
+  if (m > 250) step = -1;
+}
+          </script>
+
+
+        </div>
+
+
+        <!-- help: bounce -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse4" id="handle4" checked="checked">
+            <h2 class="handle">
+              <label for="handle4">Bounce Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                TBD: ???
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+        <!-- images -->
+
+
+        <div>
+
+          <h2>5. Images</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            We're ready to add images! But to do that, you'll need to work
+            in the p5.js editor. Our little Tinker windows don't work with images, unfortunately.
+            <br class="tinkerNewLine" />
+            Follow the steps below.
+            <br class="tinkerNewLine" />
+            <span class="tinkerBullet" />Sign into the <a href="https://editor.p5js.org" target="_blank">p5.js web editor</a>.</span>
+            <span class="tinkerBullet" /><a href="https://editor.p5js.org/magicsfirst/sketches/RgVFGl3S-" target="_blank">Click this link
+              to open the starter project.</a>
+            </span>
+            <span class="tinkerBullet" />Watch the movie below and follow the instructions inside to
+            add images and animate them.</span>
+            TBD MOVIE images.mov
+
+          </p>
+
+
+        <!-- images: sidebar intentionally blank -->
+        <div></div>
+
+
+
+                <!-- credits -->
+
+
+                <div>
+
+                  <h2>6. Credits</h2>
+                  <p class="tinkerHeadingTop">Tinker</p>
+                  <p class="tinkerHeadingBottom">
+                    When you use images from the Internet, you should properly credit the artist by
+                    including a link to each original image.
+                    <br class="tinkerNewLine" />
+                    Watch the movie below and follow the instructions inside to add credit links.<br />
+                    TBD movie credits.mov
+                  </p>
+                </div>
+
+
+                <!-- credits: sidebar intentionally blank -->
+                <div></div>
+
+
+                <!-- full screen -->
+
+
+                <div>
+
+                  <h2>7. Full Screen</h2>
+                  <p class="tinkerHeadingTop">Tinker</p>
+                  <p class="tinkerHeadingBottom">
+                    To see your project in full screen view,
+                    follow the steps in the GIF image below.
+                  </p>
+                  <p><img src="../images/lesson7/fullScreen.gif"></p>
+                </div>
+
+
+                <!-- credits: sidebar intentionally blank -->
+                <div></div>
+
+
+
+
+<!-- rock sample
 https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3
+-->
 
 
 
