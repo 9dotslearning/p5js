@@ -34,7 +34,7 @@
 
         <p>
           <img src="../images/lesson4/p4ellipsereflections.gif" width="35%" alt="4 ellipses reflecting each other's movements" />
-          <img src="../images/lesson4/p4lineswith4reflections.gif" width="35%" alt="4 lines reflecting each other's movements" />
+          <br />TBD GIF of transparency
         </p>
       </div>
 
@@ -292,7 +292,10 @@ function draw() {
 
         </div>
 
-
+<div>
+<p>TBD: iintroduce noFill(). Change all the other examples to use noFill();</p>
+</div>
+<div></div>
         <!-- ********************* 5. change color ********************* -->
 
 <!-- TBD?
@@ -378,7 +381,7 @@ function setup() {
 }
 
 function draw() {
-  fill(mouseX, 100, 100);
+  fill(51, 100, 100);
   ellipse(mouseX, mouseY, 10, 10);
   ellipse(mouseX+100, mouseY, 10, 10);
 }
@@ -492,16 +495,16 @@ function draw() {
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
             Move your mouse through the window below.
-            Notice that there are 2 ellipses.
-            As the first ellipse moves right, the second ellipse moves left by the same amount.
-            As the first ellipse moves down, the second ellipse moves down by the same amount. Why?
+            Notice that there are 2 ellipses. The first ellipse moves with the cursor.
+            As the first ellipse moves sideways, the second ellipse moves in the opposite direction by the same amount.
+            The two ellipses move up and down together. Why?
             <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">
-              Add a third ellipse that moves sideways with the first ellipse, but moves down when that ellipse moves up.
+            <span class="tinkerBullet" />Make the color random.</span>
+            <span class="tinkerBullet">Add a third ellipse that moves sideways
+              with the cursor (just like the first ellipse), but moves down when the first ellipse moves up.
             </span>
-            <span class="tinkerBullet">
-              There seems to be room for a fourth ellipse! Can you figure out how to add it?
+            <span class="tinkerBullet">There seems to be room for a fourth ellipse! Can you figure out how to add it?
             </span>
 
 
@@ -514,7 +517,7 @@ function setup() {
 }
 
 function draw() {
-  fill(mouseX, 100, 100);
+  fill(15, 100, 100);
   ellipse(mouseX, mouseY, 10, 10);
   ellipse(250-mouseX, mouseY, 10, 10);
 }
@@ -554,28 +557,30 @@ function draw() {
 
         <div>
 
-          <h2>8. Lines </h2>
+          <h2>8. Transparency </h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
-            Move your mouse through the window below.
-            You'll see a line with one end at the top left, <em>x</em> 0&nbsp;<em>y</em> 0,
-            and the other end wherever the mouse moves.
+            The ellipses appear faded. If you move slowly, they get brighter.
             <br class="tinkerNewLine" />
-            Try these challenges:
+            There are 2 new commands:<br />
+            <span style="display: inline-block; margin-left: 22px; text-indent: -22px;">
+              &#9670;&emsp;<code>noFill()</code> makes the <em>inside</em> of ellipses empty.
+            </span>
+            <span style="display: inline-block; margin-left: 22px; text-indent: -22px;">
+              &#9670;&emsp;<code>stroke(51, 100, 100, <span style="color: #b50000;">0.2</span>)</code>
+              now has a fourth argument. This argument makes the stroke (borders) <em>partially</em> transparent,
+              so they appear faded.
+              <br />
+            </span>
+            <br class="tinkerNewLine" />
             <span class="tinkerBullet">
-              Can you figure out the syntax for the <code>line</code> command? Test yourself!
-              Change the <code>line</code> command so that the line starts at the top right corner
-              instead of the top left corner.
+              In <code>stroke</code>, change the decimal <code>0.2</code> to
+              other decimals between 0 and 1. Find a decimal you like.
             </span>
             <span class="tinkerBullet">
-              Make the line color random. Notice that for lines, we use the <code>stroke</code> command to change color
-              instead of the <code>fill</code> command. Lines don't have insides to fill!
+              Change the stroke color, or make it random.
             </span>
-            <span class="tinkerBullet">
-              Change the thickness of the line. <em>Hint!</em> Use <code>strokeWeight</code>.
-            </span>
-
 
           </p>
           <script type="text/p5" data-preview-width="250" data-height="360">
@@ -586,45 +591,36 @@ function setup() {
 }
 
 function draw() {
-  stroke(51, 100, 100);
-  line(0, 0, mouseX, mouseY);
-}
-
+  noFill();
+  stroke(51, 100, 100, 0.2);
+  ellipse(mouseX, mouseY, 10, 10);
+ }
           </script>
         </div>
 
-        <!-- help: Lines -->
+        <!-- help: transparency -->
 
         <div class="sidebar">
 
           <section class="accordion">
             <input type="checkbox" name="collapse9" id="handle9" checked="checked">
             <h2 class="handle">
-              <label for="handle9">Lines Help</label>
+              <label for="handle9">Transparency Help</label>
             </h2>
 
             <div class="content">
-              <p>
-                Here is the syntax of the line command:
-              </p>
-              <p>
-                <img src="../images/lesson4/p4linesyntax.png" alt="In line(50, 100, 200, 150), the first two numbers 50, 100 are the coordinates of the top left end, and the last two numbers 200, 150 are the coordinates of the bottom right." />
-              </p>
-              <p>
-                To make the line start at the top right corner, you can use this command: <br />
-                <code>line(250, 0, mouseX, mouseY);</code>
-                <br />
-                where <code>250, 0</code> is the top right corner of the canvas.
-              </p>
-              <p>
-                To change the thickness of the line and give it a random color, add these two commands to the script <em>above</em> <code>line</code>:
-              </p>
-              <p>
-                <code>
-                  strokeWeight(4);<br />
-                  stroke(random(360), 100, 100);
-                </code>
-              </p>
+              TBD - REWRITE TO PREVENT REPETITION.
+              The command <code>noFill();</code> makes fill completely empty,
+              so you can see ellipses behind other ellipses.
+              In previous drawings, each new ellipse obscured previous ellipses.
+              <br class="tinkerNewLine" />
+              There's also a way to change transparency a little at a time (instead of turning it on or off completely).
+              Notice that the <code>stroke</code> command includes fourth argument:
+              <code>stroke(0, 0, 100, <strong>0.2</strong>)</code><br />
+              This argument is called <span class="accentuate">alpha</span>.
+              Alpha controls the amount of transparency a little at a time.
+              An alpha of 0 is completely transparent, and an alpha of 1 is not at all transparent.
+              You can set alpha to any number between 0 and 1.
             </div>
           </section>
 
@@ -634,32 +630,27 @@ function draw() {
 
 
 
-      <!-- ********************* 9. pmouseX, pmouseY ********************* -->
+      <!-- ********************* 9. final reflections ********************* -->
 
 
       <div>
 
-        <h2>9. pmouseX and pmouseY</h2>
+        <h2>9. Make Your Own Project</h2>
         <p class="tinkerHeadingTop">Tinker</p>
         <p class="tinkerHeadingBottom">
-          Click <span class="btnPress">&#9654;Play</span>.
-          Move your mouse through the window below.
-          You'll draw a line as if the mouse were a pen.
-          <br class="tinkerNewLine" />
-          How does it work? The new variables <code>pmouseX</code> and <code>pmouseY</code> contain
-          the <em>previous mouse <ex>x-</em> and <em>y-</em>positions.
-          They make the <code>line</code> command draw a tiny line segment from the
-          position the mouse was at an instant earlier to the position the mouse is at now. As you move the mouse,
-          those tiny line segments knit together into a continuous line that feels like a drawing pen.
-          <br class="tinkerNewLine" />
-          Try these challenges:
-          <span class="tinkerBullet">
-            Make the line color random.
+          To make and save your own project, you'll work in the <span class="accentuate">p5.js Web Editor</span>.
+          <span class="tinkerBullet">Copy the code below. You'll use it as a starter project.
           </span>
-          <span class="tinkerBullet">
-            Make the line thickness (<code>strokeWeight</code>) random.
+          <span class="tinkerBullet">Click this link to open the <a href="https://editor.p5js.org" target="_blank">p5.js Web Editor</a>
+            in another tab. A new project opens. Select all the code and press <span class="btnPress">Delete</span>
+            or <span class="btnPress">Backspace</span> to delete it.
           </span>
-
+          <span class="tinkerBullet">Paste the code you copied.
+          </span>
+          <span class="tinkerBullet">Change the code to make an animation of your own, similar to either of the GIFs at the beginning of this lesson.
+          </span>
+          <span class="tinkerBullet">Have fun! 👏
+          </span>
 
         </p>
         <script type="text/p5" data-preview-width="250" data-height="360">
@@ -670,9 +661,10 @@ function setup() {
 }
 
 function draw() {
-  stroke(51, 100, 100);
-  line(pmouseX, pmouseY, mouseX, mouseY);
-}
+  noFill();
+  stroke(195, 100, 100, 0.2);
+  ellipse(mouseX, mouseY, 6, 6);
+ }
 
         </script>
       </div>
@@ -696,66 +688,6 @@ function draw() {
 
       </div>
 
-
-      <!-- ********************* 10. line reflections ********************* -->
-
-
-      <div>
-
-        <h2>10. Line Reflections </h2>
-        <p class="tinkerHeadingTop">Tinker</p>
-        <p class="tinkerHeadingBottom">
-          Click <span class="btnPress">&#9654;Play</span>.
-          Move your mouse through the window below.
-          You'll draw 2 lines that reflect each other's sideways movement.
-          Can you figure out how the code works?
-          <br class="tinkerNewLine" />
-          Try the two challenges below to add 2 more reflecting lines.
-          The GIF images at the beginning of this lesson show how the completed project should look.
-          <span class="tinkerBullet">
-            Add a third line that moves sideways with the pink line but reflects its vertical movement.
-          </span>
-          <span class="tinkerBullet">
-            Add a fourth line that moves sideways with the blue lines but reflects vertical movement.
-          </span>
-        </p>
-        <script type="text/p5" data-preview-width="250" data-height="360">
-function setup() {
-  createCanvas(250, 250);
-  colorMode(HSB);
-  background(0, 100, 0);
-}
-
-function draw() {
-  stroke(330, 100, 100);
-  line(pmouseX, pmouseY, mouseX, mouseY);
-  stroke(240, 100, 100);
-  line(250-pmouseX, pmouseY, 250-mouseX, mouseY);
-}
-        </script>
-      </div>
-
-      <!-- help: pmouseX, pmouseY -->
-
-      <div class="sidebar">
-
-        <section class="accordion">
-          <input type="checkbox" name="collapse11" id="handle11" checked="checked">
-          <h2 class="handle">
-            <label for="handle11">Line Reflections Help</label>
-          </h2>
-
-          <div class="content">
-            <p>
-              Here's a GIF image of the completed challenge. Feel free to use colors and visual effects you like!
-            </p>
-            <p>
-              <img src="../images/lesson4/p4lineswith4reflections.gif" alt="4 lines that reflect each other" />
-            </p>
-          </div>
-        </section>
-
-      </div>
 
 
 
