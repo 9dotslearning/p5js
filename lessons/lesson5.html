@@ -547,7 +547,7 @@ function draw() {
             </span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="400">
-let p = 200;
+let y  = 200;
 
 function setup() {
   createCanvas(250, 200);
@@ -557,8 +557,8 @@ function setup() {
 
 function draw() {
   fill(0, 100, 100);
-  ellipse(125, p, 20, 20);
-  p = p - 20;
+  ellipse(125, y, 20, 20);
+  y = y - 20;
 }
           </script>
         </div>
@@ -595,22 +595,101 @@ function draw() {
             Click <span class="btnPress">&#9654;Play</span>.
             You'll see overlapping ellipses.
             <br class="tinkerNewLine" />
-            Try this challenge:
+            Try these challenges:
             <span class="tinkerBullet">Add a line of code so that when the ellipse reaches
               the top of the screen, it jumps back down to the bottom and begins its
               upward journey again. You'll know you succeeded if the ellipses start rippling.
             </span>
             <span class="tinkerBullet"><em>Hint!</em> When the ellipse reaches the top of the screen,
               its <em>y-</em>coordinate becomes less than 0. You'll need to add a command
-              to check for the moment when this happens; look at <span class="accentuate">4.&nbsp;Rippling&nbsp;Rectangles</span>
-              for the command to add.
+              to check for the moment when this happens. You can look at <span class="accentuate">4.&nbsp;Rippling&nbsp;Rectangles</span>
+              for a similar command.
             </span>
-            <span class="tinkerBullet"><em>Hint!</em> In that command, you'll need the <code>less than sign</code>, which looks
+            <span class="tinkerBullet"><em>Hint!</em> In the command you're adding,
+              you'll need the <code>less than sign</code>, which looks
               like this: &nbsp;&nbsp; <code>&lt;</code><br />
               To type it, press <span class="btnPress">Shift</span> + the comma key.
             </span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="480">
+let y = 200;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+  background(30, 10, 30);
+}
+
+function draw() {
+  fill(0, 100, 100);
+  ellipse(125, y, 20, 20);
+  y = y - 12;
+
+
+}
+          </script>
+        </div>
+
+
+        <!-- help: rippling ellipses -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse9" id="handle9" checked="checked">
+            <h2 class="handle">
+              <label for="handle9">Rippling Ellipses Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- ********************* 10. another stack  ********************* -->
+
+        <!-- tinker: another stack -->
+
+        <div>
+
+          <h2>10. Another Stack</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>.
+            We've added the command that causes the rising ellipse to
+            jump back to the bottom, causing a ripple.
+            And we've made 3 other changes to, too, that create
+            a second stack of rising ellipses. Let's investigate.
+            <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">Find the new variable called
+              <code>x</code> and all the commands that use it.
+              There are 3 of them.
+            </span>
+            <span class="tinkerBullet">On line 1, change <code>125</code>
+              to another number from 1-250. Do that a few times.
+              Click <span class="btnPress">&#9654;Play</span>
+              after each change. What happens? Why?
+            </span>
+            <span class="tinkerBullet">Click <span class="btnPress">Revert</span>
+              to restore the previous script.
+            </span>
+            <span class="tinkerBullet">Change the code again so that when you
+              click <span class="btnPress">&#9654;Play</span> the there's one
+              stack in the middle and a new stack rippling at the left
+              edge of the screen.
+            </span>
+            <span class="tinkerBullet">Change the code again so that
+              when you click <span class="btnPress">&#9654;Play</span>
+              the new stack appears at a random sideways position.
+              You should see many random stacks now!
+            </span>
+          </p>
+          <script type="text/p5" data-preview-width="250" data-height="560">
 let x = 125;
 let y = 200;
 
@@ -624,24 +703,27 @@ function draw() {
   fill(0, 100, 100);
   ellipse(x, y, 20, 20);
   y = y - 12;
+
+  if (y < 0) x = 185;
+  if (y < 0) y = 200;
 }
           </script>
         </div>
 
 
-        <!-- help: rippling ellipses -->
+        <!-- help: another stack -->
 
         <div class="sidebar">
 
           <section class="accordion">
             <input type="checkbox" name="collapse10" id="handle10" checked="checked">
             <h2 class="handle">
-              <label for="handle10">Wiggling Ellipses Help</label>
+              <label for="handle10">Another Stack Help</label>
             </h2>
 
             <div class="content">
               <p>
-                TBD: explain the random command with two arguments.
+                TBD:
               </p>
             </div>
           </section>
@@ -649,25 +731,27 @@ function draw() {
         </div>
 
 
-        <!-- ********************* 10. wiggling ellipses  ********************* -->
+        <!-- ********************* 11. diagonals  ********************* -->
 
-        <!-- tinker: wiggling ellipses -->
+        <!-- tinker: diagonals -->
 
         <div>
 
-          <h2>10. Wiggling Ellipses</h2>
+          <h2>11. Diagonals</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
-            You'll see that the ellipses wiggle from side to side as they move up the screen.
+            You'll see that the ellipses wiggle
+            make diagonals that tilt to the right as they move up the screen.
+
             <br class="tinkerNewLine" />
-            Try these challenges:
-            <span class="tinkerBullet">Which line of code is making the ellipses wiggle?
-            </span>
-            <span class="tinkerBullet">Change the code so that the ellipses wiggle a lot more.
+            Try this challenge:
+            <span class="tinkerBullet">Change the code so that
+              the ellipses make diagonals that tilt left
+              as they move up the screen.
             </span>
           </p>
-          <script type="text/p5" data-preview-width="250" data-height="400">
+          <script type="text/p5" data-preview-width="250" data-height="560">
 let x = 125;
 let y = 200;
 
@@ -680,20 +764,25 @@ function setup() {
 function draw() {
   fill(0, 100, 100);
   ellipse(x, y, 20, 20);
-  y = y - 25;
+  y = y - 12;
+
+  x = x + 1;
+
+  if (y < 0) x = random(200);
+  if (y < 0) y = 200;
 }
           </script>
         </div>
 
 
-        <!-- help: wiggling ellipses -->
+        <!-- help: diagonals -->
 
         <div class="sidebar">
 
           <section class="accordion">
-            <input type="checkbox" name="collapse10" id="handle10" checked="checked">
+            <input type="checkbox" name="collapse11" id="handle11" checked="checked">
             <h2 class="handle">
-              <label for="handle10">Wiggling Ellipses Help</label>
+              <label for="handle11">Diagonals Help</label>
             </h2>
 
             <div class="content">
@@ -705,6 +794,162 @@ function draw() {
 
         </div>
 
+
+        <!-- ********************* 12. wiggling ellipses  ********************* -->
+
+        <!-- tinker: wiggling ellipses -->
+
+        <div>
+          <h2>12. Wiggling Ellipses</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>.
+            You'll see that the ellipses wiggle from side to side as they move up the screen.
+
+            <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">Which line of code is making the ellipses wiggle?
+            </span>
+            <span class="tinkerBullet">Change the code so that the ellipses wiggle a lot more.
+            </span>
+          </p>
+          <script type="text/p5" data-preview-width="250" data-height="560">
+let x = 125;
+let y = 200;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+  background(30, 10, 30);
+}
+
+function draw() {
+  fill(0, 100, 100);
+  ellipse(x, y, 20, 20);
+  y = y - 12;
+
+  x = x + random(-3, 3);
+
+  if (y < 0) x = random(200);
+  if (y < 0) y = 200;
+}
+          </script>
+        </div>
+
+
+        <!-- help: wiggling ellipses -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse12" id="handle12" checked="checked">
+            <h2 class="handle">
+              <label for="handle12">Wiggling Ellipses Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                TBD: explain the random command with two arguments.
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- ********************* 10. make your own project ********************* -->
+
+
+        <div>
+
+          <h2>10. Make Your Own Project</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            To make and save your own project, you'll work in the <span class="accentuate">p5.js Web Editor</span>.
+            <span class="tinkerBullet">Copy the code below. You'll use it as a starter project.
+            </span>
+            <span class="tinkerBullet">Click this link to open the <a href="https://editor.p5js.org" target="_blank">p5.js Web Editor</a>
+              in another tab. A new project opens. Select all the code and press <span class="btnPress">Delete</span>
+              or <span class="btnPress">Backspace</span> to delete it.
+            </span>
+            <span class="tinkerBullet">Look at the two code examples below.
+              The first example creates falling rectangles, and the second one
+              creates rising ellipses. Copy the example you'd like to work on.
+              Paste the code you copied in the <span class="accentuate">p5.js</span> web editor.
+            </span>
+            <span class="tinkerBullet">Change the code to make an animation of your own, similar to either of the GIFs at the beginning of this lesson.
+            </span>
+            <span class="tinkerBullet">Have fun! 👏
+            </span>
+
+          </p>
+
+          <pre class="example-codeonly">
+/* *** FALLING RECTANGLES *** */
+
+let c = 50;
+let y = 0;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+  background(30, 10, 30);
+  frameRate(10);
+}
+
+function draw() {
+  fill(c, 100, 100);
+  rect(4, y, 20, 20);
+  rect(34, y, 20, 20);
+  y = y + 8;
+
+  if (y > 200) c = 325;
+  if (y > 200) y = 0;
+}
+          </pre>
+
+          <pre class="example-codeonly">
+/* *** RISING ELLIPSES *** */
+
+let x = 125;
+let y = 200;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+  background(30, 10, 30);
+}
+
+function draw() {
+  fill(0, 100, 100);
+  ellipse(x, y, 20, 20);
+  y = y - 12;
+
+  x = x + random(-3, 3);
+
+  if (y < 0) x = random(200);
+  if (y < 0) y = 200;
+}
+        </pre>
+        </div>
+
+        <!-- help: pmouseX, pmouseY -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse10" id="handle10" checked="checked">
+            <h2 class="handle">
+              <label for="handle10">Make Your Own Project Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                TBD.
+              </p>
+            </div>
+          </section>
+
+        </div>
 
 
 
