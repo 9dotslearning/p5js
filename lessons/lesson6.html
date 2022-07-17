@@ -31,8 +31,7 @@
         <h2>Spins and Spirals</h2>
         <p class="nav"><a href="../index.html">&larr; Back to Home</a></p>
         <p>
-          In this lesson, you'll learn how to make beautiful spinning shapes.
-          You'll also learn how to draw lines and how to write words on screen.
+          In this lesson, you'll learn how to draw lines and how to make beautiful spinning shapes.
         </p>
 
         <p>
@@ -44,86 +43,31 @@
 
       <div class="grid">
 
-      <!-- ********************* 1. text ********************* -->
-
-        <!-- tinker: text -->
-
-        <div>
-
-          <h2>1. Text</h2>
-          <p class="tinkerHeadingTop">Tinker</p>
-          <p class="tinkerHeadingBottom">
-            Click <span class="btnPress">&#9654;Play</span>. You'll see the word "hello".
-            <br class="tinkerNewLine" />
-            Try these challenges:
-            <span class="tinkerBullet">Change the word from "hello" to something else.</span>
-            <span class="tinkerBullet">Change the position of the word to the bottom right.</span>
-          </p>
-          <script type="text/p5" data-preview-width="250" data-height="300">
-function setup() {
-  createCanvas(250, 200);
-  colorMode(HSB);
-}
-
-function draw() {
-  text("hello!", 50, 50);
-}
-          </script>
-        </div>
-
-        <!-- help: text -->
-
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse" id="handle1" checked="checked">
-            <h2 class="handle">
-              <label for="handle1">Text Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-                TBD:
-              </p>
-            </div>
-          </section>
-
-        </div>
-
-
-          <!-- ********************* 2. lines ********************* -->
+        <!-- ********************* 1. lines ********************* -->
 
         <!-- tinker: lines -->
 
         <div>
 
-          <h2>2. Lines</h2>
+          <h2>1. Lines</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>. You'll see
             that a line has been added to the screen.
             <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">Change each number in
-              the <code>line</code> command one at a time, and
-              click <span class="btnPress">&#9654;Play</span> after
-              each change. What does each number do?
-              For help, click Lines Help at the right!
+            <span class="tinkerBullet">Change one number in the <code>line</code>
+              command to make the line longer. Be sure to click <span class="btnPress">&#9654;Play</span>.
             </span>
-            <span class="tinkerBullet">Click <span class="btnPress">Revert</span> to
-              restore the previous script.
-            </span>
-            <span class="tinkerBullet">Change the <code>line</code>
-              command to make the line longer.
-            </span>
-            <span class="tinkerBullet">Change the <code>line</code>
+            <span class="tinkerBullet">Change two numbers in the <code>line</code>
               command again so that the line is lower on screen but still
-              points straight across.
+              points straight across. Be sure to click <span class="btnPress">&#9654;Play</span>.
             </span>
             <span class="tinkerBullet">Change the <code>line</code>
               command again so that
               one end is at the lower left corner of the canvas and
               the other end is at the upper right, making a diagonal.
+              Be sure to click <span class="btnPress">&#9654;Play</span>.
             </span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="360">
@@ -134,8 +78,7 @@ function setup() {
 }
 
 function draw() {
-  text("hello!", 50, 50);
-  line(50, 60, 100, 60);
+  line(50, 60, 125, 60);
 }
           </script>
         </div>
@@ -145,9 +88,9 @@ function draw() {
         <div class="sidebar">
 
           <section class="accordion">
-            <input type="checkbox" name="collapse2" id="handle2" checked="checked">
+            <input type="checkbox" name="collapse" id="handle21" checked="checked">
             <h2 class="handle">
-              <label for="handle2">Lines Help</label>
+              <label for="handle1">Lines Help</label>
             </h2>
 
             <div class="content">
@@ -161,23 +104,24 @@ function draw() {
 
 
 
-        <!-- ********************* 3. rotate ********************* -->
+        <!-- ********************* 2. rotate ********************* -->
 
-        <!-- tinker: lines -->
+        <!-- tinker: rotate -->
 
         <div>
 
-          <h2>3. Rotate</h2>
+          <h2>2. Rotate</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
-            You'll see the text and line again.
+            You'll see the line again, along with an empty ellipse at its end.
             <br class="tinkerNewLine" />
             Try this challenge:
             <span class="tinkerBullet">Find the new <code>rotate</code>
               command. Change the number <code>0</code> to a small decimal
               like 0.3 and then click <span class="btnPress">&#9654;Play</span>.
-              What happens? Try some other decimals, including negative decimals.
+              What happens? Try some other small numbers, too &mdash;
+              numbers less than 1.5, or else the line will rotate off screen.
             </span>
 
           </p>
@@ -185,12 +129,14 @@ function draw() {
 function setup() {
   createCanvas(250, 200);
   colorMode(HSB);
+  background(0, 0, 80);
 }
 
 function draw() {
   rotate(0);
-  text("hello!", 50, 50);
-  line(50, 60, 100, 60);
+  noFill();
+  line(0, 5, 100, 5);
+  ellipse(100, 5, 20, 20);
 }
           </script>
 
@@ -211,7 +157,7 @@ function draw() {
         <div class="sidebar">
 
           <section class="accordion">
-            <input type="checkbox" name="collapse2" id="handle12" checked="checked">
+            <input type="checkbox" name="collapse2" id="handle2" checked="checked">
             <h2 class="handle">
               <label for="handle2">Text Help</label>
             </h2>
@@ -236,35 +182,48 @@ function draw() {
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
-            A new command called <code>translate</code> moved the
-            text and the line.
+            You can use a command called <code>translate</code> to move the
+            point <code>(0, 0)</code> to a different location on screen.
             Let's investigate how <code>translate</code> works.
             <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">Change the <em>first</em> argument within the <code>translate</code> command.
-              Use numbers between <code>0</code> and <code>200</code>, for now. Click <span class="btnPress">&#9654;Play</span>.
+            <span class="tinkerBullet">In the <code>translate</code> command, change the <em>first</em> argument to
+              any number between <code>0</code> and <code>200</code>, for now.
+              Click <span class="btnPress">&#9654;Play</span>.
               What happens?
             </span>
             <span class="tinkerBullet">Change the <em>second</em> argument within the <code>translate</code> command.
               Then click <span class="btnPress">&#9654;Play</span>.
               What happens?
             </span>
-            <span class="tinkerBullet">Move the <code>line</code> command so that appears <em>above</em> <code>translate</code>.
-              Then click <span class="btnPress">&#9654;Play</span>.
-              What happens?
-            </span>
           </p>
-          <script type="text/p5" data-preview-width="250" data-height="300">
+          <script type="text/p5" data-preview-width="250" data-height="360">
 function setup() {
   createCanvas(250, 200);
   colorMode(HSB);
+  background(0, 0, 80);
 }
 
 function draw() {
   translate(125, 100);
-  text("hello!", 0, 0);
+  noFill();
+  line(0, 0, 100, 0);
+  ellipse(100, 0, 20, 20);
 }
           </script>
+
+          <p class="tinkerHeadingTop" style="margin-top: 13px;">Explanation</p>
+          <p class="tinkerHeadingBottom">The command <code>translate(125, 100)</code>
+            moves the point <code>0, 0</code> to a new location that is 125 pixels to the right and 100 pixels down
+            from its previous location.
+            In this case, the point <code>0, 0</code> moves exactly halfway across and halfway down our canvas, which is
+            250 pixels wide and 200 pixels tall.
+            <br class="tinkerNewLine" />
+            <img src="../images/lesson6/translatedImage.png" width="50%" alt="the word hello translated (moved) to the center of the screen" />
+          </p>
+
+
+
         </div>
 
         <!-- help: translate -->
@@ -280,8 +239,7 @@ function draw() {
             <div class="content">
               <p>
                 Explain that translate moves the center of the screen, so that 0, 0 is somewhere else!
-                NEED IMAGES. ALSO explain why putting line above translate doesn't work. This involves explaining
-                the draw loop and the notional machine. :-)
+                NEED IMAGES.
               </p>
             </div>
           </section>
@@ -289,194 +247,69 @@ function draw() {
         </div>
 
 
-        <!-- ********************* OLD 3. rotate ********************* -->
+        <!-- ********************* 4. translate then rotate ********************* -->
 
 
         <div>
 
-          <h2>3. Rotate</h2>
+          <h2>4. Translate Then Rotate</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
-            A new command called <code>rotate</code> changed the angle of the line.
-            Let's investigate how <code>rotate</code> works.
+            The line and the ellipse rotate around the center of the screen.
             <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">Change the argument to the <code>rotate</code> command using
-              numbers between <code>0</code> and <code>6</code>. Click <span class="btnPress">&#9654;Play</span>.
-              What happens?
+            <span class="tinkerBullet">Change one number in the script to make the
+              line and ellipse rotate in bigger leaps.
             </span>
-            <span class="tinkerBullet">Move the <code>rotate</code> command so that it appears
-              <em>above</em> the <code>translate</code> command. Then click <span class="btnPress">&#9654;Play</span>.
-              You'll find it doesn't work. Why?
+            <span class="tinkerBullet">Change that number again to make the
+              line and ellipse rotate in the opposite direction.
             </span>
           </p>
-          <script type="text/p5" data-preview-width="250" data-height="300">
-function setup() {
-  createCanvas(250, 200);
-  colorMode(HSB);
-}
-
-function draw() {
-  translate(125, 100);
-  rotate(1);
-  text("hello!", 0, 0);
-}
-          </script>
-        </div>
-
-        <!-- help: rotate -->
-
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse3" id="handle3" checked="checked">
-            <h2 class="handle">
-              <label for="handle3">Rotate the Canvas Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-                Rotates about the center counter-clockwise. The number 6 is a little more than a full turn.
-                p5.js is using a unit of turning called a radian, which is about 57 degrees or, more
-                precisely, 180/PI degrees.
-              </p>
-            </div>
-          </section>
-
-        </div>
-
-
-
-        <!-- ********************* OLD 4. create variables ********************* -->
-
-
-        <div>
-
-          <h2>4. Variables for Rotation</h2>
-          <p class="tinkerHeadingTop">Tinker</p>
-          <p class="tinkerHeadingBottom">
-            Click <span class="btnPress">&#9654;Play</span>.
-            You'll see that we've tilted the word "hello" in a new direction.
-            <br class="tinkerNewLine" />
-            Try these challenges:
-            <span class="tinkerBullet">Change the first line of code so that <code>move</code> contains
-              a different number. Try whole numbers, positive and negative numbers, and decimals
-              (if you type very large numbers like 1000 do <em>not</em> include commas).
-              Click <span class="btnPress">&#9654;Play</span> after each change.
-              What happens?
-            </span>
-            <span class="tinkerBullet">Change the label <code>move</code> to a
-              different letter or word. Be sure to change <code>move</code> everywhere
-              it appears in the script. Then click <span class="btnPress">&#9654;Play</span>.
-              Does the animation still work properly?
-            </span>
-          </p>
-          <script type="text/p5" data-preview-width="250" data-height="360">
-let move = 4;
+          <script type="text/p5" data-preview-width="250" data-height="480">
+let r = 0;
 
 function setup() {
   createCanvas(250, 200);
   colorMode(HSB);
+  background(0, 0, 80);
 }
 
 function draw() {
   translate(125, 100);
-  rotate(move);
-  text("hello!", 0, 0);
-}
-          </script>
-        </div>
-
-        <!-- help: create variables -->
-
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse4" id="handle4" checked="checked">
-            <h2 class="handle">
-              <label for="handle4">Create Variables Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-                Explain let rm = 3;
-                change m to another letter, to a word
-              </p>
-            </div>
-          </section>
-
-        </div>
-
-
-<div>TBD. NEEDS A SECTION THAT INTRODUCES A LINE INSTEAD OF TEXT, WITHOUT CONTINUOUS ROTATION.
-ALSO, NEEDS A GIF EXPLAINING THAT THE CANVAS IS ROTATING. USE YOUR SCRATCH ANIMATION.
-</div>
-<div></div>
-
-
-        <!-- ********************* OLD 5. change variables ********************* -->
-
-
-        <div>
-
-          <h2>5. Change Variables</h2>
-          <p class="tinkerHeadingTop">Tinker</p>
-          <p class="tinkerHeadingBottom">
-            We've replaced "hello" with a black line that rotates continuously (over and over).
-            Click <span class="btnPress">&#9654;Play</span> to see it.
-            <br class="tinkerNewLine" />
-            Try this challenge:
-            <span class="tinkerBullet">
-              Which line of code makes the line rotate continuously?
-            </span>
-            <span class="tinkerBullet">
-              What happens if you change the number in that line of code to be much larger?
-              Or change it to a decimal like <code>0.01</code>?
-              Or change it to a negative number like <code>-7</code>?
-              Be sure to click <span class="btnPress">&#9654;Play</span> after each change.
-            </span>
-          </p>
-          <script type="text/p5" data-preview-width="250" data-height="400">
-let move = 4;
-
-function setup() {
-  createCanvas(250, 200);
-  colorMode(HSB);
-}
-
-function draw() {
-  translate(125, 100);
-  rotate(m);
+  rotate(r);
+  noFill();
   line(0, 0, 100, 0);
-  move = move + 1;
+  ellipse(100, 0, 20, 20);
+  r = r + 0.1;
 }
           </script>
+
         </div>
 
-        <!-- help: change variables -->
+        <!-- help: translate -->
 
         <div class="sidebar">
 
           <section class="accordion">
-            <input type="checkbox" name="collapse5" id="handle5" checked="checked">
+            <input type="checkbox" name="collapse2" id="handle2" checked="checked">
             <h2 class="handle">
-              <label for="handle5">Change Variables Help</label>
+              <label for="handle2">Translate Help</label>
             </h2>
 
             <div class="content">
               <p>
-                Reiterate m = m + 1; and the notional machine.
+
               </p>
             </div>
           </section>
 
         </div>
 
-<div>TBD. EXPLANATION: YOU JUST USED VARIABLES TO CHANGE THE ROTATION?
-  PREVIOUSLY YOU USED VARIABLES MOUSEX AND MOUSEY TO CHANGE POSITIOIN AND SIZE?
-</div>
+
+<div>CONSIDER: (1) r + PI/10 (2) if (r > 200) noLoop();</div>
 <div></div>
+
 
         <!-- ********************* OLD 6. use variables for position ********************* -->
 
