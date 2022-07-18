@@ -152,7 +152,7 @@ function draw() {
 
         </div>
 
-        <!-- help: text -->
+        <!-- help: rotate -->
 
         <div class="sidebar">
 
@@ -184,7 +184,9 @@ function draw() {
             Click <span class="btnPress">&#9654;Play</span>.
             You can use a command called <code>translate</code> to move the
             point <code>(0, 0)</code> to a different location on screen.
-            Let's investigate how <code>translate</code> works.
+            In this example, we've moved <code>0, 0</code> to the center
+            of the canvas, which is 125 pixels to the right and 100 pixels down from the
+            top, left corner. Let's investigate how <code>translate</code> works.
             <br class="tinkerNewLine" />
             Try these challenges:
             <span class="tinkerBullet">In the <code>translate</code> command, change the <em>first</em> argument to
@@ -212,6 +214,7 @@ function draw() {
 }
           </script>
 
+          <!--
           <p class="tinkerHeadingTop" style="margin-top: 13px;">Explanation</p>
           <p class="tinkerHeadingBottom">The command <code>translate(125, 100)</code>
             moves the point <code>0, 0</code> to a new location that is 125 pixels to the right and 100 pixels down
@@ -221,7 +224,7 @@ function draw() {
             <br class="tinkerNewLine" />
             <img src="../images/lesson6/translatedImage.png" width="50%" alt="the word hello translated (moved) to the center of the screen" />
           </p>
-
+        -->
 
 
         </div>
@@ -231,15 +234,13 @@ function draw() {
         <div class="sidebar">
 
           <section class="accordion">
-            <input type="checkbox" name="collapse2" id="handle2" checked="checked">
+            <input type="checkbox" name="collapse3" id="handle3" checked="checked">
             <h2 class="handle">
-              <label for="handle2">Translate Help</label>
+              <label for="handle3">Translate Help</label>
             </h2>
 
             <div class="content">
               <p>
-                Explain that translate moves the center of the screen, so that 0, 0 is somewhere else!
-                NEED IMAGES.
               </p>
             </div>
           </section>
@@ -256,11 +257,17 @@ function draw() {
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
-            The line and the ellipse rotate around the center of the screen.
+            The line and the ellipse rotate around the center of the screen endlessly.
+            There's also a new variable <code>r</code>.
+            Let's investigate how they're connected.
             <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">Change one number in the script to make the
-              line and ellipse rotate in bigger leaps.
+            <span class="tinkerBullet">Find the command that varies or changes the rotation.
+              Change the number in that command and then press <span class="btnPress">&#9654;Play</span>.
+              If you found the correct command, your animation should change.
+            </span>
+            <span class="tinkerBullet">Change that same number again a few times,
+              clicking <span class="btnPress">&#9654;Play</span> after each change to see the effects.
             </span>
             <span class="tinkerBullet">Change that number again to make the
               line and ellipse rotate in the opposite direction.
@@ -287,14 +294,14 @@ function draw() {
 
         </div>
 
-        <!-- help: translate -->
+        <!-- help: translate then rotate -->
 
         <div class="sidebar">
 
           <section class="accordion">
-            <input type="checkbox" name="collapse2" id="handle2" checked="checked">
+            <input type="checkbox" name="collapse4" id="handle4" checked="checked">
             <h2 class="handle">
-              <label for="handle2">Translate Help</label>
+              <label for="handle4">Translate Then Rotate Help</label>
             </h2>
 
             <div class="content">
@@ -307,8 +314,143 @@ function draw() {
         </div>
 
 
-<div>CONSIDER: (1) r + PI/10 (2) if (r > 200) noLoop();</div>
-<div></div>
+        <!-- ********************* 5. stop the animation ********************* -->
+
+
+        <div>
+
+          <h2>5. Stop the Animation</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>.
+            The line and ellipse stop rotating after awhile.
+            Notice the new command <code>if</code> at the end
+            of the script. In this command,
+            the symbol &gt; means "greater than." Remember that the variable
+            <code>r</code> is getting bigger and bigger.
+            When it becones greater than 5, the command <code>noLoop</code>
+            stops the animation.
+            <br class="tinkerNewLine" />
+            Try this challenge:
+            <span class="tinkerBullet">In the <code>if</code> command,
+              change 5 to some other numbers, both larger and smaller.
+              Click <span class="btnPress">&#9654;Play</span> after each
+              change to see the effect.
+            </span>
+          </p>
+          <script type="text/p5" data-preview-width="250" data-height="500">
+let r = 0;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+  background(0, 0, 80);
+}
+
+function draw() {
+  translate(125, 100);
+  rotate(r);
+  noFill();
+  line(0, 0, 100, 0);
+  ellipse(100, 0, 20, 20);
+  r = r + 0.1;
+
+  if (r > 5) noLoop();
+}
+          </script>
+
+        </div>
+
+        <!-- help: stop the animation -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse5" id="handle5" checked="checked">
+            <h2 class="handle">
+              <label for="handle5">Stop the Animation Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+        <!-- ********************* 6. The Number PI ********************* -->
+
+
+        <div>
+
+          <h2>6. The Number PI</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>.
+            The line and ellipse neatly divide the canvas into
+            8 sections and appears to be stopped. Let's investigate.
+            <br class="tinkerNewLine" />
+            Try this challenge:
+            <span class="tinkerBullet">Locate the command
+              <code>r = r + PI/4</code>. The symbol <code>PI</code>
+              represents the number pi (pronounced "pie"). As you may know, pi
+              is the ratio of the circumference of a circle to its
+              diameter. This ratio is always near 3.14159265...
+              The symbol <code>PI/4</code> means "pi divided by 4."
+            </span>
+            <span class="tinkerBullet">Change the divisor <code>4</code>
+              to another small number and then click <span class="btnPress">&#9654;Play</span>.
+              How many equal sections of the canvas do you see now?
+            </span>
+            <span class="tinkerBullet">Change the divisor again several more times,
+              clicking <span class="btnPress">&#9654;Play</span> after each change.
+              Can you find a pattern between the divisor and the number of sections?
+            </span>
+          </p>
+          <script type="text/p5" data-preview-width="250" data-height="500">
+let r = 0;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+  background(0, 0, 80);
+}
+
+function draw() {
+  translate(125, 100);
+  rotate(r);
+  noFill();
+  line(0, 0, 100, 0);
+  ellipse(100, 0, 20, 20);
+  r = r + PI/4;
+}
+          </script>
+
+        </div>
+
+        <!-- help: the number PI -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse6" id="handle6" checked="checked">
+            <h2 class="handle">
+              <label for="handle6">The Number PI Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
 
 
         <!-- ********************* OLD 6. use variables for position ********************* -->
