@@ -31,11 +31,13 @@
         <h2>Back and Forth</h2>
         <p class="nav"><a href="../index.html">&larr; Back to Home</a></p>
         <p>
-          In this lesson, you'll learn how to make shapes move back and forth.
-          Once again, variables provide the magic.
+          In this lesson, you'll learn how to make shapes do something and then undo it.
+          For example, you'll make shapes move move back and forth,
+          fade into a new color and fade back to the original, or get bigger and then smaller.
+          You'll learn how variables can create these oscillating animations.
         </p>
         <p>
-          <img src="../images/lesson6/backAndForth3Shapes.gif" style="width: 35%; margin-top: 13px;d" alt="3 shapes moving back and forth across the screen endlessly" />
+          <img src="../images/lesson6/backAndForth3BouncingCircles.gif" style="width: 35%; margin-top: 13px;d" alt="3 shapes moving back and forth across the screen endlessly" />
           <img src="../images/lesson6/backAndForth2Squares.gif" style="width: 35%; margin-top: 13px;d" alt="2 squares changing from one color to another and back again endlessly" />
           <img src="../images/lesson6/backAndForthGrowingShapes.gif" style="width: 35%; margin-top: 13px;d" alt="ellipses growing and shrinking endlessly" />
         </p>
@@ -243,7 +245,8 @@ function draw() {
               and then reappear at the left edge, endlessly.
             </span>
             <span class="tinkerBullet">Change the script so that the ellipse moves from the top, center
-              straight down to the bottom center. Then it reappears at the top center and repeats, endlessly.
+              straight down to the bottom center. When it reaches thr bottom,
+              make it reappear at the top center and continue moving, endlessly.
             </span>
           </p>
 
@@ -262,10 +265,6 @@ function draw() {
   if (x > 250) x = 0;
 }
         </script>
-
-          <p class="tinkerHeadingTop" style="margin-top: 13px;">Explanation</p>
-          <p class="tinkerHeadingBottom">
-          </p>
 
         </div>
 
@@ -354,6 +353,275 @@ function draw() {;
         </div>
 
 
+        <!-- 6. bounce everywhere -->
+
+
+        <div>
+
+          <h2>6. Bounce Everywhere</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>.
+            You'll see an ellipse bounce off the bottom and then
+            move through the right edge and disappear.
+            <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">Add a command that makes
+              the ellipse bounce off the right edge.
+            </span>
+            <span class="tinkerBullet">Add another command that makes
+              the ellipse bounce off the top edge.
+            </span>
+            <span class="tinkerBullet">Add one last command that makes
+              the ellipse bounce off the left edge.
+            </span>
+            <span class="tinkerBullet">Change the script so that the
+              ellipse starts moving at a different angle. For example,
+              make the ellipse move towards the right wall instead of
+              towards the bottom.
+            </span>
+          </p>
+
+          <script type="text/p5" data-preview-width="250" data-height="600">
+let x = 0;
+let xstep = 2;
+let y = 0;
+let ystep = 3;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+
+}
+
+function draw() {;
+  background(0, 0, 80);
+  ellipse(x, y, 20, 20);
+
+  x = x + xstep;
+
+
+  y = y + ystep;
+  if (y > 200) ystep = -3;
+
+
+}
+          </script>
+
+
+        </div>
+
+
+        <!-- help: bounce everywhere -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse6" id="handle6" checked="checked">
+            <h2 class="handle">
+              <label for="handle6">Bounce Everywhere Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                TBD: ???
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+        <!-- 7. fade out and fade in -->
+
+
+        <div>
+
+          <h2>7. Fade Out and Fade In</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>.
+            You'll see a rectangle that fades out and fades back in.
+            Let's investigate.
+            <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">Notice that the <code>fill</code>
+              command contains a fourth argument which adds transparency.
+              In this case, the transparency is a variable that's changing.
+              Can you make it change more slowly? More quickly?
+            </span>
+            <span class="tinkerBullet">Change the transparency in the
+              <code>fill</code> command to be <code>1 - t</code> instead of
+              <code>t</code> Then click <span class="btnPress">&#9654;Play</span>.
+              How did the animation change?
+            </span>
+            <span class="tinkerBullet">Add another rectangle in a
+              different color. Make it fade in and out, too.
+            </span>
+          </p>
+
+          <script type="text/p5" data-preview-width="250" data-height="600">
+let t = 1;
+let tstep = -0.01;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+}
+
+function draw() {;
+  background(0, 100, 0);
+  noStroke();
+
+  fill(325, 100, 100, t);
+  rect(0, 0, 250, 200);
+
+
+
+  t = t + tstep;
+  if (t < 0) tstep = 0.01;
+  if (t > 1) tstep = -0.01;
+}
+          </script>
+
+
+        </div>
+
+
+        <!-- help: fade out and fade in -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse7" id="handle7" checked="checked">
+            <h2 class="handle">
+              <label for="handle7">Fade Out and Fade In Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                TBD: ???
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+        <!-- grow and shrink -->
+
+
+        <div>
+
+          <h2>8. Grow and Shrink</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>.
+            You will see an ellipse.
+            <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">Add a command to make the ellipse grow.
+              Use both variables, <code>size</code> and <code>sizestep</code>.
+            </span>
+            <span class="tinkerBullet">Add another command to make the ellipse
+              shrink when it gets too big. You can decide what's too big!
+            </span>
+            <span class="tinkerBullet">Add another command tom make the ellipse
+              grow again when it gets too small. You can decide what's too small!
+            </span>
+          </p>
+
+          <script type="text/p5" data-preview-width="250" data-height="480">
+let size = 40;
+let sizestep  = 1;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+}
+
+function draw() {
+  background(0, 100, 0);
+  fill(15, 100, 100);
+  ellipse(125, 100, size, size);
+
+}
+          </script>
+
+
+        </div>
+
+
+        <!-- help: grow and shrink -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse8" id="handle8" checked="checked">
+            <h2 class="handle">
+              <label for="handle8">Grow and Shrink Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                TBD: ???
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+        <!-- ********************* 12. make your own project ********************* -->
+
+
+        <div>
+
+          <h2>9. Make Your Own Project</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            To make and save your own project, you'll work in the <span class="accentuate">p5.js Web Editor</span>.
+            <span class="tinkerBullet">Copy the code below. You'll use it as a starter project.
+            </span>
+            <span class="tinkerBullet">Click this link to open the <a href="https://editor.p5js.org" target="_blank">p5.js Web Editor</a>
+              in another tab. A new project opens. Select all the code and press <span class="btnPress">Delete</span>
+              or <span class="btnPress">Backspace</span> to delete it.
+            </span>
+            <span class="tinkerBullet">Look at the two code examples below.
+              The first example creates falling rectangles, and the second one
+              creates rising ellipses. Copy the example you'd like to work on.
+              Paste the code you copied in the <span class="accentuate">p5.js</span> web editor.
+            </span>
+            <span class="tinkerBullet">Change the code to make an animation of your own, similar to either of the GIFs at the beginning of this lesson.
+            </span>
+            <span class="tinkerBullet">Have fun! 👏
+            </span>
+
+          </p>
+
+          <pre class="example-codeonly">
+/* *** FALLING RECTANGLES *** */
+
+let c = 50;
+let y = 0;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+  background(30, 10, 30);
+  frameRate(10);
+}
+
+function draw() {
+  fill(c, 100, 100);
+  rect(4, y, 20, 20);
+  rect(34, y, 20, 20);
+  y = y + 8;
+
+  if (y > 200) c = 325;
+  if (y > 200) y = 0;
+}
+          </pre>
 
 
 
