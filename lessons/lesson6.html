@@ -32,9 +32,12 @@
         <p class="nav"><a href="../index.html">&larr; Back to Home</a></p>
         <p>
           In this lesson, you'll learn how to make shapes do something and then undo it.
-          For example, you'll make shapes move move back and forth,
-          fade into a new color and fade back to the original, or get bigger and then smaller.
-          You'll learn how variables can create these oscillating animations.
+          For example, you'll make shapes change direction when they touch the edge of the canvas.
+          You'll see shapes slowly change color and
+          and then fade back to the original. You'll see other
+          shapes that get bigger and then smaller.
+          You'll learn how the <code>background</code> command
+          and variables are essential for making these back-and-forth animatioins.
         </p>
         <p>
           <img src="../images/lesson6/backAndForth3BouncingCircles.gif" style="width: 35%; margin-top: 13px;d" alt="3 shapes moving back and forth across the screen endlessly" />
@@ -432,12 +435,12 @@ function draw() {;
         </div>
 
 
-        <!-- 7. fade out and fade in -->
+        <!-- 7. fade in and out -->
 
 
         <div>
 
-          <h2>7. Fade Out and Fade In</h2>
+          <h2>7. Fade In and Out</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
@@ -488,14 +491,14 @@ function draw() {;
         </div>
 
 
-        <!-- help: fade out and fade in -->
+        <!-- help: fade in and out -->
 
         <div class="sidebar">
 
           <section class="accordion">
             <input type="checkbox" name="collapse7" id="handle7" checked="checked">
             <h2 class="handle">
-              <label for="handle7">Fade Out and Fade In Help</label>
+              <label for="handle7">Fade In and Out Help</label>
             </h2>
 
             <div class="content">
@@ -520,13 +523,13 @@ function draw() {;
             You will see an ellipse.
             <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">Add a command to make the ellipse grow.
-              Use both variables, <code>size</code> and <code>sizestep</code>.
+            <span class="tinkerBullet">Add a command that makes the ellipse grow.
+              <em>Hint!</em> The command will include the variables <code>size</code> and <code>sizestep</code>.
             </span>
             <span class="tinkerBullet">Add another command to make the ellipse
               shrink when it gets too big. You can decide what's too big!
             </span>
-            <span class="tinkerBullet">Add another command tom make the ellipse
+            <span class="tinkerBullet">Add another command to make the ellipse
               grow again when it gets too small. You can decide what's too small!
             </span>
           </p>
@@ -578,50 +581,167 @@ function draw() {
         <div>
 
           <h2>9. Make Your Own Project</h2>
+
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             To make and save your own project, you'll work in the <span class="accentuate">p5.js Web Editor</span>.
-            <span class="tinkerBullet">Copy the code below. You'll use it as a starter project.
-            </span>
             <span class="tinkerBullet">Click this link to open the <a href="https://editor.p5js.org" target="_blank">p5.js Web Editor</a>
               in another tab. A new project opens. Select all the code and press <span class="btnPress">Delete</span>
               or <span class="btnPress">Backspace</span> to delete it.
             </span>
-            <span class="tinkerBullet">Look at the two code examples below.
-              The first example creates falling rectangles, and the second one
-              creates rising ellipses. Copy the example you'd like to work on.
-              Paste the code you copied in the <span class="accentuate">p5.js</span> web editor.
-            </span>
-            <span class="tinkerBullet">Change the code to make an animation of your own, similar to either of the GIFs at the beginning of this lesson.
+            <span class="tinkerBullet">You can copy and paste one of the code examples below to use as a starter project or
+              simply use the examples as a reference for making a completely new project of your own.
+              Each example creates one of the images shown at the beginning of this lesson.
             </span>
             <span class="tinkerBullet">Have fun! 👏
             </span>
 
           </p>
 
-          <pre class="example-codeonly">
-/* *** FALLING RECTANGLES *** */
+          <!-- example #1 code and hints -->
 
-let c = 50;
+          <p class="tinkerHeading2Top" style="margin-top: 13px;">Example #1 &mdash; Bouncing Circles</p>
+          <p class="tinkerHeading2Bottom">
+            <span class="tinkerBullet">For this project, see the first GIF image at the beginning of this lesson.
+              The yellow circle moves straight across the screen and back again.
+              The other two circles move diagonally. The two diagonally-moving circles reflect each other's movement,
+              like the shapes in the <span class="accentuate">Reflections</span> lesson. Feel free to make
+              the same animation or something very different!</span>
+            <span class="tinkerBullet">The example includes all the variables you'll need, although you
+              may wish to add or change them; many different strategies work successfully!
+              The code contains just one ellipse, so you may want to add more.
+            </span>
+            <span class="tinkerBullet">The ellipse has no fill and a big stroke weight that makes
+              a thick outline. This outline is partially transparent because of the fourth argument in
+              the <code>stroke</code> command, <code>0.2</code>.
+            </span>
+
+          </p>
+
+
+          <pre class="example-codeonly">
+/* *** BOUNCING CIRCLES *** */
+
+let x = 0;
+let xstep = 1;
 let y = 0;
+let ystep = 2;
 
 function setup() {
-  createCanvas(250, 200);
+  createCanvas(400, 400);
   colorMode(HSB);
-  background(30, 10, 30);
-  frameRate(10);
 }
 
 function draw() {
-  fill(c, 100, 100);
-  rect(4, y, 20, 20);
-  rect(34, y, 20, 20);
-  y = y + 8;
+  background(0, 0, 100);
 
-  if (y > 200) c = 325;
-  if (y > 200) y = 0;
+  noFill();
+  strokeWeight(50);
+
+  stroke(105, 100, 100, 0.8);
+  ellipse(x, y, 200, 200);
+
+
 }
           </pre>
+
+          <!-- example #2 code and hints -->
+
+          <p class="tinkerHeading2Top" style="margin-top: 13px;">Example #2 &mdash; Colored Squares</p>
+          <p class="tinkerHeading2Bottom">
+            <span class="tinkerBullet">For this project, see the second GIF image at the beginning of this lesson.
+              A large square fades out and fades back in, over and over. A small square inside
+              the large one does the opposite &mdash; it fades in and fades back out, over and over.
+              Feel free to make the same animation or something very different!
+            </span>
+            <span class="tinkerBullet">The example includes all the variables you'll need, although you
+              may wish to add others; many different strategies work successfully!
+              The example code also includes only the bigger square, so you'll need to add the smaller one.</span>
+            <span class="tinkerBullet">The <code>stroke</code> command for the bigger square includes transparency which
+              is changed over time by the variable <code>t</code>. This variable should change from <code>1</code>
+              (the square is completely visible) to <code>0</code> (the square is completely transparent)
+              and back again endlessly.
+            </span>
+            <span class="tinkerBullet">The transparency for the smaller square should also be
+              changed by a variable. Can you figure out how this variable can make the
+              smaller square to begin invisibly and become visible?
+            </span>
+          </p>
+
+
+          <pre class="example-codeonly">
+/* *** COLORED SQUARES *** */
+
+let t = 1;
+let tstep = -0.01;
+
+function setup() {
+  createCanvas(400, 400);
+  colorMode(HSB);
+}
+
+function draw() {
+  background(0, 100, 0);
+
+  noFill();
+  stroke(344, 100, 100, t);
+  strokeWeight(100);
+  rect(0, 0, 400, 400);
+
+  t = t + tstep;
+
+
+}
+
+          </pre>
+
+
+          <!-- example #3 code and hints -->
+
+          <p class="tinkerHeading2Top" style="margin-top: 13px;">Example #3 &mdash; Grow and Shrink</p>
+          <p class="tinkerHeading2Bottom">
+            <span class="tinkerBullet">For this project, see the third GIF image at the beginning of this lesson.
+              A large ellipse at the top shows its lower half on the canvas (the other half is there but
+              can't be seen above the canvas). There's a similar large
+              ellipse at the bottom, and they grow and shrink together. Three smaller ellipses at the center of the
+              canvas grow and shrink more quickly. Feel free to make the same animation or something very different!
+            </span>
+            <span class="tinkerBullet">The example includes only some of the variables you'll need, so
+              you'll need to add more. The example also includes only the two large ellipses, so you'll
+              need to add the smaller ones.
+            </span>
+          </p>
+
+
+          <pre class="example-codeonly">
+/* *** GROW AND SHRINK *** */
+
+let sz = 120;
+let szstep = 1;
+
+let running = false;
+
+function setup() {
+  createCanvas(400, 400);
+  colorMode(HSB);
+}
+
+function draw() {
+  background(30, 10, 30);
+  strokeWeight(24);
+
+  noFill();
+  stroke(105, 100, 100);
+  ellipse(200, 0, sz, sz);
+  ellipse(200, 400, sz, sz);
+
+
+}
+
+
+          </pre>
+
+
 
 
 

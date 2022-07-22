@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Lesson 6</title>
+    <title>Lesson 7</title>
 
 
     <!-- fonts -->
@@ -27,7 +27,7 @@
       <!-- ********************* page intro ********************* -->
 
       <div>
-        <h1>Lesson 6</h1>
+        <h1>Lesson 7</h1>
         <h2>Spins</h2>
         <p class="nav"><a href="../index.html">&larr; Back to Home</a></p>
         <p>
@@ -47,10 +47,72 @@
 
         <div>
 
-          <p> TBD simpler introduction to lines, starting with a half-diagonal
-            from upper left to center. Then make the 1. entry below into 2.</p>
-
           <h2>1. Lines</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>. You'll see
+            a line from the top left to the bottom right corner of the canvas.
+            <br class="tinkerNewLine" />
+            There are 4 numbers in the <code>line(0, 0, 250, 200)</code> command.
+            It's helpful to think of them as two pairs. The first pair <code>0, 0</code> are the
+            <em>x-</em> and <em>y-</em>coordinates of the one end of the line.
+            So one end of this line is at the top left corner of the canvas.
+            The other pair <code>250, 200</code> are the
+            <em>x-</em> and <em>y-</em>coordinates of the other end of the line.
+            So the far end of this line is at the bottom right corner.
+          <br class="tinkerNewLine" />
+            Try these challenges:
+            <span class="tinkerBullet">Change just the first argument in the <code>line</code> command
+              and then click <span class="btnPress">&#9654;Play</span>. Change it again a few times
+              until you get a sense of what it does.
+            </span>
+            <span class="tinkerBullet">Change each of the other arguments one at a time, clicking
+              <span class="btnPress">&#9654;Play</span> after each change. Your goal is to develop
+              such a good sense of each argument that you can predict what will
+              happen before you click <span class="btnPress">&#9654;Play</span>!
+            </span>
+          </p>
+          <script type="text/p5" data-preview-width="250" data-height="360">
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+  background(0, 0, 80);
+}
+
+function draw() {
+  line(0, 0, 250, 200);
+}
+          </script>
+        </div>
+
+        <!-- help: lines -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle1" checked="checked">
+            <h2 class="handle">
+              <label for="handle1">Lines Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                TBD:
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+
+        <!-- ********************* 2. more lines ********************* -->
+
+        <!-- tinker: more lines -->
+
+        <div>
+
+          <h2>2. More Lines</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>. You'll see
@@ -58,16 +120,15 @@
             <br class="tinkerNewLine" />
             Try these challenges:
             <span class="tinkerBullet">Change one number in the <code>line</code>
-              command to make the line longer. Be sure to click <span class="btnPress">&#9654;Play</span>.
+              command to make the line longer. Be sure to click <span class="btnPress">&#9654;Play</span>
+              to see the change.
             </span>
             <span class="tinkerBullet">Change two numbers in the <code>line</code>
               command so that the line is lower on screen but still
               points straight across. Be sure to click <span class="btnPress">&#9654;Play</span>.
             </span>
             <span class="tinkerBullet">Change the <code>line</code>
-              command again so that
-              one end is at the lower left corner of the canvas and
-              the other end is at the upper right, making a diagonal.
+              command so that the line goes straight up and down.
               Be sure to click <span class="btnPress">&#9654;Play</span>.
             </span>
           </p>
@@ -84,14 +145,14 @@ function draw() {
           </script>
         </div>
 
-        <!-- help: lines -->
+        <!-- help: more lines -->
 
         <div class="sidebar">
 
           <section class="accordion">
-            <input type="checkbox" name="collapse" id="handle21" checked="checked">
+            <input type="checkbox" name="collapse2" id="handle2" checked="checked">
             <h2 class="handle">
-              <label for="handle1">Lines Help</label>
+              <label for="handle2">More Lines Help</label>
             </h2>
 
             <div class="content">
@@ -110,18 +171,21 @@ function draw() {
         <!-- tinker: rotate -->
 
         <div>
-          <p>TBD 2. becomes 3.</p>
-          <h2>2. Rotate</h2>
+          <h2>3. Rotate</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
-            You'll see the line again, along with an empty ellipse at its end.
+            You'll see a line with an empty ellipse at its end.
             <br class="tinkerNewLine" />
             Try this challenge:
             <span class="tinkerBullet">Find the new <code>rotate</code>
-              command. Change the number <code>0</code> to a small decimal
-              like 0.3 and then click <span class="btnPress">&#9654;Play</span>.
-              What happens? Try some other small numbers, too. Use
+              command. Change the number <code>0</code> to <code>1</code>
+              and then click <span class="btnPress">&#9654;Play</span>.
+              What happens?
+            </span>
+              Change the number again, this time to a small decimal
+              like <code>0.3</code> and then click <span class="btnPress">&#9654;Play</span>.
+              Try some other small numbers, too. Use
               numbers that are less than 1.5 to ensure that the
               line doesn't rotate so far that it moves off screen.
             </span>
@@ -149,7 +213,7 @@ function draw() {
             of the screen. You can see this rotation in the picture below.
             Positive numbers rotate clockwise, and negative numbers rotate counterclockwise.
             <br class="tinkerNewLine"/>
-            <img src="../images/lesson6/rotateCanvasFromCorner.gif" width="50%" alt="notebook paper with a red triangle and the word CANVAS spinning endlessly" />
+            <img src="../images/lesson7/rotateCanvasFromCorner.gif" width="50%" alt="the canvas rotating around its top, left corner" />
           </p>
 
         </div>
@@ -159,9 +223,64 @@ function draw() {
         <div class="sidebar">
 
           <section class="accordion">
-            <input type="checkbox" name="collapse2" id="handle2" checked="checked">
+            <input type="checkbox" name="collapse3" id="handle3" checked="checked">
             <h2 class="handle">
-              <label for="handle2">Text Help</label>
+              <label for="handle3">Text Help</label>
+            </h2>
+
+            <div class="content">
+              <p>
+                TBD:
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+
+
+        <!-- tinker: rotate endlessly -->
+
+        <div>
+          <h2>4. Rotate Endlessly</h2>
+          <p class="tinkerHeadingTop">Tinker</p>
+          <p class="tinkerHeadingBottom">
+            Click <span class="btnPress">&#9654;Play</span>.
+            You'll see the line and with a small ellipse rotating endlessly.
+            <br class="tinkerNewLine" />
+            Try this challenge:
+            <span class="tinkerBullet">Change the rotation so that the lines are a little further apart.</span>
+            <span class="tinkerBullet">Make the lines rotate in the opposite direction.</span>
+          </p>
+          <script type="text/p5" data-preview-width="250" data-height="480">
+let r = 0;
+
+function setup() {
+  createCanvas(250, 200);
+  colorMode(HSB);
+  background(0, 0, 80);
+}
+
+function draw() {
+  rotate(r);
+  r = r + 0.05;
+
+  noFill();
+  line(0, 0, 100, 0);
+  ellipse(100, 0, 4, 4);
+}
+          </script>
+
+        </div>
+
+        <!-- help: rotate endlessly -->
+
+        <div class="sidebar">
+
+          <section class="accordion">
+            <input type="checkbox" name="collapse4" id="handle4" checked="checked">
+            <h2 class="handle">
+              <label for="handle4">Rotate Endlessly Help</label>
             </h2>
 
             <div class="content">
@@ -179,10 +298,7 @@ function draw() {
 
 
         <div>
-          <p>TBD INSERT 4. continuous rotation.</p>
-          <p>TBD 3. Translate becomes 5. Translate</p>
-
-          <h2>3. Translate</h2>
+          <h2>5. Translate</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
@@ -236,9 +352,9 @@ function draw() {
         <div class="sidebar">
 
           <section class="accordion">
-            <input type="checkbox" name="collapse3" id="handle3" checked="checked">
+            <input type="checkbox" name="collapse5" id="handle5" checked="checked">
             <h2 class="handle">
-              <label for="handle3">Translate Help</label>
+              <label for="handle5">Translate Help</label>
             </h2>
 
             <div class="content">
@@ -250,12 +366,12 @@ function draw() {
         </div>
 
 
-        <!-- ********************* 4. translate then rotate ********************* -->
+        <!-- ********************* 6. translate then rotate ********************* -->
 
 
         <div>
 
-          <h2>4. Translate Then Rotate</h2>
+          <h2>6. Translate Then Rotate</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
@@ -303,9 +419,9 @@ function draw() {
         <div class="sidebar">
 
           <section class="accordion">
-            <input type="checkbox" name="collapse4" id="handle4" checked="checked">
+            <input type="checkbox" name="collapse6" id="handle6" checked="checked">
             <h2 class="handle">
-              <label for="handle4">Translate Then Rotate Help</label>
+              <label for="handle6">Translate Then Rotate Help</label>
             </h2>
 
             <div class="content">
@@ -318,12 +434,12 @@ function draw() {
         </div>
 
 
-        <!-- ********************* 5. stop the animation ********************* -->
+        <!-- ********************* 7. stop the animation ********************* -->
 
 
         <div>
 
-          <h2>5. Stop the Animation</h2>
+          <h2>7. Stop the Animation</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
@@ -373,9 +489,9 @@ function draw() {
         <div class="sidebar">
 
           <section class="accordion">
-            <input type="checkbox" name="collapse5" id="handle5" checked="checked">
+            <input type="checkbox" name="collapse7" id="handle7" checked="checked">
             <h2 class="handle">
-              <label for="handle5">Stop the Animation Help</label>
+              <label for="handle7">Stop the Animation Help</label>
             </h2>
 
             <div class="content">
