@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Lesson 6</title>
+    <title>Lesson 8</title>
 
 
     <!-- fonts -->
@@ -27,445 +27,32 @@
       <!-- ********************* page intro ********************* -->
 
       <div>
-        <h1>Lesson 6</h1>
-        <h2>Spins and Spirals</h2>
+        <h1>Lesson 8</h1>
+        <h2>Spirals</h2>
         <p class="nav"><a href="../index.html">&larr; Back to Home</a></p>
         <p>
-          In this lesson, you'll learn how to draw lines and how to make beautiful spinning shapes.
+          In this lesson, you'll learn how to make beautiful spirals
+          using variables to change a shape's position or size.
         </p>
-
+        <p>TBD. REDO LINE MOVIE TO SHOW ELLIPSE INITIALLY.</p>
         <p>
-          <img src="../images/lesson6/rotationexample1.gif" width="35%" alt="spinning lines that make a star shape"/>
-          <img src="../images/lesson6/rotationexample4.gif" width="35%" alt="colorful spinning spiral"/>
+          <img src="../images/lesson8/spiralsFinalGalaxy.gif"  style="width: 35%; margin-top: 13px;d" alt="spiral made of tiny multi-colored circles" />
+          <img src="../images/lesson8/spiralsFinalDoubleEllipses.gif"  style="width: 35%; margin-top: 13px;d" alt="spiral made of long, flat ellipses" />
+          <img src="../images/lesson8/spiralsFinalShrinkingRectangle.gif"  style="width: 35%; margin-top: 13px;d" alt="spiral flower made of shrinking rectangles" />
+          <img src="../images/lesson8/spiralsFinalLine.gif"  style="width: 35%; margin-top: 13px;d" alt="spiral made of growing, diagonal lines" />
         </p>
       </div>
 
 
       <div class="grid">
 
-        <!-- ********************* 1. lines ********************* -->
 
-        <!-- tinker: lines -->
-
-        <div>
-
-          <h2>1. Lines</h2>
-          <p class="tinkerHeadingTop">Tinker</p>
-          <p class="tinkerHeadingBottom">
-            Click <span class="btnPress">&#9654;Play</span>. You'll see
-            that a line has been added to the screen.
-            <br class="tinkerNewLine" />
-            Try these challenges:
-            <span class="tinkerBullet">Change one number in the <code>line</code>
-              command to make the line longer. Be sure to click <span class="btnPress">&#9654;Play</span>.
-            </span>
-            <span class="tinkerBullet">Change two numbers in the <code>line</code>
-              command so that the line is lower on screen but still
-              points straight across. Be sure to click <span class="btnPress">&#9654;Play</span>.
-            </span>
-            <span class="tinkerBullet">Change the <code>line</code>
-              command again so that
-              one end is at the lower left corner of the canvas and
-              the other end is at the upper right, making a diagonal.
-              Be sure to click <span class="btnPress">&#9654;Play</span>.
-            </span>
-          </p>
-          <script type="text/p5" data-preview-width="250" data-height="360">
-function setup() {
-  createCanvas(250, 200);
-  colorMode(HSB);
-  background(0, 0, 80);
-}
-
-function draw() {
-  line(50, 60, 125, 60);
-}
-          </script>
-        </div>
-
-        <!-- help: lines -->
-
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse" id="handle21" checked="checked">
-            <h2 class="handle">
-              <label for="handle1">Lines Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-                TBD:
-              </p>
-            </div>
-          </section>
-
-        </div>
-
-
-
-        <!-- ********************* 2. rotate ********************* -->
-
-        <!-- tinker: rotate -->
-
-        <div>
-
-          <h2>2. Rotate</h2>
-          <p class="tinkerHeadingTop">Tinker</p>
-          <p class="tinkerHeadingBottom">
-            Click <span class="btnPress">&#9654;Play</span>.
-            You'll see the line again, along with an empty ellipse at its end.
-            <br class="tinkerNewLine" />
-            Try this challenge:
-            <span class="tinkerBullet">Find the new <code>rotate</code>
-              command. Change the number <code>0</code> to a small decimal
-              like 0.3 and then click <span class="btnPress">&#9654;Play</span>.
-              What happens? Try some other small numbers, too. Use
-              numbers that are less than 1.5 or else the line will rotate off screen.
-            </span>
-
-          </p>
-          <script type="text/p5" data-preview-width="250" data-height="360">
-function setup() {
-  createCanvas(250, 200);
-  colorMode(HSB);
-  background(0, 0, 80);
-}
-
-function draw() {
-  rotate(0);
-  noFill();
-  line(0, 5, 100, 5);
-  ellipse(100, 5, 20, 20);
-}
-          </script>
-
-          <p class="tinkerHeadingTop" style="margin-top: 13px;">Explanation</p>
-          <p class="tinkerHeadingBottom">The <code>rotate</code>
-            command rotates the canvas and everything on it around
-            the point <code>0, 0</code>, which is the top, left corner
-            of the screen. You can see this rotation in the picture below.
-            Positive numbers rotate clockwise, and negative numbers rotate counterclockwise.
-            <br class="tinkerNewLine"/>
-            <img src="../images/lesson6/rotateCanvasFromCorner.gif" width="50%" alt="notebook paper with a red triangle and the word CANVAS spinning endlessly" />
-          </p>
-
-        </div>
-
-        <!-- help: rotate -->
-
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse2" id="handle2" checked="checked">
-            <h2 class="handle">
-              <label for="handle2">Text Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-                TBD:
-              </p>
-            </div>
-          </section>
-
-        </div>
-
-
-
-        <!-- ********************* 3. translate ********************* -->
+        <!-- ********************* 1. change position ********************* -->
 
 
         <div>
 
-          <h2>3. Translate</h2>
-          <p class="tinkerHeadingTop">Tinker</p>
-          <p class="tinkerHeadingBottom">
-            Click <span class="btnPress">&#9654;Play</span>.
-            You can use a command called <code>translate</code> to move the
-            point <code>(0, 0)</code> to a different location on screen.
-            In this example, we've used the command <code>translate(125, 100)</code> to
-            move <code>0, 0</code> to the right 125 pixels and down 100 pixels.
-            That puts <code>0, 0</code> in the center of our canvas, which is
-            250 pixels wide and 200 pixels tall. Let's investigate how <code>translate</code> works.
-            <br class="tinkerNewLine" />
-            Try these challenges:
-            <span class="tinkerBullet">In the <code>translate</code> command, change the <em>first</em> argument to
-              any number between <code>0</code> and <code>200</code>, for now.
-              Click <span class="btnPress">&#9654;Play</span>.
-              What happens?
-            </span>
-            <span class="tinkerBullet">Change the <em>second</em> argument within the <code>translate</code> command.
-              Then click <span class="btnPress">&#9654;Play</span>.
-              What happens?
-            </span>
-          </p>
-          <script type="text/p5" data-preview-width="250" data-height="360">
-function setup() {
-  createCanvas(250, 200);
-  colorMode(HSB);
-  background(0, 0, 80);
-}
-
-function draw() {
-  translate(125, 100);
-  noFill();
-  line(0, 0, 100, 0);
-  ellipse(100, 0, 20, 20);
-}
-          </script>
-
-          <p class="tinkerHeadingTop" style="margin-top: 13px;">Explanation</p>
-          <p class="tinkerHeadingBottom">The command <code>translate(125, 100)</code>
-            moves the point <code>0, 0</code> to a new location that is 125 pixels to the right and 100 pixels down
-            from its previous location.
-            The new location of <code>0, 0</code> is the center of the canvas.
-            <br class="tinkerNewLine" />
-            <img src="../images/lesson6/translatedImage.png" width="50%" alt="the point 0, 0 moved to the center of the screen by the translate command" />
-          </p>
-
-
-        </div>
-
-        <!-- help: translate -->
-
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse3" id="handle3" checked="checked">
-            <h2 class="handle">
-              <label for="handle3">Translate Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-              </p>
-            </div>
-          </section>
-
-        </div>
-
-
-        <!-- ********************* 4. translate then rotate ********************* -->
-
-
-        <div>
-
-          <h2>4. Translate Then Rotate</h2>
-          <p class="tinkerHeadingTop">Tinker</p>
-          <p class="tinkerHeadingBottom">
-            Click <span class="btnPress">&#9654;Play</span>.
-            You'll see the line and ellipse rotating around the center of the screen endlessly.
-            There's also a new variable <code>r</code>.
-            Let's investigate how this animation works!
-            <br class="tinkerNewLine" />
-            Try these challenges:
-            <span class="tinkerBullet">Find the command that you think
-              changes the rotation. <em>Hint!</em> There's a number in this command.
-              Change the number and then press <span class="btnPress">&#9654;Play</span>.
-              If you found the correct command, your animation should change.
-            </span>
-            <span class="tinkerBullet">Change that same number again a few times,
-              clicking <span class="btnPress">&#9654;Play</span>
-              after each change to see the effects. What numbers create interesting images?
-            </span>
-            <span class="tinkerBullet">Change that number again to make the
-              line and ellipse rotate in the opposite direction.
-            </span>
-          </p>
-          <script type="text/p5" data-preview-width="250" data-height="480">
-let r = 0;
-
-function setup() {
-  createCanvas(250, 200);
-  colorMode(HSB);
-  background(0, 0, 80);
-}
-
-function draw() {
-  translate(125, 100);
-  rotate(r);
-  noFill();
-  line(0, 0, 90, 0);
-  ellipse(90, 0, 20, 20);
-  r = r + 0.1;
-}
-          </script>
-
-        </div>
-
-        <!-- help: translate then rotate -->
-
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse4" id="handle4" checked="checked">
-            <h2 class="handle">
-              <label for="handle4">Translate Then Rotate Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-
-              </p>
-            </div>
-          </section>
-
-        </div>
-
-
-        <!-- ********************* 5. stop the animation ********************* -->
-
-
-        <div>
-
-          <h2>5. Stop the Animation</h2>
-          <p class="tinkerHeadingTop">Tinker</p>
-          <p class="tinkerHeadingBottom">
-            Click <span class="btnPress">&#9654;Play</span>.
-            The line and ellipse stop rotating after awhile.
-            Notice the new command <code>if</code> at the end
-            of the script. Let's investigate it.
-            <br class="tinkerNewLine" />
-            Try these challenges:
-            <span class="tinkerBullet">In the <code>if</code> command,
-              the symbol &gt; means "greater than."
-              Change <code>5</code> to some other numbers, both larger and smaller.
-              Click <span class="btnPress">&#9654;Play</span> after each
-              change to see the effect. Why do smaller numbers mean fewer spokes?
-            </span>
-            <span class="tinkerBullet">In the <code>if</code> command,
-              delete the parentheses <code>(</code>
-              and <code>)</code>. Then click <span class="btnPress">&#9654;Play</span>.
-              What happens?
-            </span>
-          </p>
-          <script type="text/p5" data-preview-width="250" data-height="500">
-let r = 0;
-
-function setup() {
-  createCanvas(250, 200);
-  colorMode(HSB);
-  background(0, 0, 80);
-}
-
-function draw() {
-  translate(125, 100);
-  rotate(r);
-  noFill();
-  line(0, 0, 90, 0);
-  ellipse(90, 0, 20, 20);
-  r = r + 0.1;
-
-  if (r > 5) noLoop();
-}
-          </script>
-
-        </div>
-
-        <!-- help: stop the animation -->
-
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse5" id="handle5" checked="checked">
-            <h2 class="handle">
-              <label for="handle5">Stop the Animation Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-
-              </p>
-            </div>
-          </section>
-
-        </div>
-
-
-        <!-- ********************* 6. The Number PI ********************* -->
-<!--
-
-        <div>
-
-          <h2>6. The Number PI</h2>
-          <p class="tinkerHeadingTop">Tinker</p>
-          <p class="tinkerHeadingBottom">
-            Click <span class="btnPress">&#9654;Play</span>.
-            The line and ellipse neatly divide the canvas into
-            8 sections, and the annimation appears to stop. Let's investigate.
-            <br class="tinkerNewLine" />
-            Try this challenge:
-            <span class="tinkerBullet">Locate the command
-              <code>r = r + PI/4</code>. The symbol <code>PI</code>
-              represents the number pi (pronounced "pie"). As you may know, pi
-              is the ratio of the circumference of a circle to its
-              diameter. This ratio is always near 3.14159265...
-              The symbol <code>PI/4</code> means "pi divided by 4,"
-              which is the same as 3.14159265... divided by 4.
-            </span>
-            <span class="tinkerBullet">Change the divisor <code>4</code>
-              to another small number and then click <span class="btnPress">&#9654;Play</span>.
-              How many equal sections of the canvas do you see now?
-            </span>
-            <span class="tinkerBullet">Change the divisor again several more times,
-              clicking <span class="btnPress">&#9654;Play</span> after each change.
-              Can you predict the number of sections you'll see?
-            </span>
-            <span class="tinkerBullet">Change the <code>stroke</code> command
-              so that the colors are random. Then click <span class="btnPress">&#9654;Play</span>.
-              Is the animation stopped, or not?
-          </p>
-          <script type="text/p5" data-preview-width="250" data-height="500">
-let r = 0;
-
-function setup() {
-  createCanvas(250, 200);
-  colorMode(HSB);
-  background(0, 0, 80);
-}
-
-function draw() {
-  translate(125, 100);
-  rotate(r);
-  noFill();
-  stroke(0, 100, 100);
-  line(0, 0, 90, 0);
-  ellipse(90, 0, 20, 20);
-  r = r + PI/4;
-}
-          </script>
-
-        </div>
--->
-        <!-- help: the number PI -->
-<!--
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse6" id="handle6" checked="checked">
-            <h2 class="handle">
-              <label for="handle6">The Number PI Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-
-              </p>
-            </div>
-          </section>
-
-        </div>
--->
-
-
-
-        <!-- ********************* 6. spirals ********************* -->
-
-
-        <div>
-
-          <h2>6. Change Position</h2>
+          <h2>1. Change Position</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
@@ -489,12 +76,11 @@ function draw() {
               <code>0.5</code>, <code>-0.25</code>, or other small decimals.
               Which values added to <code>r</code> make spirals that you like?
             </span>
-            <span class="tinkerBullet">Just for fun, let's change the
-              color and shape of the ellipses. Change the height and width
-              in the <code>ellipse</code> command to draw ellipses very long
-              and narrow ellipses or big circular ones.
-              Then add commands to fill your the ellipses with your favorite or random colors.
+            <span class="tinkerBullet">Just for fun, change the height and width
+              in the <code>ellipse</code> command to make long, flat ellipses instead of
+              small circular ones.
             </span>
+            <span class="tinkerBullet">Just for fun, fill the ellipses with your favorite color.</span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="500">
 let r = 0;
@@ -517,31 +103,31 @@ function draw() {
           </script>
 
           <p class="tinkerHeadingTop" style="margin-top: 13px;">Explanation</p>
-          <p class="tinkerHeadingBottom">Here's a slow-motion image of the ellipse's motion,
-            showing how each additional ellipse moves further and further from the center as the canvas rotates.
-            The ellipse's movement is created by changing the variable <code>x</code>,
-            and the rotation is created by changing <code>r</code>.
+          <p class="tinkerHeadingBottom">Here's a slow-motion image of an ellipse
+            whose <em>x-</em>coordinate is getting larger and larger
+            at the same time that the canvas rotates. The effect is to create
+            a spiral, the same shape as star galaxies in space.
             <br class="tinkerNewLine"/>
-            <img src="../images/lesson6/translateThenRotate.gif" width="50%" alt="ellipses slowly appearing and moving away from center as the canvas rotates" />
+            <img src="../images/lesson8/translateThenRotate.gif" width="50%" alt="ellipses slowly appearing and moving away from center as the canvas rotates" />
           </p>
 
 
 
         </div>
 
-        <!-- help: use variables for position -->
+        <!-- help: change position -->
 
         <div class="sidebar">
 
           <section class="accordion">
-            <input type="checkbox" name="collapse7" id="handle7" checked="checked">
+            <input type="checkbox" name="collapse" id="handle1" checked="checked">
             <h2 class="handle">
-              <label for="handle7">Use Variables for Position Help</label>
+              <label for="handle1">Change Position Help</label>
             </h2>
 
             <div class="content">
               <p>
-                Explain that r is changing the x-position. Show the slow-mo movie.
+
               </p>
             </div>
           </section>
@@ -549,12 +135,12 @@ function draw() {
         </div>
 
 
-        <!-- ********************* 7. change size ********************* -->
+        <!-- ********************* 2. change size ********************* -->
 
 
         <div>
 
-          <h2>7. Change Size</h2>
+          <h2>2. Change Size</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>. The animation is
@@ -567,12 +153,12 @@ function draw() {
             <span class="tinkerBullet">Can you change the code so that the ellipses
               get wider a little more slowly?
               a little more quickly?
-              Which rates of change create animations that you like?
+              Which animations do you like?
             </span>
             <span class="tinkerBullet">Can you change the code so that the rotation
               changes a little more slowly?
               a little more quickly?
-              Which rates of change create animations that you like?
+              Which animations do you like?
             </span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="500">
@@ -601,9 +187,9 @@ function draw() {
         <div class="sidebar">
 
           <section class="accordion">
-            <input type="checkbox" name="collapse7" id="handle7" checked="checked">
+            <input type="checkbox" name="collapse2" id="handle2" checked="checked">
             <h2 class="handle">
-              <label for="handle7">Change Size Help</label>
+              <label for="handle2">Change Size Help</label>
             </h2>
 
             <div class="content">
@@ -616,101 +202,13 @@ function draw() {
         </div>
 
 
-        <!-- ********************* OLD 8. transparency ********************* -->
-
-<!--
-        <div>
-
-          <h2>9. Transparency</h2>
-          <p class="tinkerHeadingTop">Tinker</p>
-          <p class="tinkerHeadingBottom">
-            Click <span class="btnPress">&#9654;Play</span>.
-            Each ellipse gets bigger and moves away from the center.
-            Also, the drawing appears gray at the edges and darker at the center.
-            <br class="tinkerNewLine" />
-            There are 2 new commands:<br />
-            <span style="display: inline-block; margin-left: 22px; text-indent: -22px;">
-              &#9670;&emsp;<code>noFill()</code> makes the <em>inside</em> of ellipses transparent.
-            </span>
-            <span style="display: inline-block; margin-left: 22px; text-indent: -22px;">
-              &#9670;&emsp;<code>stroke(0, 100, 0, <span style="color: #b50000;">0.2</span>)</code>
-              now has a fourth argument. This argument makes the stroke (borders) <em>partially</em> transparent,
-              so they appear faded.
-              <br />
-            </span>
-            <br class="tinkerNewLine" />
-            Try these challenges:
-            <span class="tinkerBullet">
-              In <code>stroke</code>, change the decimal <code>0.2</code> to
-              other decimals between 0 and 1. Find a decimal you like.
-            </span>
-            <span class="tinkerBullet">
-              Make the stroke a color instead of black and gray.
-            </span>
-            <span class="tinkerBullet">
-              Replace the <code>stroke</code> and <code>fill</code> commands with the two new commands below.
-              What happens?<br />
-              <code>fill(330, 100, 100, 0.1);</code><br />
-              <code>noStroke();</code>
-            </span>
-          </p>
-          <script type="text/p5" data-preview-width="250" data-height="420">
-let move = 0;
-
-function setup() {
-  createCanvas(250, 200);
-  colorMode(HSB);
-}
-
-function draw() {
-  translate(125, 100);
-  rotate(move);
-  noFill();
-  stroke(0, 100, 0, 0.2);
-  ellipse(r, 0, r, 10);
-  move = move + 0.1;
-}
-          </script>
-        </div>
--->
-        <!-- help: transparency -->
-
-<!--
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse8" id="handle8" checked="checked">
-            <h2 class="handle">
-              <label for="handle8">Transparency Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-                TBD<br />
-                The command <code>noFill();</code> makes fill completely transparent,
-                so you can see ellipses behind other ellipses.
-                In previous drawings, each new ellipse obscured previous ellipses.
-                <br class="tinkerNewLine" />
-                There's also a way to change transparency a little at a time (instead of turning it on or off completely).
-                Notice that the <code>stroke</code> command includes fourth argument:
-                <code>stroke(0, 0, 100, <strong>0.2</strong>)</code><br />
-                This argument is called <span class="accentuate">alpha</span>.
-                Alpha controls the amount of transparency a little at a time.
-                An alpha of 0 is completely transparent, and an alpha of 1 is not at all transparent.
-                You can set alpha to any number between 0 and 1.
-              </p>
-            </div>
-          </section>
-
-        </div>
--->
 
         <!-- ********************* 8. examples ********************* -->
 
 
         <div>
 
-          <h2>8. Make Your Own Project</h2>
+          <h2>3. Make Your Own Project</h2>
 
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
@@ -734,170 +232,66 @@ function draw() {
 
           <!-- example #1 -->
 
-          <div>
+          <p class="tinkerHeading2Top" style="margin-top: 13px;">Example #1 &mdash; Spinning Circles</p>
+          <p class="tinkerHeading2Bottom">
+            <span class="tinkerBullet">For this project, see the first GIF image at the beginning of this lesson.</span>
+            <span class="tinkerBullet">The starter code shows a single ellipse changing colors randomly.
+              You must make it move further and further from the center of the canvas over time,
+              and you must also make the canvas rotate. If you wish, you can make the animation
+              stop after awhile.
+            </span>
+            <span class="tinkerBullet">The project includes all the variables you'll need.
+              Use the variable <code>r</code> to change the rotation
+              and the variable <code>x</code> to change the ellipse's <em>x-</em>coordinate.
+            </span>
+          </p>
 
-            <p style="margin-top: 36px;">
-              <strong>Example #1</strong>
-              <p><img src="../images/lesson6/rotationexample1.gif" width="35%" alt="small ellipse moving and creating a snail-like shape" /></p>
-              <pre class="example-codeonly">
+          <pre class="example-codeonly">
 let r = 0;
 let x = 0;
-let sz = 0;
 
 function setup() {
-  createCanvas(250, 200);
+  createCanvas(400, 400);
   colorMode(HSB);
+  background(0, 100, 0);
 }
 
 function draw() {
-  translate(125, 100);
+
+  translate(width/2, height/2);
   rotate(r);
-  r = r + 0.1;
-  if (r > 70) noLoop();
 
-  noFill();
-  stroke(0, 100, 0, 0.2);
-  ellipse(x, 0, sz, 10);
-  x = x + 0.1;
-  sz = sz + 0.1;
+  fill(random(360), 100, 100);
+  ellipse(x, 0, 8, 8);
+
 }
-                </pre>
-              </p>
-            </div>
-          </div>
 
-          <div class="sidebar">
 
-            <section class="accordion">
-              <input type="checkbox" name="collapse8" id="handle8" checked="checked">
-              <h2 class="handle">
-                <label for="handle8">Example #1 Help</label>
-              </h2>
+            </pre>
+          </p>
 
-              <div class="content">
-                <p>
-                  TBD!
-                </p>
-              </div> <!-- content -->
-            </section>
-
-          </div> <!-- sidebar -->
 
           <!-- example #2 -->
-          <div>
 
-            <p style="margin-top: 36px;">
-              <strong>Example #2</strong>
-              <p><img src="../images/lesson6/rotationexample2.gif" alt="colorful rectangles circling and shrinking towards the center" /></p>
-              <pre class="example-codeonly">
-let r = 360;
-let x = 360;
+<p>TBD - CONSIDER SIMPLY SAYING 'SAME AS PREVIOUS PROJECT, BUT 2 ELLIPSES'</p>
 
-function setup() {
-  createCanvas(400, 400);
-  colorMode(HSB);
-  background(0, 100, 0);
-}
-
-function draw() {
-  translate(200, 200);
-  rotate(r);
-  r = r - 1;
-  if (r < 0) noLoop();
-
-  fill(x, 100, 100);
-  rect(0, 0, x/2, x/2);
-  x = x - 1;
-}
-
-              </pre>
-            </p>
-          </div>
-
-          <div class="sidebar">
-
-            <section class="accordion">
-              <input type="checkbox" name="collapse9" id="handle9" checked="checked">
-              <h2 class="handle">
-                <label for="handle9">Example #2 Help</label>
-              </h2>
-
-              <div class="content">
-                <p>
-                  <ul>
-                    <li>
-                      <code>rect(0, 0, r/2, r/2);</code><br />
-                      <code>r/2</code> means "<code>r</code> divided by 2"
-                    </li>
-                    <li>
-                      <code>r = r - 1;</code><br />
-                      subtracts 1 from <code>r</code> each time <code>function draw()</code> repeats,
-                      making <code>r</code> smaller and smaller over time.
-                    </li>
-                  </ul>
-                </p>
-
-              </div>  <!-- content -->
-            </section>
-          </div> <!-- sidebar -->
-
-
-        <!-- example #3 -->
-
-        <div>
-          <p style="margin-top: 36px;">
-            <strong>Example #3</strong>
-            <p><img src="../images/lesson6/rotationexample3.gif" alt="long, thin ellipse spinning and changing colors" /></p>
-          <pre class="example-codeonly">
-let r = 0;
-let a = 0;
-
-function setup() {
-  createCanvas(400, 400);
-  colorMode(HSB);
-  background(0, 100, 0);
-}
-
-function draw() {
-  translate(200, 200);
-  rotate(r);
-  r = r + 1;
-  if (r > 400) noLoop();
-
-  fill(a, 100, 100, 0.1);
-  ellipse(0, 0, 400, 16);
-  a = a + 1;
-}
-
-
-            </pre>
+          <p class="tinkerHeading2Top" style="margin-top: 13px;">Example #2 &mdash; Double Ellipses</p>
+          <p class="tinkerHeading2Bottom">
+            <span class="tinkerBullet">For this project, see the second GIF image at the beginning of this lesson.</span>
+            <span class="tinkerBullet">The starter code shows a single long, flat ellipse.
+              You must do 3 things:
+              <span class="tinkerBullet">Add a second, small ellipse that's a different color.
+                Put it in the center of the long, flat ellipse.
+              </span>
+              <span class="tinkerBullet">Make both ellipses move further and further from the center of the canvas over time.</span>
+              <span class="tinkerBullet">Make the canvas rotate.</span>
+            </span>
+            <span class="tinkerBullet">The project includes all the variables you'll need.
+              Use the variable <code>r</code> to change the rotation
+              and the variable <code>x</code> to change the ellipses' position.
+            </span>
           </p>
-        </div>
 
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse10" id="handle10" checked="checked">
-            <h2 class="handle">
-              <label for="handle10">Example #3 Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-              </p>
-            </div>  <!-- content -->
-          </section>
-
-        </div>  <!-- sidebar -->
-
-
-        <!-- example #4 -->
-        <div>
-
-
-          <p style="margin-top: 36px;">
-            <strong>Example #4</strong>
-            <p><img src="../images/lesson6/rotationexample4.gif" alt="small red ellipses with yellow dots at their centers fan outward in a circular pattern" /></p>
           <pre class="example-codeonly">
 let r = 0;
 let x = 0;
@@ -909,37 +303,98 @@ function setup() {
 }
 
 function draw() {
-  translate(200, 200);
-  rotate(r);
-  r = r + 1;
-  if (r > 150) noLoop();
 
-  stroke(51, 100, 0);
-  strokeWeight(1);
-  fill(360, 100, 100);
-  ellipse(x, 0, 40, 8);
+  translate(width/2, height/2);
+  rotate(0);
+
+  fill(0, 100, 100);
+  ellipse(0, 0, 40, 8);
+
+}
+
+
+            </pre>
+          </p>
+
+
+          <!-- example #3 -->
+
+          <p class="tinkerHeading2Top" style="margin-top: 13px;">Example #3 &mdash; Shrinking Rectangles</p>
+          <p class="tinkerHeading2Bottom">
+            <span class="tinkerBullet">For this project, see the third GIF image at the beginning of this lesson.</span>
+            <span class="tinkerBullet">The starter code shows a single rectangle.
+              You must make it get smaller and smaller, and you must make the canvas rotate.
+            </span>
+            <span class="tinkerBullet">The project includes all the variables you'll need.
+              Use the variable <code>r</code> to change the rotation
+              and the variable <code>sz/code> to change the rectangle's size.
+            </span>
+          </p>
+
+          <pre class="example-codeonly">
+let r = 0;
+let sz = 100;
+
+function setup() {
+  createCanvas(400, 400);
+  colorMode(HSB);
+  background(0, 100, 0);
+}
+
+function draw() {
+
+  translate(200, 200);
+  rotate(0);
+
   fill(51, 100, 100);
-  ellipse(x, 0, 8, 8);
-  x = x + 1;
+  rect(0, 0, 100, 100);
+
 }
             </pre>
           </p>
+
+
+          <!-- example #3 -->
+
+          <p class="tinkerHeading2Top" style="margin-top: 13px;">Example #3 &mdash; Shrinking Rectangles</p>
+          <p class="tinkerHeading2Bottom">
+            <span class="tinkerBullet">For this project, see the third GIF image at the beginning of this lesson.</span>
+            <span class="tinkerBullet">The starter code shows a single rectangle.
+              You must make it get smaller and smaller, and you must make the canvas rotate.
+            </span>
+            <span class="tinkerBullet">The project includes all the variables you'll need.
+              Use the variable <code>r</code> to change the rotation
+              and the variable <code>sz/code> to change the rectangle's size.
+            </span>
+          </p>
+
+          <pre class="example-codeonly">
+let r = 0;
+let sz = 100;
+
+function setup() {
+  createCanvas(400, 400);
+  colorMode(HSB);
+  background(0, 100, 0);
+}
+
+function draw() {
+
+  translate(200, 200);
+  rotate(0);
+
+  fill(51, 100, 100);
+  rect(0, 0, 100, 100);
+
+}
+            </pre>
+          </p>
+
+
+
+
+
         </div>
-
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse11" id="handle11" checked="checked">
-            <h2 class="handle">
-              <label for="handle11">Example #4 Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-              </p>
-            </div> <!-- content -->
-          </section>
-      </div>  <!-- sidebar -->
 
 
       <!-- ************************ footer ************************ -->
