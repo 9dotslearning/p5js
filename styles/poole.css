@@ -63,7 +63,7 @@ body {
   /* font-family: 'Montserrat'; */
   /* font-family: 'Open Sans'; */
   font-family: 'Quicksand';
-  font-size: 0.9rem;
+  font-size: 1rem;
   background-color: #f9f9f9; /* #f2f2f2; */
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
@@ -229,7 +229,7 @@ pre code {
 
 /*
  *
- * Columns
+ * Page structure
  *
  */
 
@@ -245,6 +245,29 @@ pre code {
   grid-template-columns: 640px auto;
   grid-column-gap: 24px;
   grid-row-gap: 36px;
+}
+
+.grid-gallery {
+  display: grid;
+  grid-template-columns: auto;
+  grid-column-gap: 12px;
+  grid-row-gap: 36px;
+}
+
+.grid-gallery-item1 {
+  grid-column: 1 / 2;
+}
+
+.grid-gallery-item2 {
+  grid-column: 2 / 3;
+}
+
+.grid-gallery-item3 {
+  grid-column: 3 / 4;
+}
+
+.grid-gallery-item4 {
+  grid-column: 4/ 5;
 }
 
 .sidebar {

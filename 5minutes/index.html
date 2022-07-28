@@ -1,0 +1,114 @@
+<!--
+  TO DO AFTER UPLOADING SITE:
+  1) Remove navbar.html from this tree and re-point jquery for navbar.html to main site?
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>p5.js in 3 minutes</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Salsa&display=swap" rel="stylesheet">
+
+    <!-- from https://creative-coding.decontextualize.com/ -->
+    <link href="../styles/poole.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/syntax" rel="stylesheet" type="text/css" />
+
+    <!-- styles -->
+
+    <!-- processing -->
+    <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
+    <script language="javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+
+  <body>
+
+    <div class="wrapper">
+
+      <div class="contents">
+        <!--Navigation bar-->
+        <div id="nav-placeholder">
+
+
+        </div>
+
+        <!-- navbar include
+        <script>
+        /* disable cache so it menu changes it propagates appropriately */
+        $.ajaxSetup({
+            cache: false
+        });
+        $(function(){
+          $("#nav-placeholder").load("navbar.html");
+        });
+        </script>
+        -->
+        <!--end of Navigation bar-->
+
+
+<!-- manual navbar -->
+
+        <nav class="navbar">
+          <ul class="nav-links">
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+            <div class="menu">
+              <li><a href="/"><span class="logo">magiCSfirst</span></a></li>
+              <li><a href="../index.html">p5.js</a>
+              <li><a href="/">twine</a></li>
+              <li><a href="/">scratch</a></li>
+              <li><a href="/about.html">about</a></li>
+              <li><a href="/">blog</a></li>
+            </div>
+          </ul>
+        </nav>
+
+        <nav class="navbar"">
+          <ul class="nav-links">
+            <input type="checkbox" id="checkbox_toggle2" />
+            <label for="checkbox_toggle2" class="hamburger">&#9776;</label>
+
+            <div class="menu">
+              &rarr;&emsp;
+              <li style="color: #5e5a54;">p5.js in 5 minutes</li>
+              <li><a href="../beginning/index.html">lessons for beginners</a></li>
+            </div>
+          </ul>
+        </nav>
+
+
+
+        <!-- start of page -->
+          <h1 class="logo"><span class="accentuate">p5.js in 5 Minutes</span></h1>
+          <p>
+            <ul>
+              <li><a href="https://editor.p5js.org/magicsfirst/sketches/8Rd-EBa3v" target="_blank">
+                Click this link to open a starter project in a new tab.
+              </a></li>
+              <li>Watch the 3-minute movie below. As you watch,
+                do the steps in your starter project. Have fun!</li>
+            </ul>
+          </p>
+          <p>
+
+          </p>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="sketchui.js"></script>
+    <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <script src="https://kit.fontawesome.com/9ac34343ed.js" crossorigin="anonymous"></script>
+
+  </body>
+</html>
