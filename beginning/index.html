@@ -33,13 +33,12 @@
     <div class="wrapper">
 
       <div class="contents">
-        <!--Navigation bar-->
+        <!--Navigation bar
         <div id="nav-placeholder">
 
 
         </div>
 
-        <!-- navbar include
         <script>
         /* disable cache so it menu changes it propagates appropriately */
         $.ajaxSetup({
@@ -49,37 +48,38 @@
           $("#nav-placeholder").load("navbar.html");
         });
         </script>
-        -->
-        <!--end of Navigation bar-->
+
+        >>> end of Navigation bar-->
 
 
 <!-- manual navbar -->
 
         <nav class="navbar">
+
           <ul class="nav-links">
             <input type="checkbox" id="checkbox_toggle" />
             <label for="checkbox_toggle" class="hamburger">&#9776;</label>
 
             <div class="menu">
-              <li><a href="/"><span class="logo">magiCSfirst</span></a></li>
-              <li><a href="../index.html">p5.js</a>
-              <li><a href="/">twine</a></li>
-              <li><a href="/">scratch</a></li>
+              <li><a href="#"><span class="logo">magiCSfirst</span></a></li>
+              <li><a href="../index.html"><span class="menu-selectedBranch">p5.js</span></a>
+              <li><a href="#">twine</a></li>
+              <li><a href="#">scratch</a></li>
               <li><a href="/about.html">about</a></li>
-              <li><a href="/">blog</a></li>
+              <li><a href="#">blog</a></li>
             </div>
           </ul>
         </nav>
 
-        <nav class="navbar"">
+        <nav class="navbar2">
+
           <ul class="nav-links">
             <input type="checkbox" id="checkbox_toggle2" />
             <label for="checkbox_toggle2" class="hamburger">&#9776;</label>
 
             <div class="menu">
-              &rarr;&emsp;
               <li><a href="../5minutes/index.html">p5.js in 5 minutes</a></li>
-              <li style="color: #5e5a54;">lessons for beginners</li>
+              <li><span class="menu-selectedItem">lessons for beginners</span></li>
             </div>
           </ul>
         </nav>
@@ -87,7 +87,7 @@
 
 
         <!-- start of page -->
-          <h1 class="logo"><span class="accentuate">p5.js Lessons for Beginners</span></h1>
+          <h1><span class="accentuate">p5.js Lessons for Beginners</span></h1>
           <p>
             Here are some examples of what you'll make.</p>
             <div class="grid-gallery">
@@ -95,7 +95,7 @@
                 <img src="../images/lesson8/spiralsFinalGalaxy.gif" width="80%">
               </div>
               <div class="grid-gallery-item2">
-                <img src="../images/lesson4/ellipsereflections.gif" width="80%">
+                <img src="../images/lesson4/reflections.gif" width="80%">
               </div>
               <div class="grid-gallery-item3">
                 <img src="../images/lesson7/spinsFinal2Lines.gif" width="80%">
@@ -128,5 +128,7 @@
     <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
     <script src="https://kit.fontawesome.com/9ac34343ed.js" crossorigin="anonymous"></script>
 
+    <!-- background animation -->
+    <script src="sketch.js"></script>
   </body>
 </html>

@@ -34,12 +34,11 @@
 
       <div class="contents">
         <!--Navigation bar-->
-        <div id="nav-placeholder">
+        <!-- <div id="nav-placeholder">
 
 
         </div>
 
-        <!-- navbar include
         <script>
         /* disable cache so it menu changes it propagates appropriately */
         $.ajaxSetup({
@@ -62,7 +61,7 @@
 
             <div class="menu">
               <li><a href="/"><span class="logo">magiCSfirst</span></a></li>
-              <li style="color: #5e5a54;">p5.js</li>
+              <li><span class="menu-selectedItem">p5.js</span></li> <!-- #5e5a54 -->
               <li><a href="/">twine</a></li>
               <li><a href="/">scratch</a></li>
               <li><a href="/about.html">about</a></li>
@@ -71,7 +70,7 @@
           </ul>
         </nav>
 
-        <nav class="navbar"">
+        <nav class="navbar2">
           <!-- <ul class="nav-links" style="border-left: 1px solid #aaa; padding-left: 28px;"> -->
 
           <ul class="nav-links">
@@ -79,9 +78,8 @@
             <label for="checkbox_toggle2" class="hamburger">&#9776;</label>
 
             <div class="menu">
-              &rarr;&emsp;
-              <li><a href="5minutes/index.html">p5.js in 5 minutes</a></li>
-              <li><a href="beginning/index.html">lessons for beginners</a></li>
+              <li><a href="5minutes/index.html" style="color: #74800e">p5.js in 5 minutes</a></li>
+              <li><a href="beginning/index.html" style="color: #74800e">lessons for beginners</a></li>
             </div>
           </ul>
         </nav>
@@ -90,14 +88,17 @@
 
         <!-- start of page -->
           <h1 class="logo"><span class="accentuate">p5.js</span></h1>
-          <p>Welcome. These pages offer lessons in <span style="font-family: 'ABeeZee'">p5.js</span>,
-            a computer programming language that
-            draws animated art, plays music, and makes games on the web.
-            Here are some examples of what you'll make: [[TBD embed]]
-          </p>
-          <p>To learn, you can do a <a href="5minutes/index.html">5-minute lesson</a>.</p>
-          <p>Or your can do <a href="beginning">online lessons for beginners</a>.</p>
-          <p>Have fun!</p>
+
+          <div style="width: 800px">
+            <p>TEST Welcome. These pages offer lessons in <span style="font-family: 'ABeeZee'">p5.js</span>,
+              a computer programming language that
+              draws animated art, plays music, and makes games on the web.
+            </p>
+            <p>To learn, you can do a <a href="5minutes/index.html">5-minute lesson</a>.</p>
+            <p>Or you can do <a href="beginning">online lessons for beginners</a>.</p>
+            <p>Have fun!</p>
+          </div>
+
         </div>
     </div>
 
