@@ -14,22 +14,30 @@
 
     <!-- styles -->
     <!-- from https://creative-coding.decontextualize.com/ -->
-    <link href="../styles/poole.css" rel="stylesheet" type="text/css" />
+    <link href="../../styles/poole.css" rel="stylesheet" type="text/css" />
 
     <!-- processing -->
     <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
     <script language="javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+      /* disable cache so menu propagates appropriately */
+      $.ajaxSetup({
+          cache: false
+      });
+    </script>
   </head>
 
   <body>
     <div class="wrapper">
+      <div class="contents">
 
       <!-- ********************* page intro ********************* -->
 
       <div>
         <h1>Lesson 8</h1>
         <h2>Spirals</h2>
-        <p class="nav"><a href="../index.html">&larr; Back to Home</a></p>
+        <p class="nav"><a href="index.html">&larr; Back to Home</a></p>
         <p>
           In this lesson, you'll learn how to make beautiful spirals
           by changing their rotation, position, and size.
@@ -386,7 +394,7 @@ function draw() {
             </span>
             <span class="tinkerBullet">The project includes all the variables you'll need.
               Use the variable <code>r</code> to change the rotation
-              and the variable <code>sz/code> to change the rectangle's size.
+              and the variable <code>sz</code> to change the rectangle's size.
             </span>
           </p>
 
@@ -416,11 +424,8 @@ function draw() {
             </pre>
           </p>
 
-
-
-
-
         </div>
+        <div class="sidebar"></div>
 
 
       <!-- ************************ footer ************************ -->
@@ -437,13 +442,25 @@ function draw() {
       </span>
       </p>
 
+      <!-- footer -->
+      <div class="row">
+        <div class="triple-column">
+          <div id="footer-placeholder">
+
+          </div>
+
+          <script>
+            $(function(){
+              $("#footer-placeholder").load("../../footer.html");
+            });
+          </script>
+
+      </div> <!-- contents -->
     </div> <!-- wrapper -->
 
-    <!--
     <script src="../script.js"></script>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="../sketchui.js"></script>
-    -->
     <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
     <script src="https://kit.fontawesome.com/9ac34343ed.js" crossorigin="anonymous"></script>
   </body>

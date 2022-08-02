@@ -17,8 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Salsa&display=swap" rel="stylesheet">
 
     <!-- from https://creative-coding.decontextualize.com/ -->
-    <link href="../styles/poole.css" rel="stylesheet" type="text/css" />
-    <link href="../styles/syntax" rel="stylesheet" type="text/css" />
+    <link href="../../styles/poole.css" rel="stylesheet" type="text/css" />
+    <link href="../../styles/syntax" rel="stylesheet" type="text/css" />
 
     <!-- styles -->
 
@@ -26,6 +26,12 @@
     <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
     <script language="javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+      /* disable cache so menu propagates appropriately */
+      $.ajaxSetup({
+          cache: false
+      });
+    </script>
   </head>
 
   <body>
@@ -61,11 +67,11 @@
             <label for="checkbox_toggle" class="hamburger">&#9776;</label>
 
             <div class="menu">
-              <li><a href="#"><span class="logo">magiCSfirst</span></a></li>
+              <li><a href="/"><span class="logo">magiCSfirst</span></a></li>
               <li><a href="../index.html"><span class="menu-selectedBranch">p5.js</span></a>
-              <li><a href="#">twine</a></li>
+              <li><a href="../twine/index.html">twine</a></li>
               <li><a href="#">scratch</a></li>
-              <li><a href="/about.html">about</a></li>
+              <li><a href="../../about.html">about</a></li>
               <li><a href="#">blog</a></li>
             </div>
           </ul>
@@ -118,8 +124,22 @@
               <li><a href="lesson10.html">Lesson 10: Music</a></li>
             </ul>
           </p>
-        </div>
-    </div>
+
+          <!-- footer -->
+          <div class="row">
+            <div class="triple-column">
+              <div id="footer-placeholder">
+
+              </div>
+
+              <script>
+                $(function(){
+                  $("#footer-placeholder").load("../../footer.html");
+                });
+              </script>
+
+        </div> <!-- contents -->
+    </div> <!-- wrapper -->
 
 
     <script src="script.js"></script>

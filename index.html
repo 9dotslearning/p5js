@@ -17,8 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Salsa&display=swap" rel="stylesheet">
 
     <!-- from https://creative-coding.decontextualize.com/ -->
-    <link href="styles/poole.css" rel="stylesheet" type="text/css" />
-    <link href="styles/syntax" rel="stylesheet" type="text/css" />
+    <link href="../styles/poole.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/syntax" rel="stylesheet" type="text/css" />
 
     <!-- styles -->
 
@@ -26,6 +26,13 @@
     <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
     <script language="javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+      /* disable cache so menu propagates appropriately */
+      $.ajaxSetup({
+          cache: false
+      });
+    </script>
+
   </head>
 
   <body>
@@ -60,12 +67,12 @@
             <label for="checkbox_toggle" class="hamburger">&#9776;</label>
 
             <div class="menu">
-              <li><a href="/"><span class="logo">magiCSfirst</span></a></li>
+              <li><a href="/index.html"><span class="logo">magiCSfirst</span></a></li>
               <li><span class="menu-selectedItem">p5.js</span></li> <!-- #5e5a54 -->
-              <li><a href="/">twine</a></li>
-              <li><a href="/">scratch</a></li>
-              <li><a href="/about.html">about</a></li>
-              <li><a href="/">blog</a></li>
+              <li><a href="../twine/index.html">twine</a></li>
+              <li><a href="#">scratch</a></li>
+              <li><a href="../about.html">about</a></li>
+              <li><a href="#">blog</a></li>
             </div>
           </ul>
         </nav>
@@ -84,23 +91,38 @@
           </ul>
         </nav>
 
-
-
         <!-- start of page -->
           <h1 class="logo"><span class="accentuate">p5.js</span></h1>
 
-          <div style="width: 800px">
-            <p>Welcome. These pages offer lessons in <span style="font-family: 'ABeeZee'">p5.js</span>,
+          <div>
+            <p>These pages offer lessons in <span style="font-family: 'ABeeZee'">p5.js</span>,
               a computer programming language that
               draws animated art, plays music, and makes games on the web.
             </p>
-            <p>To learn, you can do a <a href="5minutes/index.html">5-minute lesson</a>.</p>
-            <p>Or you can do <a href="beginning">online lessons for beginners</a>.</p>
+            <p>To start learning, you can explore <a href="5minutes/index.html">p5.js in 5 minutes</a>.</p>
+            <p>Or you can do online <a href="beginning">lessons for beginners</a>.</p>
             <p>Have fun!</p>
           </div>
 
-        </div>
-    </div>
+        <!-- footer -->
+          <div class="row">
+            <div class="triple-column">
+              <div id="footer-placeholder">
+
+              </div>
+
+              <script>
+                $(function(){
+                  $("#footer-placeholder").load("../footer.html");
+                });
+              </script>
+
+          </div> <!-- footer row -->
+
+
+
+        </div> <!-- contents -->
+    </div> <!-- wrapper -->
 
 
     <script src="script.js"></script>
