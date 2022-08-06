@@ -39,9 +39,9 @@
         <h2>Up and Down</h2>
         <p class="nav"><a href="index.html">&larr; Back to Home</a></p>
         <p>In the last lesson, you learned about the variables
-          <code>mouseX</code> and <code>mouseY</code>. In this lesson, you'll learn how to move shapes up and down the
-          screen. As you'll see, moving shapes is made possible by inventing
-          variables of your own.
+          <code>mouseX</code> and <code>mouseY</code>. In this lesson,
+          you'll create your own variables and use them to
+          move shapes up and down the screen.
         <p>
           <img src="../images/lesson5/upOrDownRain.gif" style="margin-bottom: -20px; width: 35%;" alt="many rectangles moving straight down the screen, creating colorful stripes" /><br />
           From Emily Xie, <a href="https://www.youtube.com/watch?v=S1TQCi9axzg">Matrix Digital Rain in p5.js</a><br />
@@ -68,21 +68,29 @@
             <br class="tinkerNewLine" />
             Try these challenges:
             <span class="tinkerBullet">In the first line of code <br />
-              <code>p = 0;</code><br />
-              change 0 to a bigger number between 0 and 200. What happens?
+              <code>z = 0;</code><br />
+              change 0 to a bigger number between 0 and 100. What happens? Why?
+              <em>Hint!</em> Look at line 10.
             </span>
             <span class="tinkerBullet">Click <span class="btnPress">Revert</span>
               to restore the previous script.
-              Then change the script to make the rectangles appear further apart.
             </span>
-            <span class="tinkerBullet">Change the script to make the rectangles appear in the opposite direction, from bottom to top.</span>
-            <span class="tinkerBullet">Change the label <code>p</code> to another letter.
-              Be sure to change <code>p</code> to the same, new letter
-              in all 3 places it appears in the script. What happens?
+            <span class="tinkerBullet">Each rectangle currently appears 8 pixels further down the screen
+              than the previous rectangle. Can you see why?
+              Change the script to make the rectangles appear further apart.
+            </span>
+            <span class="tinkerBullet">Change the script so that the first rectangle
+              appears at the bottom of the screen and then each additional
+              rectangle appears above it, making an animation that moves up the screen.
+              <em>Hint!</em> You'll need to subract.
+            </span>
+            <span class="tinkerBullet">Change the label <code>z</code> to another letter.
+              Be sure to change <code>z</code>
+              in all the places it appears in the script. What happens?
             </span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="400">
-let p = 0;
+let z = 0;
 
 function setup() {
   createCanvas(250, 200);
@@ -91,8 +99,8 @@ function setup() {
 }
 
 function draw() {
-  rect(125, p, 6, 6);
-  p = p + 8;
+  rect(125, z, 6, 6);
+  z = z + 8;
 }
           </script>
         </div>
@@ -110,15 +118,46 @@ function draw() {
 
             <div class="content">
               <p>
-                TBD: show the solutions. Explain p = p + 1; and the notional machine.
+                The commmand <code>let z = 0;</code> creates a variable with the label <code>z</code>
+                and puts <code>0</code> into it.
+              </p>
+              <p>When you change the <code>0</code> to a different number,
+                the vertical position of the first rectangle changes. That's because later on the script,
+                the command<br />
+                <code>rect(125, z, 6, 6);</code><br /> sets the vertical position of the first rectangle
+                to whatever number is in <code>z</code>. So if <code>let z = 100;</code> then
+                the first rectangle appears at vertical position <code>100</code>, halfway down the screen.
+              </p>
+              <p>
+                The command <code>z = z + 8;</code> increases <code>z</code> by 8, over and over.
+                So if <code>z</code> starts at <code>0</code>, it becomes <code>8</code>,
+                <code>16</code>, <code>24</code>, <code>32</code>, ... and so on over time. Each
+                time that <code>z</code> increases, the next rectangle moves further down the screen.
+              </p>
+              <p>
+                The command <code>z = z + 8;</code> may seem nonsensical. How can <code>z</code>
+                equal <code>z + 8</code>? It doesn't! Your computer understands this line in an entirely different way
+                than mathematics.
+                When your computer finds a line of code contain a single <code>=</code>
+                it starts at the right-hand side. In this case, it gets the number <code>8</code>.
+                Then it finds <code>+</code>, so it knows it's about to add <code>8</code> to something.
+                Then it finds <code>z</code>, so it adds <code>8</code> to whatever number
+                <code>z</code> is at the moment, and that becomes the new value of <code>z</code>.
+              </p>
+              <p>
+                For example, in our script <code>z</code> starts at <code>0</code>.
+                Then your computer adds <code>8 + 0</code> and updates
+                <code>z</code> to be <code>8</code>. Since <code>function draw()</code> happens over and over,
+                your computer soon comes to the same line of code again. This time
+                it adds <code>8 + 8</code>
+                and updates <code>z</code> to be <code>16</code>. And so on!
+                As <code>z</code> becomes larger and larger, the rectangles move down the screen.
               </p>
             </div>
           </section>
 
         </div>
 
-<div>TBD: introduce = means becomes?</div>
-<div></div>
 
         <!-- ********************* 3. stacking rectangles ********************* -->
 
@@ -157,25 +196,8 @@ function draw() {
         </div>
 
 
-        <!-- help: stacking rectangles -->
-
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse2" id="handle2" checked="checked">
-            <h2 class="handle">
-              <label for="handle2">Stacking Rectangles Help</label>
-            </h2>
-
-            <div class="content">
-              <p>
-                TBD: show the solutions.
-              </p>
-            </div>
-          </section>
-
-        </div>
-
+        <!-- help: stacking rectangles - intentionally empty -->
+        <div class="sidebar"></div>
 
 
 
@@ -193,18 +215,19 @@ function draw() {
             There's also a new line of code at the end of the script:<br />
             <code>if (y > 200) y = 0;</code>
             <br class="tinkerNewLine" />
-            Try these challenges:
+            Let's explore these ideas. Try these challenges:
             <span class="tinkerBullet">In the new line of code
               at the end of the script, change <code>200</code> to a smaller number
               and then click <span class="btnPress">&#9654;Play</span>.
               What happens?
             </span>
             <span class="tinkerBullet">Click <span class="btnPress">Revert</span>
-              to restore the previous script. Change <code>0</code> to a
+              to restore the previous script. In the same line of code, change <code>0</code> to a
               larger number between 0 and 100 and then click <span class="btnPress">&#9654;Play</span>.
               What happens?
             </span>
-            <span class="tinkerBullet">Add a second rectangle,
+            <span class="tinkerBullet">Click <span class="btnPress">Revert</span>
+              to restore the previous script. Now add a second rectangle,
               so that you see two rippling rectangles on screen next to each other.
             </span>
           </p>
@@ -241,16 +264,39 @@ function draw() {
 
             <div class="content">
               <p>
-                TBD: show the solutions.
+                The command <code>if (y > 200) y = 0;</code> means
+                "if the variable <code>y</code> is greater than 200,
+                reset the variable <code>y</code> to <code>0</code>."
               </p>
+              <p>
+                What does this line do on screen? Remember that vertical
+                position <code>200</code> is at the bottom of the screen,
+                and vertical position <code>0</code> is at the top.
+                Because of this line of code, as soon as the rectangle reaches the bottom of the
+                screen, it jumps back to the top.
+              </p>
+              <p>
+                If you change this line of code to something like:<br />
+                <code>if (y > 44) y = 0;</code><br />
+                then as soon as the rectangle reaches the vertical position
+                <code>44</code>, about 1/5 of the way down the screen,
+                it jumps back to the top.
+              </p>
+              <p>
+                If you change this line of code to something like:<br />
+                <code>if (y > 200) y = 125;</code><br />
+                then as soon as the rectangle reaches the bottom of the screen,
+                it jumps back to vertical position <code>125</code>,
+                a little more than halfway down the screen. This makes
+                the ripples appear a little more than halfway down the stack.
+              </p>
+              <p>
+                Here's a second rectangle that moves alongside the first one:<br />
+                <code>rect(100, y, 20, 20);</code>
             </div>
           </section>
 
         </div>
-
-<div>TBD: explain if?</div>
-<div></div>
-
 
 
 
@@ -271,7 +317,7 @@ function draw() {
             Try these challenges:
             <span class="tinkerBullet">On line 1,
               change <code>50</code> to another number between 0-360.
-              Then click <span class="btnPress">&#9654;Play</span>. What happens?
+              Then click <span class="btnPress">&#9654;Play</span>. What happens? Why?
             </span>
             <span class="tinkerBullet">Click <span class="btnPress">Revert</span>
               to restore the previous code.
@@ -280,8 +326,15 @@ function draw() {
               to open the HSB color picker in a new tab</a>.
               Use the circular slider to choose a hue. Make note of its number and then
               type that number to replace the number 50 on line 1.
-              Click <span class="btnPress">&#9654;Play</span>. What happens?
+              Click <span class="btnPress">&#9654;Play</span>. What happens? Why?
               Try some other hue numbers from the HSB color picker, too.
+            </span>
+            <span class="tinkerBullet">Find the line of code:<br />
+              <code>fill(c, 100, 100);</code><br />
+              Change <code>c</code> to a number between <code>0-360</code>
+              that's not the same as the number you just used from the HSB color picker.
+              Then click <span class="btnPress">&#9654;Play</span>. Which number
+              controls the color? Why?
             </span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="480">
@@ -317,7 +370,29 @@ function draw() {
 
             <div class="content">
               <p>
-                TBD: show the solutions.
+                The commmand <code>let c = 50;</code> creates a variable with the label <code>c</code>
+                and puts <code>50</code> into it.
+              </p>
+              <p>
+                Later in the script, the command<br />
+                <code>fill(c, 100, 100);</code><br />
+                sets the hue,
+                or basic color, of the rectangle to whatever number is in the variable <code>c</code>.
+              </p>
+              <p>
+                You can see in the HSB Color Picker that <code>50</code> means yellow.
+                So when<br />
+                <code>let c = 50;</code><br />
+                then<br />
+                <code>fill(c, 100, 100);</code><br />
+                makes the rectangle yellow.
+              </p>
+              <p>
+                If you change<br />
+                <code>fill(c, 100, 100);</code><br />
+                to replace <code>c</code> with a number, then the number you include becomes the
+                rectangle's color. The variable <code>c</code> is no longer connected
+                to the rectangle's color.
               </p>
             </div>
           </section>
