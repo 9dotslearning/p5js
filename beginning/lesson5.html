@@ -67,26 +67,17 @@
             that appear one after the other, from top to bottom.
             <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">In the first line of code <br />
+            <span class="tinkerBullet">In the first line of code
               <code>z = 0;</code><br />
               change 0 to a bigger number between 0 and 100. What happens? Why?
-              <em>Hint!</em> Look at line 10.
+              <em>Hint!</em> Look at line 10. 😀
             </span>
             <span class="tinkerBullet">Click <span class="btnPress">Revert</span>
               to restore the previous script.
             </span>
-            <span class="tinkerBullet">Each rectangle currently appears 8 pixels further down the screen
-              than the previous rectangle. Can you see why?
-              Change the script to make the rectangles appear further apart.
-            </span>
-            <span class="tinkerBullet">Change the script so that the first rectangle
-              appears at the bottom of the screen and then each additional
-              rectangle appears above it, making an animation that moves up the screen.
-              <em>Hint!</em> You'll need to subract.
-            </span>
-            <span class="tinkerBullet">Change the label <code>z</code> to another letter.
-              Be sure to change <code>z</code>
-              in all the places it appears in the script. What happens?
+            <span class="tinkerBullet">Each rectangle appears 8 pixels further down the screen
+              than the previous rectangle. Can you find the line of code that makes that happen?
+              Change that line to spread the rectangles further apart.
             </span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="400">
@@ -137,9 +128,9 @@ function draw() {
               <p>
                 The command <code>z = z + 8;</code> may seem nonsensical. How can <code>z</code>
                 equal <code>z + 8</code>? It doesn't! Your computer understands this line in an entirely different way
-                than mathematics.
+                than in mathematics.
                 When your computer finds a line of code contain a single <code>=</code>
-                it starts at the right-hand side. In this case, it gets the number <code>8</code>.
+                it starts at the righthand side and reads the line moving left. In this case, it gets the number <code>8</code>.
                 Then it finds <code>+</code>, so it knows it's about to add <code>8</code> to something.
                 Then it finds <code>z</code>, so it adds <code>8</code> to whatever number
                 <code>z</code> is at the moment, and that becomes the new value of <code>z</code>.
@@ -175,6 +166,10 @@ function draw() {
             <span class="tinkerBullet">Change the script to make the
               rectangles appear closer together, overlapping each other.
               They should look like a stack of squished rectangles!
+            </span>
+            <span class="tinkerBuller">In the previous example,
+              the variable was named <code>z</code>. In this example,
+              it's called <code>y</code>. Does the name make any difference?
             </span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="400">
@@ -227,7 +222,7 @@ function draw() {
               What happens?
             </span>
             <span class="tinkerBullet">Click <span class="btnPress">Revert</span>
-              to restore the previous script. Now add a second rectangle,
+              to restore the previous script. Now add commands to make a second rectangle,
               so that you see two rippling rectangles on screen next to each other.
             </span>
           </p>
@@ -329,12 +324,12 @@ function draw() {
               Click <span class="btnPress">&#9654;Play</span>. What happens? Why?
               Try some other hue numbers from the HSB color picker, too.
             </span>
-            <span class="tinkerBullet">Find the line of code:<br />
+            <span class="tinkerBullet">Find the line of code:
               <code>fill(c, 100, 100);</code><br />
-              Change <code>c</code> to a number between <code>0-360</code>
-              that's not the same as the number you just used from the HSB color picker.
-              Then click <span class="btnPress">&#9654;Play</span>. Which number
-              controls the color? Why?
+              Delete the variable label <code>c</code> and replace it with
+              a number between 0-360. Now go back to line 1 and
+              change its number a few times, clicking <span class="btnPress">&#9654;Play</span>
+              after each change. Can you explain what's happening?
             </span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="480">
@@ -388,10 +383,11 @@ function draw() {
                 makes the rectangle yellow.
               </p>
               <p>
-                If you change<br />
+                If you replace the label <code>c</code> with a number in
                 <code>fill(c, 100, 100);</code><br />
-                to replace <code>c</code> with a number, then the number you include becomes the
-                rectangle's color. The variable <code>c</code> is no longer connected
+                then the number you include becomes the
+                rectangle's color no matter what number is placed in
+                <code>c</code> on line 1. The variable <code>c</code> is no longer connected
                 to the rectangle's color.
               </p>
             </div>
@@ -411,14 +407,15 @@ function draw() {
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
             When the animation begins, there are two yellow rectangles that
-            quickly =turn pink.
-            You might also notice the new code on line 16:
-            <code>if (y > 200) c = 325;</code>. Let's investigate.
+            quickly turn pink.
+            You might also notice the new code on line 16:<br />
+            <code>if (y > 200) c = 325;</code>
             <br class="tinkerNewLine" />
-            Try these challenges:
+            Let's investigate. Try these challenges:
             <span class="tinkerBullet">On line 16,
               change <code>325</code> to another number between 0-360.
-              Then click <span class="btnPress">&#9654;Play</span>. What happens?
+              Then click <span class="btnPress">&#9654;Play</span>.
+              What happens? Why?
             </span>
             <span class="tinkerBullet">Switch the order of the
               two lines of code at the end of the script
@@ -470,8 +467,30 @@ function draw() {
 
             <div class="content">
               <p>
-                TBD: show the solutions.
+                On line 1 of the script, the variable <code>c</code> contains 50.
+                That makes the first rectangles yellow.
               </p>
+              <p>Line 16 changes the
+                variable <code>c</code> again, this time to 325. That makes the variables turn pink.
+                That change
+                happens when the rectangles reach the bottom of the screen &mdash;
+                when their <code>y</code> variable becomes greater than 200, the screen height.
+                If you replace <code>325</code>
+                with a different number, then after the rectangles reach the
+                bottom of the screen they will change to that color.
+              </p>
+              <p>
+                If you change the order of the final lines of code to </br>
+                <code>if (y > 200) y = 0;</code><br />
+                <code>if (y > 200) c = 325;</code><br />
+                then the color will never change! Let's see why.
+              </p>
+              <p>First, your computer checks whether the variable <code>y</code>
+                is greater than 200. If so, then <code>y</code> is reset to <code>0</code>.
+                Then your computer reads the next line of code and checks again
+                to see if <code>y</code> is greater than 200. But it isn't! The variable <code>y</code>
+                is now <code>0</code>, so your computer doesn't complete that next line of code,
+                never changes the variable <code>c</code>, and therefore never changes the color.
             </div>
           </section>
 
@@ -489,7 +508,7 @@ function draw() {
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
             You'll see the same animation as in the previous step,
-            but slower. You can change the speed by using the
+            but slower. The animation speed has been changed by the
             <code>frameRate</code> command in <code>function setup</code>.
             Let's investigate.
             <br class="tinkerNewLine" />
@@ -498,11 +517,8 @@ function draw() {
               change the number in the <code>frameRate</code> command
               to any number from 1-60.
               Then click <span class="btnPress">&#9654;Play</span>. What happens?
-              <em>Hint!</em> The frame rate is the number of times each second
-              that your computer refreshes (redraws) the images on your screen.
-              For example, when the frame rate is 10, your computer
-              refreshes the images 10 times each second. The normal frame rate is 60 times per second,
-              much faster than 10!
+              Change it a few more times, clicking <span class="btnPress">&#9654;Play</span>
+              after each change.
             </span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="560">
@@ -536,12 +552,17 @@ function draw() {
           <section class="accordion">
             <input type="checkbox" name="collapse6" id="handle6" checked="checked">
             <h2 class="handle">
-              <label for="handle6">Changing Colors Help</label>
+              <label for="handle6">Slowing Down Help</label>
             </h2>
 
             <div class="content">
               <p>
-                TBD: show the solutions.
+                The frame rate is the number of times each second
+                that your computer refreshes (redraws) the images on your screen
+                &mdash; the <em>animation frame</em>.
+                For example, when the frame rate is 10, your computer
+                refreshes the images 10 times each second. The normal frame rate is 60 times per second,
+                much faster than 10!
               </p>
             </div>
           </section>
@@ -562,22 +583,23 @@ function draw() {
             that appear one after the other, from bottom to top.
             <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">In the first line of code <br />
-              <code>p = 200;</code><br />
-              change 0 to a smaller number than 200. What happens?
+            <span class="tinkerBullet">On line 1 <br />
+              <code>y = 200;</code><br />
+              change 200 to a smaller number. What happens?
             </span>
             <span class="tinkerBullet">Click <span class="btnPress">Revert</span>
               to restore the previous script.
               Then change the script to make the ellipses appear further apart.
             </span>
-            <span class="tinkerBullet">Change the script to make the ellipses appear in the opposite direction, from top to bottom.</span>
+            <span class="tinkerBullet">Change the script to make the ellipses move in the opposite direction,
+              from top to bottom. You'll need to make several changes.</span>
             <span class="tinkerBullet">Click <span class="btnPress">Revert</span>
               to restore the previous script.
               Then change the script to make the ellipses appear closer together, so they're overlapping.
             </span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="400">
-let y  = 200;
+let y = 200;
 
 function setup() {
   createCanvas(250, 200);
@@ -601,13 +623,27 @@ function draw() {
           <section class="accordion">
             <input type="checkbox" name="collapse7" id="handle7" checked="checked">
             <h2 class="handle">
-              <label for="handle7">Many Rectangles Falling Help</label>
+              <label for="handle7">Many Ellipses Rising Help</label>
             </h2>
 
             <div class="content">
               <p>
-                TBD: show the solutions.
+                When you change <code>200</code> to a smaller number on line 1, the
+                rising ellipses begin their animation somewhere above the bottom
+                at a location determined by the number you typed. For example,
+                if you changed line 1 to<br /> <code>y = 150;</code><br />then instead of
+                beginning at the bottom of the screen, with vertical position at 200 pixels,
+                the ellipses begin about 3/4 of the way down the screen,
+                with vertical position at 150 pixels.
               </p>
+              <p>
+                To make the ellipses move downwards instead of upwards, see
+                the code in the first step on this page.
+              </p>
+              <p>
+                To make the ellipses appear further apart or closer together,
+                change the number in this line of code<br />
+                <code>y = y - 20;</code>
             </div>
           </section>
 
