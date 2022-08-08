@@ -583,21 +583,21 @@ function draw() {
             that appear one after the other, from bottom to top.
             <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">On line 1 <br />
-              <code>y = 200;</code><br />
+            <span class="tinkerBullet">On line 1,
               change 200 to a smaller number. What happens?
             </span>
             <span class="tinkerBullet">Click <span class="btnPress">Revert</span>
               to restore the previous script.
               Then change the script to make the ellipses appear further apart.
             </span>
-            <span class="tinkerBullet">Change the script to make the ellipses move in the opposite direction,
-              from top to bottom. You'll need to make several changes.</span>
             <span class="tinkerBullet">Click <span class="btnPress">Revert</span>
               to restore the previous script.
               Then change the script to make the ellipses appear closer together, so they're overlapping.
             </span>
-          </p>
+            <span class="tinkerBullet">Change the script to make the ellipses move in the opposite direction,
+              moving from top to bottom. You'll need to make several changes.
+            </span>
+        </p>
           <script type="text/p5" data-preview-width="250" data-height="400">
 let y = 200;
 
@@ -629,22 +629,27 @@ function draw() {
             <div class="content">
               <p>
                 When you change <code>200</code> to a smaller number on line 1, the
-                rising ellipses begin their animation somewhere above the bottom
+                rising ellipses begin their animation somewhere above the bottom of the screen,
                 at a location determined by the number you typed. For example,
-                if you changed line 1 to<br /> <code>y = 150;</code><br />then instead of
-                beginning at the bottom of the screen, with vertical position at 200 pixels,
-                the ellipses begin about 3/4 of the way down the screen,
-                with vertical position at 150 pixels.
+                if you change line 1 to<br /> <code>y = 150;</code><br />then instead of
+                beginning at the bottom of the screen where their vertical position is 200 pixels,
+                the ellipses begin about 1/4 of the screen above the bottomn,
+                where their vertical position is 150 pixels.
               </p>
               <p>
-                To make the ellipses move downwards instead of upwards, see
-                the code in the first step on this page.
+                To make the ellipses appear further apart together,
+                change <code>20</code>
+                to a larger number, like 30 for example:<br />
+                <code>y = y - 30;</code>
               </p>
               <p>
-                To make the ellipses appear further apart or closer together,
-                change the number in this line of code<br />
-                <code>y = y - 20;</code>
-            </div>
+                To make the ellipses move from top to bottom, see
+                the code in the first step on this page. You'll need to make several changes.
+                The ellipses should
+                start at vertical position 0, and they should add a small amount to their
+                vertical position over and over.
+              </p>
+              </div>
           </section>
 
         </div>
@@ -666,13 +671,10 @@ function draw() {
               the top of the screen, it jumps back down to the bottom and begins its
               upward journey again. You'll know you succeeded if the ellipses start rippling.
             </span>
-            <span class="tinkerBullet"><em>Hint!</em> When the ellipse reaches the top of the screen,
-              its <em>y-</em>coordinate becomes less than 0. You'll need to add a command
-              to check for the moment when this happens. You can look at <span class="accentuate">4.&nbsp;Rippling&nbsp;Rectangles</span>
-              for a similar command.
-            </span>
-            <span class="tinkerBullet"><em>Hint!</em> In the command you're adding,
-              you'll need the <code>less than sign</code>, which looks
+            <span class="tinkerBullet"><em>Hints!</em> The line of code you're adding
+              should check if the ellipse's vertical position is less than 0,
+              which is the top of the screen.
+              The <code>less than sign</code> looks
               like this: &nbsp;&nbsp; <code>&lt;</code><br />
               To type it, press <span class="btnPress">Shift</span> + the comma key.
             </span>
@@ -709,7 +711,19 @@ function draw() {
 
             <div class="content">
               <p>
-
+                Notice that the ellipse's vertical position is determined by the variable <code>y</code>:<br />
+                <code>ellipse(125, y, 20, 20);</code>.
+              </p>
+              <p>
+                When the ellipse reaches the top of the screen,
+                its vertical position &mdash; and the variable <code>y</code> &mdash; become less than 0.
+                At that moment, the ellipse should reset its
+                vertical position to the bottom of the screen,
+                where its vertical position &mdash; and the variable <code>y</code> &mdash; are 200.
+              </p>
+              <p>
+                Here's the line of code to add:<br />
+                <code>if (y < 0) y = 200;</code>
               </p>
             </div>
           </section>
@@ -728,13 +742,13 @@ function draw() {
             Click <span class="btnPress">&#9654;Play</span>.
             We've added the command that causes the rising ellipse to
             jump back to the bottom, causing a ripple.
-            And we've made 3 other changes to, too, that create
+            And we've added
             a second stack of rising ellipses. Let's investigate.
             <br class="tinkerNewLine" />
             Try these challenges:
             <span class="tinkerBullet">Find the new variable called
               <code>x</code> and all the commands that use it.
-              There are 3 of them.
+              There are 3 commands containing the variable <code>x</code>.
             </span>
             <span class="tinkerBullet">On line 1, change <code>125</code>
               to another number from 1-250. Do that a few times.
@@ -789,7 +803,35 @@ function draw() {
 
             <div class="content">
               <p>
-                TBD:
+                This script contains only one <code>ellipse</code> command, but you see two stacks of ellipses!
+                Let's see why.
+              </p>
+              <p>
+                When the script begins, we set the variable <code>x</code> to 125:<br />
+                <code>let x = 125;</code>
+              </p>
+              <p>
+                The variable <code>x</code> controls the sideways position of the ellipse:<br />
+                <code>ellipse(x, y, 20, 20); </code><br />
+                Remember that the sideways positon of the ellipse is called its <em>x-</em>coordinate.
+              </p>
+              <p>
+                Notice also that the variable <code>y</code> controls the vertical position of the
+                ellipse. We'll need that piece of information in a moment.
+              </p>
+              <p>
+                When you click <span class="btnPress">&#9654;Play</span> the first
+                stack of ellipses appears at sideways position, or <em>x-</em>coordinate, 125.
+                That's exactly halfway across the screen.
+              </p>
+              <p>
+                When the ellipse reaches the top of the screen,
+                its vertical position and the variable <code>y</code> become less than 0.
+                At that moment, the following line of code changes variable <code>x</code>
+                to 185:<br />
+                <code>if (y < 0) x = 185;</code><br />
+                That makes the a 2nd stack of ellipses appear at <em>x-</em>coordinate 185,
+                about 3/4 of the way across the screen.
               </p>
             </div>
           </section>
@@ -807,9 +849,8 @@ function draw() {
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
-            You'll see that the ellipses wiggle
+            You'll see many stacks of ellipses at random sideways positions, and they
             make diagonals that tilt to the right as they move up the screen.
-
             <br class="tinkerNewLine" />
             Try this challenge:
             <span class="tinkerBullet">Change the code so that
@@ -853,7 +894,49 @@ function draw() {
 
             <div class="content">
               <p>
-                TBD: explain the random command with two arguments.
+                To make the diagonals tilt left, change line 15 to:<br />
+                <code>x = x - 1;</code><br />
+                Let's see why that works.
+              </p>
+              <p>
+                When the script begins, we set the variable <code>x</code> to 125:<br />
+                <code>let x = 125;</code>
+              </p>
+              <p>
+                The variable <code>x</code> controls the sideways position of the ellipse:<br />
+                <code>ellipse(x, y, 20, 20); </code><br />
+                Remember that the sideways positon of the ellipse is called its <em>x-</em>coordinate.
+              </p>
+              <p>
+                When you click <span class="btnPress">&#9654;Play</span> the first
+                ellipse appears at sideways position, or <em>x-</em>coordinate, 125.
+                That's exactly halfway across the screen.
+              </p>
+              <p>
+                But then we change the value of variable <code>x</code>:<br />
+                <code>x = x + 1;</code><br />
+                Remember that when the computer encounters a single <code>=</code>,
+                it reads the commands from right to left. In this case,
+                the computer gets <code>1</code> and then adds 1 to whatever
+                number is in the variable <code>x</code>. Since
+                the number 125 is <code>x</code>, the computer
+                adds 1 + 125, gets 126, and then changes <code>x</code> to 126.
+              </p>
+              <p>
+                But changing <code>x</code> to 126 also means that the next ellipse will drawn at sideways position
+                or <em>x-</em>coordinate 126. That's 1 pixel to the right of the previous ellipse.
+              </p>
+              <p>
+                And the next ellipse after that is drawn 1 more pixel to the right, at
+                sideways position or <em>x-</em>coordinate 127. The rightward movement
+                of each ellipse makes a diagonal.
+              </p>
+              <p>
+                To make the diagonals tilt left, we need to subtract 1 each time a new
+                ellipse is drawn. To say this another way, we want to draw the first ellipse at sideways position
+                or <em>x-</em>coordinate 125, and the next ellipse at 124, and
+                the next one at 123, and so on. We want, in other words:<br />
+                <code>x = x - 1;</code>
               </p>
             </div>
           </section>
