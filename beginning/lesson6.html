@@ -39,9 +39,9 @@
         <p class="nav"><a href="index.html">&larr; Back to Home</a></p>
         <p>
           In this lesson, you'll learn how to make shapes do something and then undo it.
-          For example, you'll make shapes move to the right and then turn around when they touch an edge.
+          For example, you'll make shapes move to the right and then reverse direction when they touch an edge.
           You'll see shapes slowly change color and
-          and then slowly return to the original color. You'll see other
+          then return to the original color. You'll see other
           shapes that get bigger and then smaller.
         </p>
         <p>
@@ -116,10 +116,10 @@ function draw() {
                 <code>ellipse(x, 100, 6, 6);</code><br />
                 draws ellipses with their sideways positions at whatever number
                 <code>x</code> got. That means that the ellipses appear at <code>0</code>, <code>8</code>,
-                <code>16</code>, and so on, always moving right, 8 pixels apart.
+                <code>16</code>, and so on, with each ellipse a little further to the right, 8 pixels apart.
               </p>
               <p>
-                If we write add a larger number, like <code>x = x + 12;</code> instead of <code>x = x + 8;</code>
+                If we add a larger number, like <code>x = x + 12;</code> instead of <code>x = x + 8;</code>
                 then the ellipses will appear at <code>0</code>, <code>12</code>, <code>24</code>,
                 and so on &mdash; spreading them further apart.
               </p>
@@ -139,7 +139,7 @@ function draw() {
                 On line 1, we give <code>x</code> a number like <code>250</code>, which places the ellipse
                 near the right edge of the canvas. And later, we <em>subtract</em> a small number like <code>8</code>
                 from <code>x</code> each time <code>function draw()</code> runs. This causes each new ellipse
-                to appear a little more to the left.
+                to appear a little more to the left than its predecessors.
               </p>
 
             </div>
@@ -163,8 +163,10 @@ function draw() {
             <span class="tinkerBullet">Delete the <code>background</code> command.
               What happens? Why?
             </span>
-            <span class="tinkerBullet">Then click <span class="btnPress">Revert</span>
-              to restore the <code>background</code> command. Then click <span class="btnPress">&#9654;Play</span>.
+            <span class="tinkerBullet">Click <span class="btnPress">Revert</span>
+              to restore the original script. Now cut-and-paste the <code>background</code> command
+              into <code>function setup()</code> instead of <code>function draw()</code>.
+              Then click <span class="btnPress">&#9654;Play</span>.
               What happens? Why?
             </span>
           </p>
@@ -204,21 +206,30 @@ function draw() {
 
             <div class="content">
               <p>
-                Here's why the position of the <code>background</code> command matters.
+                If the <code>background</code> command is in <code>function draw()</code>, you see only one ellipse.
+                But if you delete the <code>background</code> command OR
+                if <code>background</code> is in <code>function setup()</code>, you see many ellipses.
+                Here's why.
               </p>
               <p>
-                When the <code>background</code> command is in <code>function draw()</code>,
-                the background color is painted on the canvas over and over, about 60 times every second!
-                Each time it is painted, the background covers up previously-drawn shapes.
-                In other words, the script colors the background, then draws an ellipse, then
-                colors the background again (covering up the ellipse), then draws the next ellipse a little to the right,
-                and so on. You see just one ellipse at a time, moved a little to the right from where it was previously.
+                If the <code>background</code> command is in <code>function draw()</code>,
+                then the background color is painted on the canvas over and over, about 60 times every second.
+                Each time it is painted, the background covers everything, including previously-drawn shapes
+                like the ellipse.
               </p>
               <p>
-                On the other hand, when the <code>background</code> command is in <code>function setup()</code>,
-                the background is painted just once when the project begins.
+                <img src="../images/lesson6/canvasInDraw.gif" alt="background covering the ellipse each time it moves, over and over" />
+              </p>
+              <p>
+                When you delete the <code>background</code> command, there is no background!
                 The ellipses painted by <code>function draw()</code> &mdash;
                 which runs over and over &mdash; all appear on the canvas.
+              </p>
+              <p>
+                When the <code>background</code> command is in <code>function setup()</code>,
+                it is painted just once when the project begins.
+                The ellipses painted by <code>function draw()</code> &mdash;
+                which runs over and over &mdash; all appear on the canvas after the background is drawn.
               </p>
             </div>
           </section>
@@ -280,7 +291,8 @@ function draw() {
                   stop repeating. This stops the animation.
                 </span>
                 <span class="tinkerBullet">The symbol <code>></code> means "greater than."
-                  We check whether <code>x > 125</code> because 125 is exactly halfway
+                  We check whether <code>x > 125</code> because <code>x</code> controls the sideways
+                  position of the ellipse and <code>125</code> is exactly halfway
                   across the canvas.
                 </span>
               </p>
@@ -294,11 +306,11 @@ function draw() {
                 <span class="tinkerBullet">Change line 11 to:<br />
                   <code>x = x - 8;</code><br />
                   We subtract <code>8</code> or any other small number
-                  from <code>x</code> so that each ellipse appears a little to the left of the previous one.<br />
+                  from <code>x</code> so that each ellipse appears a little to the left of previous ellipses.<br />
                 </span>
                 <span class="tinkerBullet">Change line 13 to:<br />
                   <code>if (x < 125) noLoop();</code><br />
-                  We check whether <code>x</code> is less than <code>125</code>, which is exactly halfway
+                  We check whether <code>x</code> is less than <code>125</code>, halfway
                   across the canvas.
                 </span>
             </div>
@@ -315,7 +327,7 @@ function draw() {
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>. You'll see a moving ellipse again.
-            When it reaches the right edge it reappears at the left.
+            When it reaches the right edge it reappears at the left and continues moving.
             <br class="tinkerNewLine" />
             Try these challenges:
             <span class="tinkerBullet">Change the code so that the ellipse moves across the canvas
@@ -323,11 +335,11 @@ function draw() {
             </span>
             <span class="tinkerBullet">Click <span class="btnPress">Revert</span> to restore the original script.
               Change the script so that the ellipse moves from the left edge to the center of the canvas
-              and then reappear at the left edge, moving endlessly.
+              and then reappears at the left edge, moving endlessly.
             </span>
             <span class="tinkerBullet">Change the script so that the ellipse moves from the top, center
               straight down to the bottom center. When it reaches the bottom,
-              make it reappear at the top center and continue moving, endlessly.
+              it reappears at the top center and continues moving, endlessly.
             </span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="400">
@@ -362,7 +374,7 @@ function draw() {
               <p>
                 To make the ellipse move across the canvas just once and stop at the right edge,
                 change line 12 to:<br />
-                <code>if (x > 250) x = noLoop();</code>
+                <code>if (x > 250) noLoop();</code>
               </p>
               <p>
                 To make the ellipse move across the canvas halfway and then reappear at the left,
@@ -403,11 +415,11 @@ function draw() {
             it reverses direction as if bouncing. Why?
             <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">Change line 2 so that the <code>step</code> gets a bigger number.
+            <span class="tinkerBullet">Change line 2 so that <code>step</code> gets a bigger number.
               Then click <span class="btnPress">&#9654;Play</span>.
               What happens?
             </span>
-            <span class="tinkerBullet">Change line 2 again so that the <code>step</code> variable gets <code>8</code>.
+            <span class="tinkerBullet">Change line 2 again so that <code>step</code> gets <code>8</code>.
               Then click <span class="btnPress">&#9654;Play</span>.
               When <code>step</code> is <code>8</code>, the ellipse slows down after it
               touches the right edge. Why? Fix the script so that the ellipse bounces and
@@ -461,8 +473,9 @@ function draw() {;
               <p>
                 What is <code>step</code>? On line 13, we add <code>step</code> to <code>x</code>,
                 over and over. That means each ellipse will appear <code>step</code> pixels further to the right
-                than previous ones. The bigger the <code>step</code> is, the faster the ellipses appear to travel.
-                In other words, <code>step</code> controls the ellipse speed.
+                than previous ellipses. The bigger the <code>step</code> is, the further apart the ellipses appear.
+                And the futher they are apart, the faster they appear to travel.
+                So <code>step</code> controls the ellipse speed.
               </p>
               <p>
                 To make the ellipse bounce and then travel at the same faster speed, change line 14 to:<br />
@@ -475,7 +488,7 @@ function draw() {;
                 To make the ellipse bounce when it touches the left edge, too, add the following command
                 at the end of the script:<br />
                 <code>if (x < 0) step = 8;</code><br />
-                This command reads, "if <code>x</code> is less than <code>0</code>,
+                This command reads, "If <code>x</code> is less than <code>0</code>,
                 then reset the <code>step</code> variable to <code>8</code>."<br />
                 The variable <code>x</code> becomes less than <code>0</code> when the ellipse reaches the left edge.
                 At that moment, we want the ellipse to begin traveling to the right again.
@@ -574,9 +587,9 @@ function draw() {;
               </p>
               <p>
                 To make the ellipse bounce off the right edge, add the following command.
-                (Just to keep your script organized, add it on line 17.)<br />
+                Just to keep your script organized, add it on line 17.<br />
                 <code>if (x > 250) xstep = -2;</code><br />
-                This command reads, if <code>x</code> is greater than <code>250</code>,
+                This command reads, "If <code>x</code> is greater than <code>250</code>,
                 then reset the <code>xstep</code> variable to <code>-2</code>."<br />
                 The variable <code>x</code> becomes greater than <code>250</code> when the ellipse reaches the right edge.
                 At that moment, we want the ellipse to begin traveling to the left.
@@ -585,9 +598,9 @@ function draw() {;
               </p>
               <p>
                 To make the ellipse bounce off the top edge, add the following command.
-                (Just to keep your script organized, add it towards the end of the script.)<br />
+                Just to keep your script organized, add it towards the end of the script.<br />
                 <code> if (y < 0) ystep = 3;</code><br />
-                This command reads, if <code>y</code> is less than <code>0</code>,
+                This command reads, "If <code>y</code> is less than <code>0</code>,
                 then reset the <code>ystep</code> variable to <code>3</code>."<br />
                 The variable <code>y</code> becomes less than <code>0</code> when the ellipse reaches the top edge.
                 At that moment, we want the ellipse to begin traveling downwards.
@@ -596,9 +609,9 @@ function draw() {;
               </p>
               <p>
                 To make the ellipse bounce off the left edge, add the following command.
-                (Just to keep your script organized, add just after line 17.)<br />
+                Just to keep your script organized, add it after line 17.<br />
                 <code>if (x < 0) xstep = 2;</code><br />
-                This command reads, if <code>x</code> is less than <code>0</code>,
+                This command reads, "If <code>x</code> is less than <code>0</code>,
                 then reset the <code>xstep</code> variable to <code>2</code>."<br />
                 The variable <code>x</code> becomes less than <code>0</code> when the ellipse reaches the left edge.
                 At that moment, we want the ellipse to begin traveling to the right.
@@ -692,9 +705,11 @@ function draw() {;
                 <code>fill(325, 100, 100, t);</code>
               </p>
               <p>
-                The variable <code>tstep</code> controls the sideways <em>speed</em> of the ellipse
+                The variable <code>tstep</code> controls how fast the transparency changes
                 because it's added to <code>t</code> over and over, each time <code>function draw()</code> runs:<br />
                 <code>t = t + tstep;</code><br />
+              </p>
+              <p>
                 If <code>tstep</code> is positive, then the transparency <code>t</code> gets bigger, and the
                 background fades <em>in</em>. If <code>tstep</code> is negative, then the transparency <code>t</code> gets smaller,
                 and the background fades <em>out</em>.
@@ -706,11 +721,10 @@ function draw() {;
                 you see black.
               </p>
               <p>
-                To make the background fade more quickly, give <code>tstep</code> a number that's more negative,
+                To make the background fade out more quickly, give <code>tstep</code> a number that's more negative,
                 like <code>-0.03</code> instead of <code>-0.01</code>. You'll need to make 2 changes.<br />
                 <span class="tinkerBullet">On line 1:<br />
-                  <code>let tstep = -0.03;</code><br />
-                  This make the background fade out when the script begins.
+                  <code>let tstep = -0.03;</code>
                 </span>
                 <span class="tinkerBullet">On the last line:<br />
                   <code>if (t > 1) tstep = -0.03;</code><br />
@@ -719,14 +733,16 @@ function draw() {;
                 </span>
               </p>
               <p>
-                When the script begins, the background fades out. It starts fading in only after fading out completely.
-                Fading in happens on line 19:<br />
-                <code>if (t < 0) tstep = 0.01;</code>
-                This line reads, "If <code>t</code> becomes less than <code>0</code> (and the background
+                When the script begins, the background fades <em>out</em>.
+                After it fades out completely, it starts fading <em>in</em> again on line 19:<br />
+                <code>if (t < 0) tstep = 0.01;</code><br />
+                This line is read, "If <code>t</code> becomes less than <code>0</code> (and the background
                 is completely faded out), reset <code>tstep</code> to <code>0.01</code>."
                 Since <code>tstep</code> is positive, the background fades in.
-                To make the background fade in more slowly, make <code>tstep</code> a smaller, positive number like this:<br />
-                <code>if (t < 0) tstep = 0.005;</code>
+              </p>
+                <p>
+                To make the background fade in more quickly, change line 19 so <code>tstep</code> gets a larger, positive number like this:<br />
+                <code>if (t < 0) tstep = 0.03;</code>
                 </span>
               </p>
               <p>
@@ -807,14 +823,14 @@ function draw() {;
                 <code>fill(325, 100, 100, t);</code>
               </p>
               <p>
-                To make both rectangles fade in, change the transparency for the second rectangle on line 15
+                To make both rectangles fade in, on line 15 change the transparency for the second rectangle
                 from <code>1 - t</code> to
                 <code>t</code>:<br />
                 <code>fill(195, 100, 100, t);</code>
               </p>
               <p>
-                Let's explore why <code>t</code> and
-                <code>1 - t</code> makes the transprencies of the two rectangles move in the opposite directions.
+                If one rectangle has transparency <code>t</code> and the other one has transparency
+                <code>1 - t</code>, the two transparencies move in opposite directions. Let's explore why.
               </p>
               <p>
                 If <code>t</code> is <code>0.01</code> then <code>1 - t</code> is <code>0.99</code>.<br />
@@ -943,7 +959,7 @@ function draw() {
               The other two circles move diagonally. The two diagonally-moving circles reflect each other's movement,
               like the shapes in the <span class="accentuate">Reflections</span> lesson. Feel free to make
               the same animation or something very different!</span>
-            <span class="tinkerBullet">The example includes all the variables you'll need, although you
+            <span class="tinkerBullet">The code below includes all the variables you'll need, although you
               may wish to add or change them; many different strategies work successfully!
               The code contains just one ellipse, so you may want to add more.
             </span>
@@ -982,7 +998,7 @@ function draw() {
           </pre>
 
           <!-- example #2 code and hints -->
-
+<!--
           <p class="tinkerHeading2Top" style="margin-top: 13px;">Example #2 &mdash; Colored Squares</p>
           <p class="tinkerHeading2Bottom">
             <span class="tinkerBullet">For this example, see the second GIF image at the beginning of this lesson.
@@ -1006,6 +1022,7 @@ function draw() {
 
 
           <pre class="example-codeonly">
+
 /* *** COLORED SQUARES *** */
 
 let t = 1;
@@ -1030,10 +1047,10 @@ function draw() {
 }
 
           </pre>
-
+-->
           <!-- example #3 code and hints -->
 
-          <p class="tinkerHeading2Top" style="margin-top: 13px;">Example #3 &mdash; Grow and Shrink</p>
+          <p class="tinkerHeading2Top" style="margin-top: 13px;">Example #2 &mdash; Grow and Shrink</p>
           <p class="tinkerHeading2Bottom">
             <span class="tinkerBullet">For this example, see the third GIF image at the beginning of this lesson.
               A large ellipse at the top shows its lower half on the canvas (the other half is there but
@@ -1041,7 +1058,7 @@ function draw() {
               ellipse at the bottom, and they grow and shrink together. Three smaller ellipses at the center of the
               canvas grow and shrink more quickly. Feel free to make the same animation or something very different!
             </span>
-            <span class="tinkerBullet">The example includes only some of the variables you'll need, so
+            <span class="tinkerBullet">The code below includes only some of the variables you'll need, so
               you'll need to add more. The example also includes only the two large ellipses, so you'll
               need to add the smaller ones.
             </span>
