@@ -63,25 +63,20 @@
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>. You'll see
             a line from the top left to the bottom right corner of the canvas.
-            <br class="tinkerNewLine" />
-            There are 4 numbers in the <code>line(0, 0, 250, 200)</code> command.
-            It's helpful to think of them in two pairs. The first pair <code>0, 0</code> are the
-            <em>x-</em> and <em>y-</em>coordinates of the one end of the line, which means that
-            one end of this line is at the top, left corner of the canvas.
-            The second pair <code>250, 200</code> represents the
-            <em>x-</em> and <em>y-</em>coordinates of the other end of the line, which means that
-            end of this line is at the bottom, right corner.
+            In the code, there's a new <code>line</code>. Let's explore it.
           <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">Change just the first argument in the <code>line</code> command
-              and then click <span class="btnPress">&#9654;Play</span>. Change it again a few times
-              until you get a sense of what it does.
+            <span class="tinkerBullet">Change just the first argument in the <code>line</code> command.
+              It's best to use a number between <code>0</code> and <code>200</code>.
+              Then click <span class="btnPress">&#9654;Play</span>. Try a few different numbers,
+              clicking <span class="btnPress">&#9654;Play</span> after each change, until you
+              have a good sense of what the first argument does.
             </span>
-            <span class="tinkerBullet">Change each of the other arguments in just the same way &mdash;
-              one at a time, clicking
-              <span class="btnPress">&#9654;Play</span> after each change. Your goal is to develop
-              a good sense of each argument. You should be able to predict what will
-              happen before you click <span class="btnPress">&#9654;Play</span>!
+            <span class="tinkerBullet">Use the same technique to explore
+              each of the other 3 arguments in the <code>line</code> command.
+              Change one argument at a time and click <span class="btnPress">&#9654;Play</span>
+              after each change. Practice changing one argument at a time until you can predict what will happen
+              <em>before</em> you click <span class="btnPress">&#9654;Play</span>!d
             </span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="360">
@@ -109,8 +104,15 @@ function draw() {
 
             <div class="content">
               <p>
-                TBD:
+                There are 4 arguments in the <code>line</code> command.
+                It's helpful to think of them in two pairs.
               </p>
+              <p>
+                <img src="../images/lesson7/linesyntax.png" width="80%" alt="in line(0, 0, 250, 200) the initial 0, 0 are the coordinates of one end of the line and 250, 200 are the coordinates of the other end" />
+              </p>
+              <p>
+                <img src="../images/lesson7/lineoncanvas.png" width="80%" alt="in line(0, 0, 250, 200) drawn on the canvas" />
+
             </div>
           </section>
 
@@ -169,7 +171,24 @@ function draw() {
 
             <div class="content">
               <p>
-                TBD:
+                To make the line longer, you must change one or both of the <em>x-</em>coordinates.
+                Here's one possible answer, where the 3rd argument &mdash; the <em>x-</em>coordinate
+                of the far end of the line &mdash; has changed:<br />
+                <code>line(50, 60, 240, 60);</code>
+              </p>
+              <p>
+                To make the line straight across but lower on screen,
+                you must change both of the <em>y-</em>coordinates so that they are identical and
+                greater then <code>60</code>.
+                Here's one possible answer, where the 2nd and 4th arguments &mdash; the <em>y-</em>coordinates
+                of the both ends of the line &mdash; have changed:<br />
+                <code>line(50, 100, 125, 100);</code>
+              </p>
+              <p>
+                To make the line straight up and down, the two <em>x-</em>coordinates must be identical,
+                and the two <em>y-</em>coordinates must be different from each other. Why?
+                Here's one possible answer:<br />
+                <code>line(50, 100, 50, 200);</code>
               </p>
             </div>
           </section>
@@ -178,7 +197,7 @@ function draw() {
 
 
 
-        <!-- ********************* 2. rotate ********************* -->
+        <!-- ********************* 3. rotate ********************* -->
 
         <!-- tinker: rotate -->
 
@@ -196,8 +215,8 @@ function draw() {
               What happens?
             </span>
             <span class="tinkerBullet">Change the number again, this time to a small decimal
-              like <code>0.3</code>, and then click <span class="btnPress">&#9654;Play</span>.
-              Try some other small numbers, too. Use
+              like <code>0.3</code>. Then click <span class="btnPress">&#9654;Play</span>.
+              Try some other small decimals, too. Use
               numbers that are less than 1.5 to ensure that the
               line doesn't rotate so far that it moves off screen.
             </span>
@@ -218,6 +237,7 @@ function draw() {
 }
           </script>
 
+<!--
           <p class="tinkerHeadingTop" style="margin-top: 13px;">Explanation</p>
           <p class="tinkerHeadingBottom">In the picture below, the rectangle represents
             a canvas that's been tilted by the command <code>rotate(0.3)</code>.
@@ -227,7 +247,7 @@ function draw() {
             <br class="tinkerNewLine"/>
             <img src="../images/lesson7/rotateCanvasFromCornerSTILL.png" width="50%" alt="the canvas rotated around its top, left corner" />
           </p>
-
+-->
         </div>
 
         <!-- help: rotate -->
@@ -237,12 +257,24 @@ function draw() {
           <section class="accordion">
             <input type="checkbox" name="collapse3" id="handle3" checked="checked">
             <h2 class="handle">
-              <label for="handle3">Text Help</label>
+              <label for="handle3">Rotate Help</label>
             </h2>
 
             <div class="content">
               <p>
-                TBD:
+                The <code>rotate</code> command
+                tilts the canvas and all the shapes on it. For example,
+                in the picture below you can see
+                a canvas on which we've drawn a line and an ellipse.
+                The small black dot represents the location <code>0, 0</code>.
+                The canvas has been tilted by the command <code>rotate(0.3)</code>.
+                <br class="tinkerNewLine"/>
+                <img src="../images/lesson7/rotateCanvasFromCornerSTILL.png" width="80%" alt="the canvas rotated around its top, left corner" />
+              </p>
+              <p>
+                Positive numbers rotate clockwise, and negative numbers rotate counterclockwise.
+              </p>
+
               </p>
             </div>
           </section>
@@ -284,12 +316,7 @@ function draw() {
           </script>
 
           <p class="tinkerHeadingTop" style="margin-top: 13px;">Explanation</p>
-          <p class="tinkerHeadingBottom">The GIF image below shows rotation around
-            the point <code>0, 0</code> at the top left corner of the canvas. Notice
-            that the line and ellipse leave copies of themselves on the canvas as it rotates
-            so that you see many of them.
-            In the GIF, the rectangle that represents the canvas fades out so that
-            you can see just the line and ellipse over time.
+          <p class="tinkerHeadingBottom">
             <br class="tinkerNewLine"/>
             <img src="../images/lesson7/rotateCanvasFromCornerFADE.gif" width="50%" alt="the canvas rotated around its top, left corner" />
           </p>
@@ -310,7 +337,16 @@ function draw() {
 
             <div class="content">
               <p>
-                TBD:
+                The GIF image below shows continuous rotation around
+                the point <code>0, 0</code> at the top left corner of the canvas. Notice
+                that the line and ellipse leave copies of themselves on the canvas as it rotates
+                so that you see many of them.
+              </p>
+              <p>
+                The rotation is created by several lines of code working together.
+                <span class="tinkerBullet">On line 1, we create a variable named <code>r</code>,
+                  which gets <code
+
               </p>
             </div>
           </section>

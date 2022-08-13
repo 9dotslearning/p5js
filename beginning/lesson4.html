@@ -113,8 +113,11 @@ function draw() {
             </h2>
 
             <div class="content">
-              <p><em>Arguments</em> are the words and numbers within parentheses of any command. For example,
-                <code>ellipse(mouseX, mouseY, 30, 15)</code> has 4 arguments.
+              <p><em>Arguments</em> are the words and numbers within the parentheses of any command. For example,
+                in<br />
+                <code>ellipse(mouseX, mouseY, 30, 15)</code><br />
+                there are 4 arguments:<br />
+                <code>mouseX</code>, <code>mouseY</code>, <code>30</code>, and <code>15</code>.
               </p>
                 In the <code>ellipse</code> command, the first argument tells the ellipse its distance from the left edge.
                 This distance is also called the ellipse's <em>x-</em>coordinate.
@@ -124,9 +127,6 @@ function draw() {
                 <em>y-</em>coordinate.</p>
               <p>
                 If you tell <code>ellipse</code> to go to <code>mouseX, mouseY</code> it will go wherever the pointer is!
-              <p>
-                That's because shapes like ellipses have coordinates that describe their positions on the canvas, and the mouse pointer has coordinates too!
-              </p>
               <p>
                 To add a second ellipse, change the code in <code>function draw()</code> to look like this:
                 <code><pre>
@@ -260,7 +260,7 @@ function draw() {
             Try these challenges:<br />
             <span class="tinkerBullet">
               Rewrite the code so that the ellipse's width changes when you move the mouse
-              up and down (instead of when you move the mouse sideways).
+              up and down (instead of sideways).
             </span>
             <span class="tinkerBullet">
               Now rewrite the code so that the both ellipse's the height and width change when you move the mouse.
@@ -300,7 +300,8 @@ function draw() {
               <p>
                 Notice that you can use the variable <code>mouseX</code> to change parts of the sketch
                 that have nothing to do with location! The same is true for <code>mouseY</code>.
-                The computer plugs in numbers for both <code>mouseX</code> and <code>mouseY</code>, so you can use them anywhere
+                The computer plugs in numbers for both <code>mouseX</code> and <code>mouseY</code>, so you can use
+                <code>mouseX</code> and <code>mouseY</code> anywhere
                 that the code expects numbers.
               </p>
               <p>
@@ -320,10 +321,7 @@ function draw() {
 
         </div>
 
-<div>
-<p>TBD: iintroduce noFill(). Change all the other examples to use noFill();</p>
-</div>
-<div></div>
+
         <!-- ********************* 5. change color ********************* -->
 
 <!-- TBD?
@@ -445,7 +443,7 @@ function draw() {
 
             <div class="content">
               <p>
-                Notice that you add or subtract numbers with <code>mouseX</code> and <code>mouseY</code>!
+                Notice that you can add or subtract numbers with <code>mouseX</code> and <code>mouseY</code>!
                 The computer plugs in numbers for both <code>mouseX</code> and <code>mouseY</code>, so you can
                 always use them in calculations.
               </p>
@@ -575,7 +573,7 @@ function draw() {
 
             <div class="content">
               <p>
-                The code below changes the second ellipse so that it moves up when the first ellipse moves down:
+                The code below changes the second ellipse so that it moves up when the first ellipse moves down:<br />
                 <code>
                   ellipse(250-mouseX, 200-mouseY, 10, 10);
                 </code>
@@ -598,7 +596,7 @@ function draw() {
             <p class="tinkerHeadingBottom">
               Click <span class="btnPress">&#9654;Play</span>.
               You'll see the two ellipses. The first ellipse moves with the pointer.
-              The second ellipse reflects the first one, in the opposite direction
+              The second ellipse reflects the first one, moving in the opposite direction
               sideways and vertically.
               <br class="tinkerNewLine" />
               Try these challenges:
@@ -669,11 +667,11 @@ function draw() {
         <p class="tinkerHeadingTop">Tinker</p>
         <p class="tinkerHeadingBottom">
           Click <span class="btnPress">&#9654;Play</span>.
-          The ellipses appear faded. If you use your mouse or trackpad to move the shapes slowly, they get brighter.
+          The ellipses appear hollow and faded. If you use your mouse or trackpad to move the shapes slowly, they get brighter.
           <br class="tinkerNewLine" />
           There are 2 new commands:<br />
           <span style="display: inline-block; margin-left: 22px; text-indent: -22px;">&#9670;&emsp;<code>noFill()</code>
-            makes the <em>inside</em> of ellipses empty.
+            makes the <em>inside</em> of ellipses empty, or hollow.
           </span>
           <span style="display: inline-block; margin-left: 22px; text-indent: -22px;">&#9670;&emsp;<code>stroke(51, 100, 100, <span style="color: #b50000;">0.2</span>)</code>
             now has a fourth argument. This argument makes the stroke (outline) <em>partially</em> transparent,
@@ -723,15 +721,20 @@ function draw() {
               <p>
                 As the decimal approaches 0, the color is <em>more and more</em>
                 transparent. When transparency is 0, the color is completely transparent,
-                so the shape itself is invisible, and all you can see is the background.
+                so you can see completely through the shape and all you see is the background.
               </p>
               <p>
-                In this case, you made a shape with no fill and
-                a transparent stroke. But you can also make
-                shapes with transparent fill.
+                In this example, you made the stroke
+                transparent. But you can also make
+                the fill transparent.
               <p>
                 Remember that to change the hue, you change the first argument
                 in the <code>stroke</code> command to a number between <code>0-360</code>.
+              </p>
+              <p>
+                To make the stroke a random hue, you can use this code:<br />
+                <code>stroke(random(360), 100, 100, 0.2)</code>
+              </p>
               </div>
           </section>
 
