@@ -63,20 +63,19 @@
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>. You'll see
             a line from the top left to the bottom right corner of the canvas.
-            In the code, there's a new <code>line</code>. Let's explore it.
+            In the code, there's a new <code>line</code> command. Let's explore it.
           <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">Change just the first argument in the <code>line</code> command.
-              It's best to use a number between <code>0</code> and <code>200</code>.
+            <span class="tinkerBullet">Change just the first argument in the <code>line</code> command
+              to a number between <code>0</code> and <code>200</code>.
               Then click <span class="btnPress">&#9654;Play</span>. Try a few different numbers,
               clicking <span class="btnPress">&#9654;Play</span> after each change, until you
               have a good sense of what the first argument does.
             </span>
             <span class="tinkerBullet">Use the same technique to explore
               each of the other 3 arguments in the <code>line</code> command.
-              Change one argument at a time and click <span class="btnPress">&#9654;Play</span>
-              after each change. Practice changing one argument at a time until you can predict what will happen
-              <em>before</em> you click <span class="btnPress">&#9654;Play</span>!d
+              Make changes, one at a time, until you can predict what will happen
+              <em>before</em> you click <span class="btnPress">&#9654;Play</span>!
             </span>
           </p>
           <script type="text/p5" data-preview-width="250" data-height="360">
@@ -179,14 +178,14 @@ function draw() {
               <p>
                 To make the line straight across but lower on screen,
                 you must change both of the <em>y-</em>coordinates so that they are identical and
-                greater then <code>60</code>.
+                greater than <code>60</code>.
                 Here's one possible answer, where the 2nd and 4th arguments &mdash; the <em>y-</em>coordinates
                 of the both ends of the line &mdash; have changed:<br />
                 <code>line(50, 100, 125, 100);</code>
               </p>
               <p>
                 To make the line straight up and down, the two <em>x-</em>coordinates must be identical,
-                and the two <em>y-</em>coordinates must be different from each other. Why?
+                and the two <em>y-</em>coordinates must be different from each other.
                 Here's one possible answer:<br />
                 <code>line(50, 100, 50, 200);</code>
               </p>
@@ -210,7 +209,7 @@ function draw() {
             <br class="tinkerNewLine" />
             Try this challenge:
             <span class="tinkerBullet">Find the new <code>rotate</code>
-              command. Change the number <code>0</code> to <code>1</code>
+              command. Change its argument from <code>0</code> to <code>1</code>
               and then click <span class="btnPress">&#9654;Play</span>.
               What happens?
             </span>
@@ -267,7 +266,7 @@ function draw() {
                 in the picture below you can see
                 a canvas on which we've drawn a line and an ellipse.
                 The small black dot represents the location <code>0, 0</code>.
-                The canvas has been tilted by the command <code>rotate(0.3)</code>.
+                The canvas has been rotated by the command <code>rotate(0.3)</code>.
                 <br class="tinkerNewLine"/>
                 <img src="../images/lesson7/rotateCanvasFromCornerSTILL.png" width="80%" alt="the canvas rotated around its top, left corner" />
               </p>
@@ -315,12 +314,13 @@ function draw() {
 }
           </script>
 
+<!--
           <p class="tinkerHeadingTop" style="margin-top: 13px;">Explanation</p>
           <p class="tinkerHeadingBottom">
             <br class="tinkerNewLine"/>
             <img src="../images/lesson7/rotateCanvasFromCornerFADE.gif" width="50%" alt="the canvas rotated around its top, left corner" />
           </p>
-
+-->
 
 
         </div>
@@ -343,73 +343,21 @@ function draw() {
                 so that you see many of them.
               </p>
               <p>
-                The rotation is created by several lines of code working together.
-                <span class="tinkerBullet">On line 1, we create a variable named <code>r</code>,
-                  which gets <code
-
+                <img src="../images/lesson7/rotateCanvasFromCornerMULTIPLE.gif" alt="rotating canvas showing lines and ellipses that look like spokes on a wheel" />
               </p>
-            </div>
-          </section>
-
-        </div>
-
-
-
-        <!-- ********************* 5. background ********************* -->
-
-
-        <div>
-          <h2>5. Background</h2>
-          <p class="tinkerHeadingTop">Tinker</p>
-          <p class="tinkerHeadingBottom">
-            Click <span class="btnPress">&#9654;Play</span>. You see only
-            one line and ellipse. The script is <em>almost</em> the same
-            as in the previous step, but with one difference. Can you find it?
-            <br class="tinkerNewLine" />
-            Try this challenge:
-            <span class="tinkerBullet">Delete the <code>background</code>
-              command and then click <span class="btnPress">&#9654;Play</span>.
-              What happens? Why?
-            </span>
-            <span class="tinkerBullet">Click <span class="btnPress">Revert</span>
-              to restore the previous script. Then cut-and-paste the
-              <code>background</code> command so that it's inside
-              <code>function setup()</code> instead of <code>function draw()</code>.
-              Click <span class="btnPress">&#9654;Play</span>. What happens?
-          </p>
-          <script type="text/p5" data-preview-width="250" data-height="480">
-let r = 0;
-
-function setup() {
-  createCanvas(250, 200);
-  colorMode(HSB);
-}
-
-function draw() {
-  background(0, 0, 100);
-  rotate(r);
-  r = r + 0.05;
-
-  noFill();
-  line(0, 0, 100, 0);
-  ellipse(100, 0, 4, 4);
-}
-          </script>
-
-        </div>
-
-        <!-- help: background -->
-
-        <div class="sidebar">
-
-          <section class="accordion">
-            <input type="checkbox" name="collapse5" id="handle5" checked="checked">
-            <h2 class="handle">
-              <label for="handle5">Translate Help</label>
-            </h2>
-
-            <div class="content">
               <p>
+                In the code, several commands work together to rotate the canvas.
+                <span class="tinkerBullet">On line 1, we create a variable named <code>r</code>
+                  that gets <code>0</code>.<br />
+                  <code>let r = 0;</code>
+                </span>
+                <span class="tinkerBullet">On line 10, we rotate the canvas by whatever number <code>r</code> got.<br />
+                  <code>rotate(r);</code>
+                </span>
+                <span class="tinkerBullet">On line 11, we increase <code>r</code> by a small amount.
+                  So <code>function draw()</code> will rotate the canvas a little more each time it repeats.<br />
+                  <code>r = r + 0.05;</code>
+                </span>
               </p>
             </div>
           </section>
@@ -418,19 +366,20 @@ function draw() {
 
 
 
-
-
-        <!-- ********************* 6. translate ********************* -->
+        <!-- ********************* 5. translate ********************* -->
 
 
         <div>
-          <h2>6. Translate</h2>
+          <h2>5. Translate</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
-            You can use a command called <code>translate</code> to move the
+            You'll see that the line and ellipse again, but the line begins at the center of the screen.
+            There's also a new command called <code>translate</code>.
+            <br class="tinkerNewLine" />
+            The command <code>translate</code> moves the
             point <code>(0, 0)</code> to a different location on canvas!
-            In this example, we've used the command <code>translate(125, 100)</code> to
+            In this example, we've used <code>translate(125, 100)</code> to
             move <code>0, 0</code> to the center of the canvas,
             exactly 125 pixels across and 100 pixels down from where it was before.
             Let's investigate how <code>translate</code> works.
@@ -461,6 +410,7 @@ function draw() {
 }
           </script>
 
+<!--
           <p class="tinkerHeadingTop" style="margin-top: 13px;">Explanation</p>
           <p class="tinkerHeadingBottom">The command <code>translate(125, 100)</code>
             moves the point <code>0, 0</code> to a new location that is 125 pixels to the right and 100 pixels down
@@ -469,7 +419,7 @@ function draw() {
             <br class="tinkerNewLine" />
             <img src="../images/lesson7/translatedImage.png" width="50%" alt="the point 0, 0 moved to the center of the screen by the translate command" />
           </p>
-
+-->
 
         </div>
 
@@ -478,13 +428,19 @@ function draw() {
         <div class="sidebar">
 
           <section class="accordion">
-            <input type="checkbox" name="collapse6" id="handle6" checked="checked">
+            <input type="checkbox" name="collapse5" id="handle5" checked="checked">
             <h2 class="handle">
-              <label for="handle6">Translate Help</label>
+              <label for="handle5">Translate Help</label>
             </h2>
 
             <div class="content">
               <p>
+                The command <code>translate(125, 100)</code>
+                  moves the point <code>0, 0</code> to a new location that is 125 pixels to the right and 100 pixels down
+                  from its previous location.
+                  The new location of <code>0, 0</code> is the center of this canvas.
+                  <br class="tinkerNewLine" />
+                  <img src="../images/lesson7/translatedImage.png" alt="the point 0, 0 moved to the center of the screen by the translate command" />
               </p>
             </div>
           </section>
@@ -492,29 +448,25 @@ function draw() {
         </div>
 
 
-        <!-- ********************* 7. translate then rotate ********************* -->
+        <!-- ********************* 6. translate then rotate ********************* -->
 
 
         <div>
 
-          <h2>7. Translate Then Rotate</h2>
+          <h2>6. Translate Then Rotate</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
             You'll see the line and ellipse rotating around the center of the screen endlessly.
-            There's also a new variable <code>r</code>.
-            Let's investigate how this animation works!
+            By using <code>translate</code>, we moved the rotating image to a convenient location
+            where we can see all of it.
             <br class="tinkerNewLine" />
             Try these challenges:
-            <span class="tinkerBullet">Find the command that increases the variable <code>r</code>.
-              Change the number in this command and then press <span class="btnPress">&#9654;Play</span>
-              to see its effect.
-            </span>
-            <span class="tinkerBullet">Change that same number again a few times,
-              clicking <span class="btnPress">&#9654;Play</span>
+            <span class="tinkerBullet">Change the script so that the rotating lines are further apart.
+              Change that same number again a few times, clicking <span class="btnPress">&#9654;Play</span>
               after each change. What numbers create interesting images?
             </span>
-            <span class="tinkerBullet">Change that number again to make the
+            <span class="tinkerBullet">Change the script so that the
               line and ellipse rotate in the opposite direction.
             </span>
           </p>
@@ -544,14 +496,22 @@ function draw() {
         <div class="sidebar">
 
           <section class="accordion">
-            <input type="checkbox" name="collapse7" id="handle7" checked="checked">
+            <input type="checkbox" name="collapse6" id="handle6" checked="checked">
             <h2 class="handle">
-              <label for="handle7">Translate Then Rotate Help</label>
+              <label for="handle6">Translate Then Rotate Help</label>
             </h2>
 
             <div class="content">
               <p>
-
+                To make the lines appear further apart, change line 15 so it adds a larger number to <code>r</code>.
+                Here's one example:<br />
+                <code>r = r + 4;</code>
+              </p>
+              <p>
+                To make the line and ellipse rotate in the opposite direction,
+                change line 15 so it subtracts a number from <code>r</code>.
+                Here's one example:<br />
+                <code>r = r - 0.5;</code>
               </p>
             </div>
           </section>
@@ -559,12 +519,12 @@ function draw() {
         </div>
 
 
-        <!-- ********************* 8. stop the animation ********************* -->
+        <!-- ********************* 7. stop the animation ********************* -->
 
 
         <div>
 
-          <h2>8. Stop the Animation</h2>
+          <h2>7. Stop the Animation</h2>
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
@@ -611,8 +571,17 @@ function draw() {
 
             <div class="content">
               <p>
-
+                Line 17 stops the animation. Here's a command that stops it at a different point:<br />
+                <code>if (r > 6.28) noLoop();</code>
               </p>
+              <p>
+                You may notice that the number <code>6.28</code> makes the rotation stop at exactly one complete circle.
+                Here's an interesting fact.
+                You may know that the number <code>pi</code> is approximately <code>3.14159...</code>
+                That makes <code>6.28</code> about 2 times <code>pi</code>. ☺️
+              </p>
+              <p>
+                What if the loop stops at <code>3.14159</code>? Or 3 times that amount? Or half of it?
             </div>
           </section>
 
@@ -701,7 +670,7 @@ function draw() {
 
         <div>
 
-          <h2>9. Make Your Own Project</h2>
+          <h2>8. Make Your Own Project</h2>
 
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">

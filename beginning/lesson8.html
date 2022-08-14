@@ -40,9 +40,8 @@
         <p class="nav"><a href="index.html">&larr; Back to Home</a></p>
         <p>
           In this lesson, you'll learn how to make beautiful spirals
-          by changing their rotation, position, and size.
+          by changing the rotation, position, and size of different shapes.
         </p>
-        <p>TBD. REDO LINE MOVIE TO SHOW ELLIPSE INITIALLY.</p>
         <p>
           <img src="../images/lesson8/spiralsFinalGalaxy.gif"  style="width: 35%; margin-top: 13px;d" alt="spiral made of tiny multi-colored circles" />
           <img src="../images/lesson8/spiralsFinalDoubleEllipses.gif"  style="width: 35%; margin-top: 13px;d" alt="spiral made of long, flat ellipses" />
@@ -68,25 +67,25 @@
             Let's investigate how that's done.
             <br class="tinkerNewLine" />
             Try these challenges:
+            <span class="tinkerBullet">Change exactly <em>one number</em> in the script
+              to make the spiral longer.
+            </span>
             <span class="tinkerBullet">Notice that in the script,
-              the ellipse's <em>x-</em> coordinate increases by 1 over and over.
-              On screen, that means the
-              ellipse move further and further from the center over time.
+              the ellipse's <em>x-</em> coordinate (sideways position)
+              increases by 1 over and over. On screen, that means the
+              ellipse moves further and further from the center over time.
+              Change the script so <code>x</code> increases by different amounts, clicking
+              <span class="btnPress">&#9654;Play</span> after each change to see the effect.
+              Which values added to <code>x</code> make spirals that you like?
             </span>
-            <span class="tinkerBullet">Change the script so
-              <code>x</code> increases by <code>0.1</code> instead of <code>1</code>.
-              Be sure to click <span class="btnPress">&#9654;Play</span>.
-              Then change <code>x</code> by <code>2</code>.
-              Try some other numbers, too. Which values added to <code>x</code> make spirals that you like?
-            </span>
-            <span class="tinkerBullet">The variable <code>r</code> is also
-              increasing by 1 over and over. Try changing <code>r</code> by <code>0.1</code>,
-              <code>0.5</code>, <code>-0.25</code>, or other small decimals.
+            <span class="tinkerBullet">The variable <code>r</code>
+              increases by 0.1 over and over. Change the script so that <code>r</code>
+              increases by other numbers.
               Which values added to <code>r</code> make spirals that you like?
             </span>
             <span class="tinkerBullet">Just for fun, change the height and width
-              in the <code>ellipse</code> command to make long, flat ellipses instead of
-              small circular ones.
+              in the <code>ellipse</code> command to make long, flat ellipses
+              or tall, skinny ones instead of circles.
             </span>
             <span class="tinkerBullet">Just for fun, fill the ellipses with your favorite color.</span>
           </p>
@@ -106,10 +105,11 @@ function draw() {
   if (r > 10) noLoop();
 
   ellipse(x, 0, 8, 8);
-  x = x + 1;
+  x = x + 0.5;
 }
           </script>
 
+<!--
           <p class="tinkerHeadingTop" style="margin-top: 13px;">Explanation</p>
           <p class="tinkerHeadingBottom">Here's a slow-motion image of an ellipse
             whose <em>x-</em>coordinate is getting larger and larger
@@ -118,7 +118,7 @@ function draw() {
             <br class="tinkerNewLine"/>
             <img src="../images/lesson8/translateThenRotate.gif" width="50%" alt="ellipses slowly appearing and moving away from center as the canvas rotates" />
           </p>
-
+-->
 
 
         </div>
@@ -135,7 +135,38 @@ function draw() {
 
             <div class="content">
               <p>
-
+                Here's a slow-motion image of an ellipse
+                whose <em>x-</em>coordinate (sideways position) gets larger and larger
+                as the canvas rotates. The effect is to create
+                a spiral, the same shape as star galaxies in space.
+                <br class="tinkerNewLine"/>
+                <img src="../images/lesson8/translateThenRotate.gif" alt="ellipses slowly appearing and moving away from center as the canvas rotates" />
+              </p>
+              <p>
+                To make the spiral longer, change line 13 to a number bigger than <code>10</code>, like this:<br />
+                <code>if (r > 20) noLoop();</code><br />
+                This change allows the canvas to make more rotations
+                before it stops, so the spiral has a chance to grow longer.
+              </p>
+              <p>
+                To increase <code>x</code> by different amounts, include different numbers on line 16 &mdash;
+                for example, change <code>0.5</code> to <code>1.2</code>:<br />
+                <code>x = x + 1.2;</code><br />
+                When you click <span class="btnPress">&#9654;Play</span>, you'll see a wider spiral
+                because now the ellipse travels 1.2 pixels (instead of 0.5 pixels) on each rotation.
+              </p>
+              <p>
+                To increase <code>r</code> by different amounts, include different numbers on line 12 &mdash;
+                for example, change <code>0.1</code> to <code>0.01</code>:<br />
+                <code>r = r + 0.01;</code><br />
+                When you click <span class="btnPress">&#9654;Play</span>, you'll see a flatter spiral.
+                The variable <code>r</code> changes how much (or little)
+                the canvas rotates each time that <code>function draw()</code> runs, with a wide variety of different effects.
+                In this case, the rotation is <code>0.01</code> (instead of <code>0.1</code>), meaning that the
+                canvas rotates less each time. As the ellipse moves sideways, it rotates down less than it used to,
+                making the spiral curve less.
+                <em>Tip!</em> While you're changing <code>r</code>, you may also wish to change line 13 to allow more (or fewer)
+                rotations before the animation stops.
               </p>
             </div>
           </section>
@@ -202,7 +233,27 @@ function draw() {
 
             <div class="content">
               <p>
-                TBD
+                On line 1, we create a variable named <code>sz</code> that gets <code>0</code>.
+                On line 12 we use that variable to define the width of the ellipse:<br />
+                <code>ellipse(0, 0, sz, 10);</code><br />
+                On line 14, we change <code>sz</code> by <code>1</code> each time
+                <code>function draw()</code> runs:<br />
+                <code>sz = sz + 1;</code><br />
+                so the ellipse gets wider over time.
+              </p>
+              <p>
+                To make the ellipses get wider more slowly, include smaller numbers on line 14 &mdash;
+                for example, change <code>1</code> to <code>0.5</code>:<br />
+                <code>sz = sz + 0.5;</code><br />
+                To make the ellipses get wider more quickly, include numbers larger than <code>1</code>.
+              </p>
+              <p>
+                To make the canvas rotate more slowly, include smaller numbers on line 13 &mdash;
+                for example, change <code>1</code> to <code>0.25</code>:<br />
+                <code>r = r + 0.25;</code><br />
+                The variable <code>r</code> determines how far the canvas rotates on line 11:<br />
+                <code>rotate(r);</code><br />
+                So smaller numbers make less rotation.
               </p>
             </div>
           </section>
@@ -221,17 +272,13 @@ function draw() {
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             To make and save your own project, you'll work in the <span class="accentuate">p5.js Web Editor</span>.
-            <span class="tinkerBullet">There are 4 examples below with pictures to show the animations they create.
-              Choose one of the examples and copy its code. You'll use it as a starter project.
-            </span>
             <span class="tinkerBullet">Click this link to open the <a href="https://editor.p5js.org" target="_blank">p5.js Web Editor</a>
               in another tab. A new project opens. Select all the code and press <span class="btnPress">Delete</span>
               or <span class="btnPress">Backspace</span> to delete it.
             </span>
-            <span class="tinkerBullet">Paste the code you copied in the <span class="accentuate">p5.js</span> web editor.
-            </span>
-            <span class="tinkerBullet">Change the code to make an animation of your own. Your animation can be
-              similar to the GIFs or completely different. The more changes you make, the more you'll learn!
+            <span class="tinkerBullet">You can copy and paste one of the code examples below to use as a starter project or
+              simply use the examples as a reference for making a completely new project of your own.
+              Each example creates one of the images shown at the beginning of this lesson.
             </span>
             <span class="tinkerBullet">Have fun! 👏
             </span>
@@ -250,7 +297,7 @@ function draw() {
             </span>
             <span class="tinkerBullet">The project includes all the variables you'll need.
               Use the variable <code>r</code> to change the rotation
-              and the variable <code>x</code> to change the ellipse's <em>x-</em>coordinate.
+              and the variable <code>x</code> to change the ellipse's <em>x-</em>coordinate, or sideways position.
             </span>
           </p>
 
@@ -384,8 +431,12 @@ function draw() {
               You must make the ellipse and the line change their positions together, and you must make the canvas rotate.
               Feel free to change the colors and to stop the animation.
             </span>
-            <span class="tinkerBullet">The line changes its <em>x-</em> and <em>y-</em>coordinates.
-              The ellipse changes its <em>y-</em>coordinate. You can see these movements in the GIF image below.<br />
+            <span class="tinkerBullet">One end of the line moves straight downwards over time,
+              and the other end moves sideways by the same amount (making the line longer). To say this another way,
+              one end of the line changes its <em>y-</em>coordinate and the other end changes its
+              <em>x-</em>coordinate by the same amount.
+              The ellipse changes its <em>y-</em>coordinate so that it moves with one end of the line.
+              You can see these movements in the GIF image below.<br />
               <img src="../images/lesson8/spiralsFinalLineOnlySlow.gif" style="width: 40%; margin-top: 13px;d" alt="line and ellipse changing their positions" />
             </span>
             <span class="tinkerBullet">The canvas rotates while the line and ellipse are moving, as
@@ -394,13 +445,14 @@ function draw() {
             </span>
             <span class="tinkerBullet">The project includes all the variables you'll need.
               Use the variable <code>r</code> to change the rotation
-              and the variable <code>sz</code> to change the rectangle's size.
+              and the variable <code>z</code> to change the ellipse's <em>y-</em>coordinate
+              and the line's <em>x-</em> and <em>y-</em>coordinates.
             </span>
           </p>
 
           <pre class="example-codeonly">
 let r = 0;
-let sz = 0;
+let z = 0;
 
 function setup() {
   createCanvas(400, 400);
