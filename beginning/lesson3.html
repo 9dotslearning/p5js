@@ -95,7 +95,7 @@ background(0);
                 Each pixel is about 1/100 inch wide and tall. This whole canvas is 250 pixels wide and 200 pixels tall.</p>
               <p><code>background</code> changes the color of the canvas.</p>
               <p>The numbers in parentheses are called <em>arguments</em>, and they change how commands work.
-              For example, <code>background(0)</code> creates black and <code>background(255)</code> creates white. Arguments between 0 and 255 produce gray, with lighter grays as arguments get bigger.
+              For example, <code>background(0)</code> creates black and <code>background(255)</code> creates white. Arguments between <code>0</code> and <code>255</code> produce gray, with lighter grays as arguments get bigger.
               </p>
               <p>When you click Click <span class="btnPress">&#9654;Play</span>, we say that you <em>run</em> the script.</p>
               <p>If things get messed up after you make changes, you can restore the starting code by clicking <span class="btnPress">Revert</span>,
@@ -119,8 +119,12 @@ background(0);
             Let's make some mistakes on purpose. They'll help us learn how the code works.
             <span class="tinkerBullet">Try deleting the comma between the numbers in <code>createCanvas</code>. Then click <span class="btnPress">&#9654;Play</span>.  What happens?</span>
             <span class="tinkerBullet">Click <span class="btnPress">Revert</span> to reset. Delete a parenthesis ( ) and click <span class="btnPress">&#9654;Play</span>. What happens?</span>
-            <span class="tinkerBullet">Click <span class="btnPress">Revert</span> to reset. Add a space between <code>create</code> and <code>Canvas</code>. What happens?</span>
-            <span class="tinkerBullet">Write <code>createcanvas</code> in lowercase letters. What happens?</span>
+            <span class="tinkerBullet">Click <span class="btnPress">Revert</span> to reset. Add a space between <code>create</code> and <code>Canvas</code>.
+              Then click <span class="btnPress">&#9654;Play</span>. What happens?
+            </span>
+            <span class="tinkerBullet">Write <code>createcanvas</code> in lowercase letters.
+              Then click <span class="btnPress">&#9654;Play</span>. What happens?
+            ``</span>
           </p>
           <script type="text/p5" data-preview-width="300">
 createCanvas(250, 300);
@@ -168,7 +172,7 @@ background(0);
             <span class="tinkerBullet">Go to <a href="https://codepen.io/HunorMarton/details/eWvewo" target="_blank">HSB Color Picker</a> in a new tab.</span>
             <span class="tinkerBullet">You'll see 3 sliders. Move them to change colors. Find a color you like!</span>
             <span class="tinkerBullet">Each slider is represented by a number.
-              Copy the numbers one at a time, in order, and paste them into the <code>background</code> command below.
+              Type the numbers one at a time, in order, into the <code>background</code> command below.
               Make sure there are commas between each number. Don't include &deg; and % symbols.
               Remember to click <span class="btnPress">&#9654;Play</span>. 🙂</span>
             <span class="tinkerBullet" style="margin-bottom: 13px;">You can learn more about these ideas by clicking <span class="accentuate">Color Help</span> at the right.</span>
@@ -292,7 +296,8 @@ ellipse(150, 100, 50, 35);
               <p>Here are the arguments to <code>ellipse</code>:<br />
               <img src="../images/lesson2/p2ellipsesyntax.png" alt="In ellipse(150, 100, 50, 35), 150 is the x-coordinate, 100 is the y-coordinate, 50 is the width, and 35 is the height." /></p>
               <p>Remember to write the arguments in order, separated by commas, and enclosed in parentheses.</p>
-              <p>Add this command to make a second ellipse. Your arguments in this <code>ellipse</code> command can be different.<br />
+              <p>Add this command to make a second ellipse. Of course there are many other possibilities!
+                Feel free to change the arguments to make an ellipse of your own. <br />
                 <code>ellipse(45, 165, 10, 40);</code>
               </p>
             </div>
@@ -311,8 +316,7 @@ ellipse(150, 100, 50, 35);
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>.
             The ellipse has changed color, and it has a thick outline as well.
-            These changes come from the <code>stroke</code>, <code>strokeWeight</code>, and
-            <code>fill</code> commands.
+            These changes come from the <code>fill</code>, <code>stroke</code>, and <code>strokeWeight</code> commands.
             <br class="tinkerNewLine">
             Try these challenges:
             <span class="tinkerBullet">Change numbers in the <code>fill</code> command and then click <span class="btnPress">&#9654;Play</span>.
@@ -405,24 +409,24 @@ background( random(225) );
                 We end up with four parentheses, like this:
               </p>
               <p>
-                <img src="../images/lesson2/p2randombackground.png" alt="image showing background(random(225))">
+                <img src="../images/lesson2/p2randombackground-225.png" alt="image showing background(random(225))">
               </p>
               <p>
                 The computer always reads the innermost parentheses first.
-                So the computer chooses a random number from 0-225.
+                So the computer chooses a random number from <code>0-225</code>.
                 Then it gives this random number to the <code>background</code> command, producing a random gray color.
               </p>
               <p>
                 It's helpful to understand that the random numbers may not seem to change
                 every time you click <span class="btnPress">&#9654;Play</span>.
                 That's because it's possible for the computer to pick the same random number twice in a row,
-                just like when you flip coins randomly and get "heads" or "tails" twice in a row.
+                just like you can get "heads" or "tails" twice in a row when you randomly flip coins.
               </p>
               <p>
-                Suppose you use a smaller number than 225 in the <code>random</code> command, like this:<br />
+                Suppose you use a smaller number than <code>225</code> in the <code>random</code> command, like this:<br />
                 <code>background( random(100) )</code><br />
-                Then you'll get random grays that are darker, because
-                lower numbers produce darker grays.
+                Then the computer will choose a random number between <code>0-100</code>, and
+                you'll see random grays that are darker. Remember that lower numbers produce darker grays.
               </p>
               <p>
                 When <code>background</code> contains a single number, you see a shade of gray
@@ -445,10 +449,11 @@ background( random(225) );
           <p class="tinkerHeadingBottom">
             Click <span class="btnPress">&#9654;Play</span>, <em>several times.</em>
             Each time you click, the background changes color randomly.
-            The colors come from the command:<br />
-            <code>background( random(255), 100, 100 )</code><br />
+            The random colors come from the command:<br />
+            <code>background( random(360), 100, 100 )</code><br />
             which randomly changes hue.
-            (If you can't see the whole <code>background</code> command, click <span class="btnPress">&#9632; Stop</span> to show the full code window.)
+            (If you can't see the whole <code>background</code> command in the code below,
+            click <span class="btnPress">&#9632; Stop</span> to show the full code window.)
             <br class="tinkerNewLine" />
             Try these challenges:
             <span class="tinkerBullet">Make the <code>fill</code> random.</span>
@@ -459,7 +464,7 @@ background( random(225) );
           <script type="text/p5" data-preview-width="300">
 createCanvas(250, 200);
 colorMode(HSB);
-background( random(255), 100, 100 );
+background( random(360), 100, 100 );
 fill(5, 100, 100);
 stroke(0, 100, 0);
 strokeWeight(6);
@@ -474,21 +479,26 @@ ellipse(150, 100, 50, 35);
           <section class="accordion">
             <input type="checkbox" name="collapse7" id="handle7" checked="checked">
             <h2 class="handle">
-              <label for="handle7">Color the Ellipse Help</label>
+              <label for="handle7">Random Color Help</label>
             </h2>
             <div class="content">
                 <p>
                 Notice that in <br />
-                <code>background( random(255), 100, 100 );</code> <br />
+                <code>background( random(360), 100, 100 );</code> <br />
                 we chose a random number <em>only</em> for the first number,
                 the hue (the basic color). We didn't randomize saturation or brightness.
+                For the random hue, we chose randomly among the 360 possibilities.
               </p>
               <p>But you could randomize saturation and brightness, too. :-)
                 You could write a command like this:<br />
-                <code>background( random(255), random(100), random(100) );</code>
-                <br class="tinkerNewLine"/>
+                <code>background( random(360), random(100), random(100) );</code><br />
+                <br />
                 <img src="../images/lesson2/p2randombackgroundall.png" alt="image showing the code: background( random(255), random(100), random(100) )" />
-                You can make similar changes to <code>stroke</code> and <code>fill</code> as well.
+                There are 100 possible saturations and 100 possible brightness values,
+                and we randomly choose one of them.
+              </p>
+              <p>
+                You can randomize <code>stroke</code> and <code>fill</code> as well.
                 Make any changes that create colors you like!
               </p>
               <p>
@@ -599,10 +609,10 @@ function draw() {
           <p class="tinkerHeadingTop">Tinker</p>
           <p class="tinkerHeadingBottom">
             Let's make some more mistakes on purpose. They'll help us learn about <code>function setup()</code> and <code>function draw()</code>.
-            To cut and paste, use keyboard shortcuts (because right-clicking the mouse won't work).
+            To cut and paste, use keyboard shortcuts (because right-clicking won't work).
             If you need help with the keyboard shortcuts,
             click <span class="accentuate">More Mistakes Help</span> at the right.
-            <br style="margin-bottom: 13px; " />
+            <br class="tinkerNewLine">
             Try these challenges:
             <span class="tinkerBullet">Delete a curly brace { or }. Click <span class="btnPress">&#9654;Play</span>. What happens?</span>
             <span class="tinkerBullet">Click <span class="btnPress">Revert</span> to reset. Then delete the word <code>function</code>. Click <span class="btnPress">&#9654;Play</span>. What happens?</span>
